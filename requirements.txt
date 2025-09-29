@@ -1,0 +1,19 @@
+I have a Hotel in Croatia, Where I provide Hotels room of various type.
+
+You have to create a beautiful stunning Croatia Based Hothel booking website with possible all features. it will be a two language website, english and croatian.
+We need multi pages Home, about, Rooms, Careeer, Contact pages.
+
+I want to get the website in next js 15.4 with tailwind and typescript. We will host the website in Cpanel, so we will use Mysql as database.
+you have to create database structure for Admin login, Admin Dashboard needed for 3 things.
+
+1. room booking Order
+2. Contact page ssubmission
+3. Career apply submission
+
+As we are taking international booking, so passport number wwill be mandatory field for all 3 submisssion.
+
+The whole website should be static for now. Later we will make it database driven one by one.
+
+Hope you understand what to do now.
+
+I have the logo file in the folder and the contact of my hotel is +385924512500  and Address:   Matošića ul. 21000, Split, Croatia
