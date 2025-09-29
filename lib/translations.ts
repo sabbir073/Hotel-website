@@ -47,7 +47,7 @@ export const translations = {
           country: "Italy"
         },
         review3: {
-          text: "The spa treatments were incredible! This hotel truly offers a five-star experience. Can't wait to come back!",
+          text: "The spa treatments were incredible! This hotel truly offers a five-star experience. Can&apos;t wait to come back!",
           name: "Emma Schmidt",
           country: "Germany"
         }
@@ -153,9 +153,9 @@ export const translations = {
       subtitle: "A Legacy of Croatian Hospitality",
       story: {
         title: "Our Story",
-        content: "Nestled in the heart of Split, Hotel du Théâtre has been a beacon of luxury and comfort since its inception. Our historic building, once home to the city's grand theatre, has been meticulously restored to offer modern amenities while preserving its timeless charm.",
+        content: "Nestled in the heart of Split, Hotel du Théâtre has been a beacon of luxury and comfort since its inception. Our historic building, once home to the city&apos;s grand theatre, has been meticulously restored to offer modern amenities while preserving its timeless charm.",
         content2: "Built in the early 20th century, our building has witnessed the golden age of Croatian theatre and arts. Today, we honor this heritage by providing a stage for unforgettable hospitality experiences, where every guest becomes the protagonist of their own Croatian story.",
-        content3: "With 45 meticulously designed rooms and suites, each space tells its own story while offering modern amenities and breathtaking views of the Adriatic Sea or the historic Diocletian's Palace."
+        content3: "With 45 meticulously designed rooms and suites, each space tells its own story while offering modern amenities and breathtaking views of the Adriatic Sea or the historic Diocletian&apos;s Palace."
       },
       mission: {
         title: "Our Mission",
@@ -195,7 +195,7 @@ export const translations = {
         title: "Awards & Recognition",
         subtitle: "Honored for excellence in hospitality",
         tripadvisor: "TripAdvisor",
-        tripadvisorDesc: "Travelers' Choice 2024",
+        tripadvisorDesc: "Travelers&apos; Choice 2024",
         croatian: "Croatian Tourism Board",
         croatianDesc: "Best Boutique Hotel 2023",
         worldLuxury: "World Luxury Hotel",
@@ -213,7 +213,7 @@ export const translations = {
     careers: {
       title: "Join Our Team",
       subtitle: "Build Your Career with Hotel du Théâtre",
-      intro: "We're always looking for talented individuals who share our passion for hospitality",
+      intro: "We&apos;re always looking for talented individuals who share our passion for hospitality",
       whyWorkWithUs: {
         title: "Why Work With Us",
         subtitle: "Join a team that values excellence, growth, and well-being",
@@ -250,7 +250,7 @@ export const translations = {
         experience3to5: "3-5 years",
         experience5to10: "5-10 years",
         experience10plus: "10+ years",
-        coverLetterPlaceholder: "Tell us why you're the perfect fit for this position...",
+        coverLetterPlaceholder: "Tell us why you&apos;re the perfect fit for this position...",
         resumeUpload: "Click to upload or drag and drop",
         resumeFormat: "PDF, DOC, DOCX (max 5MB)"
       },
@@ -263,7 +263,7 @@ export const translations = {
           position: "Front Desk Manager, 3 years"
         },
         testimonial2: {
-          text: "The hotel's commitment to excellence pushes me to be my best every day. I'm proud to be part of this amazing team.",
+          text: "The hotel&apos;s commitment to excellence pushes me to be my best every day. I&apos;m proud to be part of this amazing team.",
           name: "Marina Jurić",
           position: "Spa Manager, 5 years"
         },
@@ -315,7 +315,7 @@ export const translations = {
     },
     contact: {
       title: "Contact Us",
-      subtitle: "We'd Love to Hear from You",
+      subtitle: "We&apos;d Love to Hear from You",
       info: {
         address: "Address",
         phone: "Phone",
@@ -328,7 +328,7 @@ export const translations = {
       mapClick: "Click to view on Google Maps",
       sendMessage: "Send Us a Message",
       messageSent: "Message Sent!",
-      messageThankYou: "Thank you for contacting us. We'll get back to you within 24 hours.",
+      messageThankYou: "Thank you for contacting us. We&apos;ll get back to you within 24 hours.",
       hoursDetails: {
         reception: "Reception: 24/7",
         restaurant: "Restaurant: 7:00 - 23:00",
@@ -511,7 +511,7 @@ export const translations = {
         title: "Recenzije gostiju",
         subtitle: "Što naši gosti kažu o nama",
         review1: {
-          text: "Izuzetna usluga i prekrasan pogled! Osoblje je učinilo sve da naš godišnjica bude posebna. Toplo preporučujem!",
+          text: "Izuzetna usluga i prekrasan pogled! Osoblje je učinilo sve da naša godišnjica bude posebna. Toplo preporučujem!",
           name: "Sarah Johnson",
           country: "Ujedinjeno Kraljevstvo"
         },

@@ -335,7 +335,7 @@ export default function Home() {
                 ))}
               </div>
               <p className="text-gray-600 mb-4">
-                "{t.home.testimonials.review1.text}"
+                &ldquo;{t.home.testimonials.review1.text}&rdquo;
               </p>
               <p className="font-semibold">{t.home.testimonials.review1.name}</p>
               <p className="text-sm text-gray-500">{t.home.testimonials.review1.country}</p>
@@ -348,7 +348,7 @@ export default function Home() {
                 ))}
               </div>
               <p className="text-gray-600 mb-4">
-                "{t.home.testimonials.review2.text}"
+                &ldquo;{t.home.testimonials.review2.text}&rdquo;
               </p>
               <p className="font-semibold">{t.home.testimonials.review2.name}</p>
               <p className="text-sm text-gray-500">{t.home.testimonials.review2.country}</p>
@@ -361,7 +361,7 @@ export default function Home() {
                 ))}
               </div>
               <p className="text-gray-600 mb-4">
-                "{t.home.testimonials.review3.text}"
+                &ldquo;{t.home.testimonials.review3.text}&rdquo;
               </p>
               <p className="font-semibold">{t.home.testimonials.review3.name}</p>
               <p className="text-sm text-gray-500">{t.home.testimonials.review3.country}</p>
