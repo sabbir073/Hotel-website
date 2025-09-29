@@ -8,7 +8,7 @@ type Language = 'en' | 'hr';
 interface LanguageContextType {
   language: Language;
   setLanguage: (lang: Language) => void;
-  t: typeof translations.en;
+  t: any;
 }
 
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined);

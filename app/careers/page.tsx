@@ -440,7 +440,7 @@ export default function Careers() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
             <div className="bg-white p-6 rounded-xl shadow-lg">
               <p className="text-gray-600 mb-4 italic">
-                "Working at Hotel du Théâtre has been an incredible journey. The team is like family, and the opportunities for growth are endless."
+                &ldquo;{t.careers.employeeTestimonials.testimonial1.text}&rdquo;
               </p>
               <div className="flex items-center space-x-3">
                 <div className="relative w-12 h-12 rounded-full overflow-hidden">
@@ -452,15 +452,15 @@ export default function Careers() {
                   />
                 </div>
                 <div>
-                  <p className="font-semibold">Petar Nikolić</p>
-                  <p className="text-sm text-gray-500">Front Desk Manager, 3 years</p>
+                  <p className="font-semibold">{t.careers.employeeTestimonials.testimonial1.name}</p>
+                  <p className="text-sm text-gray-500">{t.careers.employeeTestimonials.testimonial1.position}</p>
                 </div>
               </div>
             </div>
 
             <div className="bg-white p-6 rounded-xl shadow-lg">
               <p className="text-gray-600 mb-4 italic">
-                "The hotel's commitment to excellence pushes me to be my best every day. I'm proud to be part of this amazing team."
+                &ldquo;{t.careers.employeeTestimonials.testimonial2.text}&rdquo;
               </p>
               <div className="flex items-center space-x-3">
                 <div className="relative w-12 h-12 rounded-full overflow-hidden">
@@ -480,7 +480,7 @@ export default function Careers() {
 
             <div className="bg-white p-6 rounded-xl shadow-lg">
               <p className="text-gray-600 mb-4 italic">
-                "The training and development programs here have helped me advance my career beyond what I imagined possible."
+                &ldquo;{t.careers.employeeTestimonials.testimonial3.text}&rdquo;
               </p>
               <div className="flex items-center space-x-3">
                 <div className="relative w-12 h-12 rounded-full overflow-hidden">

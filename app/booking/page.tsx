@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, Suspense } from 'react';
 import { useSearchParams } from 'next/navigation';
 import { useLanguage } from '@/contexts/LanguageContext';
 import Image from 'next/image';
@@ -29,7 +29,7 @@ const roomsInfo: any = {
   }
 };
 
-export default function Booking() {
+function BookingContent() {
   const { t } = useLanguage();
   const searchParams = useSearchParams();
   const [currentStep, setCurrentStep] = useState(1);
@@ -539,5 +539,18 @@ export default function Booking() {
         </div>
       </div>
     </div>
+  );
+}
+
+export default function Booking() {
+  return (
+    <Suspense fallback={<div className="min-h-screen bg-gray-50 flex items-center justify-center">
+      <div className="text-center">
+        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary-600 mx-auto mb-4"></div>
+        <p className="text-gray-600">Loading...</p>
+      </div>
+    </div>}>
+      <BookingContent />
+    </Suspense>
   );
 }

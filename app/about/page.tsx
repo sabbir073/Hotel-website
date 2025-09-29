@@ -165,8 +165,8 @@ export default function About() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             <div className="bg-white p-6 rounded-xl shadow-lg text-center">
               <FaStar className="text-4xl text-yellow-500 mx-auto mb-3" />
-              <h3 className="font-semibold mb-2">TripAdvisor</h3>
-              <p className="text-sm text-gray-600">Travelers' Choice 2024</p>
+              <h3 className="font-semibold mb-2">{t.about.awards.tripadvisor}</h3>
+              <p className="text-sm text-gray-600">{t.about.awards.tripadvisorDesc}</p>
             </div>
 
             <div className="bg-white p-6 rounded-xl shadow-lg text-center">
