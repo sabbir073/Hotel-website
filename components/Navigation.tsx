@@ -21,7 +21,7 @@ export default function Navigation() {
             <div className="relative w-48 h-12">
               <Image
                 src="/logo.jpg"
-                alt="Hotel du Théâtre"
+                alt="THEATRE HOTEL d.o.o."
                 fill
                 className="object-contain"
                 priority

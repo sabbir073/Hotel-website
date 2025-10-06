@@ -9,7 +9,7 @@ export const translations = {
       bookNow: "Book Now"
     },
     hero: {
-      title: "Welcome to Hotel du Théâtre",
+      title: "Welcome to THEATRE HOTEL d.o.o.",
       subtitle: "Experience Luxury in the Heart of Split, Croatia",
       description: "Discover the perfect blend of elegance and comfort at our boutique hotel",
       cta: "Book Your Stay",
@@ -20,7 +20,7 @@ export const translations = {
     },
     home: {
       whyChoose: {
-        title: "Why Choose Hotel du Théâtre",
+        title: "Why Choose THEATRE HOTEL d.o.o.",
         subtitle: "Experience the finest Croatian hospitality"
       },
       amenities: {
@@ -54,7 +54,7 @@ export const translations = {
       },
       cta: {
         title: "Ready for Your Croatian Adventure?",
-        subtitle: "Book your stay at Hotel du Théâtre today and experience luxury like never before",
+        subtitle: "Book your stay at THEATRE HOTEL d.o.o. today and experience luxury like never before",
         button: "Book Now"
       },
       viewAllRooms: "View All Rooms"
@@ -149,11 +149,11 @@ export const translations = {
       }
     },
     about: {
-      title: "About Hotel du Théâtre",
+      title: "About THEATRE HOTEL d.o.o.",
       subtitle: "A Legacy of Croatian Hospitality",
       story: {
         title: "Our Story",
-        content: "Nestled in the heart of Split, Hotel du Théâtre has been a beacon of luxury and comfort since its inception. Our historic building, once home to the city&apos;s grand theatre, has been meticulously restored to offer modern amenities while preserving its timeless charm.",
+        content: "Nestled in the heart of Split, THEATRE HOTEL d.o.o. has been a beacon of luxury and comfort since its inception. Our historic building, once home to the city&apos;s grand theatre, has been meticulously restored to offer modern amenities while preserving its timeless charm.",
         content2: "Built in the early 20th century, our building has witnessed the golden age of Croatian theatre and arts. Today, we honor this heritage by providing a stage for unforgettable hospitality experiences, where every guest becomes the protagonist of their own Croatian story.",
         content3: "With 45 meticulously designed rooms and suites, each space tells its own story while offering modern amenities and breathtaking views of the Adriatic Sea or the historic Diocletian&apos;s Palace."
       },
@@ -172,9 +172,26 @@ export const translations = {
         innovation: "Continuous Innovation",
         innovationDesc: "Embracing modern technology while honoring tradition"
       },
+      companyInfo: {
+        title: "Company Information",
+        companyName: "THEATRE HOTEL d.o.o.",
+        description: "The limited liability company THEATRE HOTEL d.o.o. is registered at Matošića 21, 21000, Split, Croatia and has been operating since 27.02.2020.",
+        activity: "Resorts and similar short-term holiday facilities",
+        address: "Matošića 21, 21000, Split, Croatia",
+        oib: "OIB: 13682410736",
+        mbs: "MBS: 060416714",
+        mbds: "MBDS: 05239001",
+        established: "Date of establishment: 27.02.2020",
+        contact: "Contact: 021655961, +385 92 451 2500"
+      },
       team: {
         title: "Our Leadership Team",
         subtitle: "Passionate professionals dedicated to your comfort",
+        director: {
+          name: "Mea Baturina",
+          title: "Director",
+          description: "Leading THEATRE HOTEL d.o.o. since 2020"
+        },
         manager: {
           name: "Marko Kovačević",
           title: "General Manager",
@@ -212,7 +229,7 @@ export const translations = {
     },
     careers: {
       title: "Join Our Team",
-      subtitle: "Build Your Career with Hotel du Théâtre",
+      subtitle: "Build Your Career with THEATRE HOTEL d.o.o.",
       intro: "We&apos;re always looking for talented individuals who share our passion for hospitality",
       whyWorkWithUs: {
         title: "Why Work With Us",
@@ -256,9 +273,9 @@ export const translations = {
       },
       employeeTestimonials: {
         title: "What Our Team Says",
-        subtitle: "Hear from the people who make Hotel du Théâtre special",
+        subtitle: "Hear from the people who make THEATRE HOTEL d.o.o. special",
         testimonial1: {
-          text: "Working at Hotel du Théâtre has been an incredible journey. The team is like family, and the opportunities for growth are endless.",
+          text: "Working at THEATRE HOTEL d.o.o. has been an incredible journey. The team is like family, and the opportunities for growth are endless.",
           name: "Petar Nikolić",
           position: "Front Desk Manager, 3 years"
         },
@@ -324,7 +341,7 @@ export const translations = {
       },
       getInTouch: "Get in Touch",
       mapTitle: "Interactive Map",
-      mapSubtitle: "Hotel du Théâtre, Split",
+      mapSubtitle: "THEATRE HOTEL d.o.o., Split",
       mapClick: "Click to view on Google Maps",
       sendMessage: "Send Us a Message",
       messageSent: "Message Sent!",
@@ -483,7 +500,7 @@ export const translations = {
       bookNow: "Rezerviraj"
     },
     hero: {
-      title: "Dobrodošli u Hotel du Théâtre",
+      title: "Dobrodošli u THEATRE HOTEL d.o.o.",
       subtitle: "Doživite luksuz u srcu Splita",
       description: "Otkrijte savršen spoj elegancije i udobnosti u našem boutique hotelu",
       cta: "Rezervirajte boravak",
@@ -494,7 +511,7 @@ export const translations = {
     },
     home: {
       whyChoose: {
-        title: "Zašto odabrati Hotel du Théâtre",
+        title: "Zašto odabrati THEATRE HOTEL d.o.o.",
         subtitle: "Doživite najbolje hrvatsko gostoprimstvo"
       },
       amenities: {
@@ -528,7 +545,7 @@ export const translations = {
       },
       cta: {
         title: "Spremni za svoju hrvatsku avanturu?",
-        subtitle: "Rezervirajte svoj boravak u Hotelu du Théâtre danas i doživite luksuz kakav nikad prije niste",
+        subtitle: "Rezervirajte svoj boravak u THEATRE HOTEL d.o.o. danas i doživite luksuz kakav nikad prije niste",
         button: "Rezerviraj sada"
       },
       viewAllRooms: "Pogledaj sve sobe"
@@ -582,11 +599,11 @@ export const translations = {
       }
     },
     about: {
-      title: "O Hotelu du Théâtre",
+      title: "O THEATRE HOTEL d.o.o.",
       subtitle: "Nasljeđe hrvatskog gostoprimstva",
       story: {
         title: "Naša priča",
-        content: "Smješten u srcu Splita, Hotel du Théâtre već dugo je simbol luksuza i udobnosti. Naša povijesna zgrada, nekad dom gradskog velikog kazališta, pažljivo je obnovljena kako bi ponudila moderne sadržaje uz očuvanje bezvremenske elegancije.",
+        content: "Smješten u srcu Splita, THEATRE HOTEL d.o.o. već dugo je simbol luksuza i udobnosti. Naša povijesna zgrada, nekad dom gradskog velikog kazališta, pažljivo je obnovljena kako bi ponudila moderne sadržaje uz očuvanje bezvremenske elegancije.",
         content2: "Izgrađena početkom 20. stoljeća, naša zgrada svjedočila je zlatnom dobu hrvatskog kazališta i umjetnosti. Danas poštujemo ovu baštinu pružajući pozornicu za nezaboravna gostoprimstva iskustva, gdje svaki gost postaje protagonist vlastite hrvatske priče.",
         content3: "S 45 pažljivo dizajniranih soba i apartmana, svaki prostor priča svoju priču dok nudi moderne sadržaje i prekrasan pogled na Jadransko more ili povijesnu Dioklecijanovu palaču."
       },
@@ -605,9 +622,26 @@ export const translations = {
         innovation: "Kontinuirana inovacija",
         innovationDesc: "Prihvaćanje moderne tehnologije uz poštovanje tradicije"
       },
+      companyInfo: {
+        title: "Informacije o tvrtki",
+        companyName: "THEATRE HOTEL d.o.o.",
+        description: "Društvo s ograničenom odgovornošću THEATRE HOTEL d.o.o. registrirano je na adresi Matošića 21, 21000, Split, Hrvatska i posluje od 27.02.2020.",
+        activity: "Odmarališta i slična kratkotrajna turistička smještajna mjesta",
+        address: "Matošića 21, 21000, Split, Hrvatska",
+        oib: "OIB: 13682410736",
+        mbs: "MBS: 060416714",
+        mbds: "MBDS: 05239001",
+        established: "Datum osnivanja: 27.02.2020",
+        contact: "Kontakt: 021655961, +385 92 451 2500"
+      },
       team: {
         title: "Naš vodstveni tim",
         subtitle: "Strastveni profesionalci predani vašoj udobnosti",
+        director: {
+          name: "Mea Baturina",
+          title: "Direktorica",
+          description: "Vodi THEATRE HOTEL d.o.o. od 2020."
+        },
         manager: {
           name: "Marko Kovačević",
           title: "Glavni direktor",
@@ -645,7 +679,7 @@ export const translations = {
     },
     careers: {
       title: "Pridružite se našem timu",
-      subtitle: "Izgradite karijeru s Hotelom du Théâtre",
+      subtitle: "Izgradite karijeru s THEATRE HOTEL d.o.o.",
       intro: "Uvijek tražimo talentirane pojedince koji dijele našu strast za gostoprimstvom",
       positions: {
         manager: {

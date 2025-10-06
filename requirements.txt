@@ -17,3 +17,24 @@ The whole website should be static for now. Later we will make it database drive
 Hope you understand what to do now.
 
 I have the logo file in the folder and the contact of my hotel is +385924512500  and Address:   Matošića ul. 21000, Split, Croatia
+
+
+NEW REQUIREMENTS
+-------------------
+
+
+Company: Information
+THEATRE HOTEL d.o.o.
+The limited liability company THEATRE HOTEL d.o.o. is registered at Matošića 21, 21000, Split, Croatia
+and has been operating since 27.02.2020. The contact phone number is 021655961. The current director
+of the company is Mea Baturina.
+Active Company
+I55200 - Resorts and similar short-term holiday facilities
+Company Address: Matošića 21, 21000, Split, Croatia.
+OIB: 13682410736
+MBS: 060416714
+MBDS: 05239001
+Date of establishment: 27.02.2020.
+Contact: 021655961, +385 92 451 2500
+
+contact page map should be google map load directly, means map should be visible in contact page.

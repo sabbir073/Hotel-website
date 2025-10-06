@@ -17,7 +17,7 @@ export default function Footer() {
               <div className="relative w-48 h-12 mb-4">
                 <Image
                   src="/logo.jpg"
-                  alt="Hotel du Théâtre"
+                  alt="THEATRE HOTEL d.o.o."
                   fill
                   className="object-contain brightness-0 invert"
                 />
@@ -82,9 +82,10 @@ export default function Footer() {
               </li>
               <li className="flex items-center space-x-3">
                 <FaPhone className="text-primary-500 flex-shrink-0" />
-                <a href="tel:+385924512500" className="text-gray-400 text-sm hover:text-white transition-colors">
-                  +385 92 451 2500
-                </a>
+                <div className="text-gray-400 text-sm">
+                  <a href="tel:021655961" className="hover:text-white transition-colors block">021655961</a>
+                  <a href="tel:+385924512500" className="hover:text-white transition-colors block">+385 92 451 2500</a>
+                </div>
               </li>
               <li className="flex items-center space-x-3">
                 <FaEnvelope className="text-primary-500 flex-shrink-0" />
@@ -119,7 +120,7 @@ export default function Footer() {
         <div className="mt-12 pt-8 border-t border-gray-800">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <p className="text-gray-400 text-sm">
-              © 2024 Hotel du Théâtre. {t.footer.rights}.
+              © 2024 THEATRE HOTEL d.o.o. {t.footer.rights}.
             </p>
             <div className="flex space-x-6 mt-4 md:mt-0">
               <Link href="/privacy" className="text-gray-400 text-sm hover:text-white transition-colors">

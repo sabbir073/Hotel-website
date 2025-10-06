@@ -123,7 +123,7 @@ export default function Careers() {
         <div className="absolute inset-0">
           <Image
             src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=1920&h=1080&fit=crop"
-            alt="Careers at Hotel du Théâtre"
+            alt="Careers at THEATRE HOTEL d.o.o."
             fill
             className="object-cover"
           />
@@ -433,8 +433,8 @@ export default function Careers() {
       <section className="py-20 bg-gray-50">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <h2 className="text-4xl font-serif font-bold text-gray-900 mb-4">What Our Team Says</h2>
-            <p className="text-xl text-gray-600">Hear from the people who make Hotel du Théâtre special</p>
+            <h2 className="text-4xl font-serif font-bold text-gray-900 mb-4">{t.careers.employeeTestimonials.title}</h2>
+            <p className="text-xl text-gray-600">{t.careers.employeeTestimonials.subtitle}</p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">

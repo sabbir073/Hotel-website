@@ -48,7 +48,7 @@ export default function Contact() {
         <div className="absolute inset-0">
           <Image
             src="https://images.unsplash.com/photo-1497215842964-222b430dc094?w=1920&h=1080&fit=crop"
-            alt="Contact Hotel du Théâtre"
+            alt="Contact THEATRE HOTEL d.o.o."
             fill
             className="object-cover"
           />
@@ -86,7 +86,10 @@ export default function Contact() {
                   <div>
                     <h3 className="text-lg font-semibold mb-1">{t.contact.info.phone}</h3>
                     <p className="text-gray-600">
-                      <a href="tel:+385924512500" className="hover:text-primary-600 transition-colors">
+                      <a href="tel:021655961" className="hover:text-primary-600 transition-colors block">
+                        021655961
+                      </a>
+                      <a href="tel:+385924512500" className="hover:text-primary-600 transition-colors block">
                         +385 92 451 2500
                       </a>
                     </p>
@@ -122,22 +125,18 @@ export default function Contact() {
                 </div>
               </div>
 
-              {/* Map Placeholder */}
+              {/* Google Map Embed */}
               <div className="relative h-80 rounded-2xl overflow-hidden shadow-lg">
-                <div className="absolute inset-0 bg-gradient-to-r from-primary-200 to-primary-300 flex items-center justify-center">
-                  <div className="text-center text-primary-800">
-                    <FaMapMarkerAlt className="text-4xl mx-auto mb-2" />
-                    <p className="text-lg font-semibold">Interactive Map</p>
-                    <p className="text-sm">Hotel du Théâtre, Split</p>
-                    <p className="text-xs mt-2">Click to view on Google Maps</p>
-                  </div>
-                </div>
-                <a
-                  href="https://maps.google.com/?q=Matošića+ul.+21000,+Split,+Croatia"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="absolute inset-0 cursor-pointer hover:bg-black/10 transition-colors"
-                ></a>
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2889.8!2d16.4402!3d43.5089!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x13355e0a8ea5f0b7%3A0x0!2zTWF0b8WhacSHYSAyMSwgMjEwMDAsIFNwbGl0LCBDcm9hdGlh!5e0!3m2!1sen!2s!4v1234567890"
+                  width="100%"
+                  height="100%"
+                  style={{ border: 0 }}
+                  allowFullScreen
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  title="THEATRE HOTEL d.o.o. Location"
+                ></iframe>
               </div>
             </div>
 

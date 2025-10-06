@@ -14,7 +14,7 @@ export default function About() {
         <div className="absolute inset-0">
           <Image
             src="https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=1920&h=1080&fit=crop"
-            alt="Hotel du Théâtre"
+            alt="THEATRE HOTEL d.o.o."
             fill
             className="object-cover"
           />
@@ -108,7 +108,21 @@ export default function About() {
             <p className="text-xl text-gray-600">{t.about.team.subtitle}</p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div className="text-center">
+              <div className="relative w-48 h-48 mx-auto mb-4 rounded-full overflow-hidden">
+                <Image
+                  src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&h=400&fit=crop"
+                  alt="Director"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+              <h3 className="text-xl font-semibold">{t.about.team.director.name}</h3>
+              <p className="text-primary-600 mb-2">{t.about.team.director.title}</p>
+              <p className="text-gray-600">{t.about.team.director.description}</p>
+            </div>
+
             <div className="text-center">
               <div className="relative w-48 h-48 mx-auto mb-4 rounded-full overflow-hidden">
                 <Image
@@ -132,9 +146,9 @@ export default function About() {
                   className="object-cover"
                 />
               </div>
-              <h3 className="text-xl font-semibold">Ana Petrović</h3>
-              <p className="text-primary-600 mb-2">Operations Director</p>
-              <p className="text-gray-600">Expert in luxury hotel management</p>
+              <h3 className="text-xl font-semibold">{t.about.team.operations.name}</h3>
+              <p className="text-primary-600 mb-2">{t.about.team.operations.title}</p>
+              <p className="text-gray-600">{t.about.team.operations.description}</p>
             </div>
 
             <div className="text-center">
@@ -146,9 +160,9 @@ export default function About() {
                   className="object-cover"
                 />
               </div>
-              <h3 className="text-xl font-semibold">Ivan Babić</h3>
-              <p className="text-primary-600 mb-2">Executive Chef</p>
-              <p className="text-gray-600">Michelin-starred culinary artist</p>
+              <h3 className="text-xl font-semibold">{t.about.team.chef.name}</h3>
+              <p className="text-primary-600 mb-2">{t.about.team.chef.title}</p>
+              <p className="text-gray-600">{t.about.team.chef.description}</p>
             </div>
           </div>
         </div>
@@ -209,6 +223,58 @@ export default function About() {
             <div>
               <p className="text-5xl font-bold mb-2">10+</p>
               <p className="text-lg">Awards Won</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Company Information */}
+      <section className="py-20 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto">
+            <div className="text-center mb-12">
+              <h2 className="text-4xl font-serif font-bold mb-4 text-gray-900">{t.about.companyInfo.title}</h2>
+            </div>
+
+            <div className="bg-gray-50 rounded-2xl p-8 shadow-lg">
+              <h3 className="text-2xl font-bold text-primary-600 mb-4">{t.about.companyInfo.companyName}</h3>
+              <p className="text-lg text-gray-700 mb-6 leading-relaxed">{t.about.companyInfo.description}</p>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div className="space-y-3">
+                  <div className="flex items-start">
+                    <span className="font-semibold text-gray-800 w-32 flex-shrink-0">Activity:</span>
+                    <span className="text-gray-600">{t.about.companyInfo.activity}</span>
+                  </div>
+                  <div className="flex items-start">
+                    <span className="font-semibold text-gray-800 w-32 flex-shrink-0">Address:</span>
+                    <span className="text-gray-600">{t.about.companyInfo.address}</span>
+                  </div>
+                  <div className="flex items-start">
+                    <span className="font-semibold text-gray-800 w-32 flex-shrink-0">{t.about.companyInfo.contact.split(':')[0]}:</span>
+                    <span className="text-gray-600">{t.about.companyInfo.contact.split(':')[1]}</span>
+                  </div>
+                </div>
+
+                <div className="space-y-3">
+                  <div className="flex items-start">
+                    <span className="font-semibold text-gray-800 w-32 flex-shrink-0">OIB:</span>
+                    <span className="text-gray-600">{t.about.companyInfo.oib.split(':')[1]}</span>
+                  </div>
+                  <div className="flex items-start">
+                    <span className="font-semibold text-gray-800 w-32 flex-shrink-0">MBS:</span>
+                    <span className="text-gray-600">{t.about.companyInfo.mbs.split(':')[1]}</span>
+                  </div>
+                  <div className="flex items-start">
+                    <span className="font-semibold text-gray-800 w-32 flex-shrink-0">MBDS:</span>
+                    <span className="text-gray-600">{t.about.companyInfo.mbds.split(':')[1]}</span>
+                  </div>
+                  <div className="flex items-start">
+                    <span className="font-semibold text-gray-800 w-32 flex-shrink-0">Established:</span>
+                    <span className="text-gray-600">{t.about.companyInfo.established.split(':')[1]}</span>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>

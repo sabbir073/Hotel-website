@@ -19,7 +19,7 @@ export default function Home() {
         <div className="absolute inset-0">
           <Image
             src="https://images.unsplash.com/photo-1564501049412-61c2a3083791?w=1920&h=1080&fit=crop"
-            alt="Hotel du Théâtre"
+            alt="THEATRE HOTEL d.o.o."
             fill
             className="object-cover"
             priority
