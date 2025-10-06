@@ -89,8 +89,8 @@ export default function Footer() {
               </li>
               <li className="flex items-center space-x-3">
                 <FaEnvelope className="text-primary-500 flex-shrink-0" />
-                <a href="mailto:info@hoteldutheatre.hr" className="text-gray-400 text-sm hover:text-white transition-colors">
-                  info@hoteldutheatre.hr
+                <a href="mailto:info@theatrehoteldoo.com" className="text-gray-400 text-sm hover:text-white transition-colors">
+                  info@theatrehoteldoo.com
                 </a>
               </li>
             </ul>

@@ -103,8 +103,8 @@ export default function Contact() {
                   <div>
                     <h3 className="text-lg font-semibold mb-1">{t.contact.info.email}</h3>
                     <p className="text-gray-600">
-                      <a href="mailto:info@hoteldutheatre.hr" className="hover:text-primary-600 transition-colors">
-                        info@hoteldutheatre.hr
+                      <a href="mailto:info@theatrehoteldoo.com" className="hover:text-primary-600 transition-colors">
+                        info@theatrehoteldoo.com
                       </a>
                     </p>
                   </div>
@@ -292,7 +292,7 @@ export default function Contact() {
               </div>
               <h3 className="text-xl font-semibold mb-3">Events & Groups</h3>
               <p className="text-gray-600 mb-4">Planning a special event or group booking? Our events team will help.</p>
-              <a href="mailto:events@hoteldutheatre.hr" className="text-primary-600 hover:text-primary-700 font-medium">
+              <a href="mailto:events@theatrehoteldoo.com" className="text-primary-600 hover:text-primary-700 font-medium">
                 Email Events Team
               </a>
             </div>
@@ -303,7 +303,7 @@ export default function Contact() {
               </div>
               <h3 className="text-xl font-semibold mb-3">Concierge</h3>
               <p className="text-gray-600 mb-4">Local recommendations, tours, and personalized assistance during your stay.</p>
-              <a href="mailto:concierge@hoteldutheatre.hr" className="text-primary-600 hover:text-primary-700 font-medium">
+              <a href="mailto:concierge@theatrehoteldoo.com" className="text-primary-600 hover:text-primary-700 font-medium">
                 Contact Concierge
               </a>
             </div>
