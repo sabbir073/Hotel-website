@@ -10,7 +10,7 @@ interface SEOProps {
   image?: string;
   url?: string;
   keywords?: string[];
-  type?: 'website' | 'article' | 'product';
+  type?: 'website' | 'article';
   publishedTime?: string;
   modifiedTime?: string;
   noindex?: boolean;
