@@ -2,6 +2,7 @@
 /node_modules
 /.pnp
 .pnp.js
+package-lock.json
 
 # Testing
 /coverage
@@ -24,9 +25,42 @@ yarn-error.log*
 
 # Local env files
 .env*.local
+.env
 
 # Vercel
 .vercel
 
 # TypeScript
 *.tsbuildinfo
+next-env.d.ts
+
+# Test scripts
+test-*.js
+test-*.ts
+
+# Documentation files (excluding root README.md)
+ADMIN_SETUP.md
+email-dns-setup.md
+*.draft.md
+*.notes.md
+
+# Database and migrations
+requirements.txt
+database/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Temporary files
+*.tmp
+*.temp
+.tmp/
+temp/

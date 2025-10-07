@@ -38,3 +38,19 @@ Date of establishment: 27.02.2020.
 Contact: 021655961, +385 92 451 2500
 
 contact page map should be google map load directly, means map should be visible in contact page.
+
+
+new rrequirements 2
+---------------------
+Lets make a login page and a protected admin page with Those menus
+Contact Submission
+Room bookings
+Job positions
+User Management
+
+Create empty pages for those protected 4 menus
+
+
+We have a mysql database in a third party server in a cpanel, We have connect the database for backend tasks.
+
+Lets first implement proper login system(Admin Login) create sql schema and fully implement admin login with dashboard

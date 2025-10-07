@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { LanguageProvider } from "@/contexts/LanguageContext";
-import Navigation from "@/components/Navigation";
-import Footer from "@/components/Footer";
+import SessionProvider from "@/components/SessionProvider";
+import RecaptchaProvider from "@/components/RecaptchaProvider";
+import LayoutWrapper from "@/components/LayoutWrapper";
 
 export const metadata: Metadata = {
   title: "THEATRE HOTEL d.o.o. - Luxury Hotel in Split, Croatia",
@@ -18,13 +19,15 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth">
       <body className="antialiased">
-        <LanguageProvider>
-          <Navigation />
-          <main className="min-h-screen pt-20">
-            {children}
-          </main>
-          <Footer />
-        </LanguageProvider>
+        <SessionProvider>
+          <RecaptchaProvider>
+            <LanguageProvider>
+              <LayoutWrapper>
+                {children}
+              </LayoutWrapper>
+            </LanguageProvider>
+          </RecaptchaProvider>
+        </SessionProvider>
       </body>
     </html>
   );

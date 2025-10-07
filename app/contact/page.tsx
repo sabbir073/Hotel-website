@@ -2,11 +2,13 @@
 
 import { useState } from 'react';
 import { useLanguage } from '@/contexts/LanguageContext';
+import { useGoogleReCaptcha } from 'react-google-recaptcha-v3';
 import Image from 'next/image';
 import { FaPhone, FaEnvelope, FaMapMarkerAlt, FaClock, FaPaperPlane, FaCheckCircle } from 'react-icons/fa';
 
 export default function Contact() {
   const { t } = useLanguage();
+  const { executeRecaptcha } = useGoogleReCaptcha();
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -16,6 +18,8 @@ export default function Contact() {
     message: ''
   });
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [error, setError] = useState('');
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
     setFormData({
@@ -24,21 +28,78 @@ export default function Contact() {
     });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Simulate form submission
-    setIsSubmitted(true);
-    setTimeout(() => {
-      setIsSubmitted(false);
-      setFormData({
-        name: '',
-        email: '',
-        phone: '',
-        passport: '',
-        subject: '',
-        message: ''
+    setError('');
+    setIsSubmitting(true);
+
+    try {
+      // Execute reCAPTCHA
+      if (!executeRecaptcha) {
+        setError('reCAPTCHA not loaded. Please refresh the page.');
+        setIsSubmitting(false);
+        return;
+      }
+
+      const recaptchaToken = await executeRecaptcha('contact_form');
+
+      // Get client IP from external service
+      let clientIp = 'unknown';
+      try {
+        const ipResponse = await fetch('https://api64.ipify.org?format=json');
+        const ipData = await ipResponse.json();
+        clientIp = ipData.ip;
+      } catch (ipError) {
+        // Fallback to cloudflare trace
+        try {
+          const cfResponse = await fetch('https://www.cloudflare.com/cdn-cgi/trace');
+          const cfText = await cfResponse.text();
+          const ipMatch = cfText.match(/ip=([^\n]+)/);
+          if (ipMatch) {
+            clientIp = ipMatch[1];
+          }
+        } catch {
+          // Silent fail
+        }
+      }
+
+      // Submit form
+      const response = await fetch('/api/contact/submit', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          ...formData,
+          recaptchaToken,
+          clientIp,
+        }),
       });
-    }, 3000);
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        setError(data.error || 'Failed to submit form');
+        setIsSubmitting(false);
+        return;
+      }
+
+      // Success
+      setIsSubmitted(true);
+      setTimeout(() => {
+        setIsSubmitted(false);
+        setFormData({
+          name: '',
+          email: '',
+          phone: '',
+          passport: '',
+          subject: '',
+          message: ''
+        });
+      }, 5000);
+    } catch (error) {
+      setError('An error occurred. Please try again.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -153,6 +214,11 @@ export default function Contact() {
                   </div>
                 ) : (
                   <form onSubmit={handleSubmit}>
+                    {error && (
+                      <div className="mb-6 p-4 bg-red-50 border border-red-200 rounded-lg text-red-700">
+                        {error}
+                      </div>
+                    )}
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
                       <div>
                         <label className="block text-gray-700 font-medium mb-2">
@@ -249,10 +315,11 @@ export default function Contact() {
 
                     <button
                       type="submit"
-                      className="w-full bg-gradient-to-r from-primary-600 to-primary-700 text-white py-3 rounded-lg hover:from-primary-700 hover:to-primary-800 transition-all font-semibold flex items-center justify-center space-x-2"
+                      disabled={isSubmitting}
+                      className="w-full bg-gradient-to-r from-primary-600 to-primary-700 text-white py-3 rounded-lg hover:from-primary-700 hover:to-primary-800 transition-all font-semibold flex items-center justify-center space-x-2 disabled:opacity-50 disabled:cursor-not-allowed"
                     >
                       <FaPaperPlane />
-                      <span>{t.contact.form.send}</span>
+                      <span>{isSubmitting ? 'Sending...' : t.contact.form.send}</span>
                     </button>
 
                     <p className="text-sm text-gray-500 mt-4 text-center">

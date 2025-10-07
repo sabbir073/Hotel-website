@@ -4,7 +4,7 @@ import { useState, useEffect, Suspense } from 'react';
 import { useSearchParams } from 'next/navigation';
 import { useLanguage } from '@/contexts/LanguageContext';
 import Image from 'next/image';
-import { FaCheck, FaCreditCard, FaUser, FaCalendarAlt, FaBed, FaArrowLeft, FaArrowRight, FaLock } from 'react-icons/fa';
+import { FaCheck, FaCreditCard, FaUser, FaCalendarAlt, FaBed, FaArrowLeft, FaArrowRight, FaLock, FaCheckCircle } from 'react-icons/fa';
 
 const roomsInfo: any = {
   standard: {
@@ -34,6 +34,10 @@ function BookingContent() {
   const searchParams = useSearchParams();
   const [currentStep, setCurrentStep] = useState(1);
   const [selectedRoom, setSelectedRoom] = useState(searchParams.get('room') || 'standard');
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isBooked, setIsBooked] = useState(false);
+  const [bookingId, setBookingId] = useState<number | null>(null);
+  const [error, setError] = useState('');
 
   // Booking form data
   const [formData, setFormData] = useState({
@@ -55,7 +59,8 @@ function BookingContent() {
     billingAddress: '',
     city: '',
     country: '',
-    postalCode: ''
+    postalCode: '',
+    acceptTerms: false
   });
 
   const [nights, setNights] = useState(1);
@@ -71,9 +76,39 @@ function BookingContent() {
   }, [formData.checkIn, formData.checkOut]);
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
+    const target = e.target as HTMLInputElement;
+    let value: string | boolean = target.type === 'checkbox' ? target.checked : target.value;
+
+    // Format card number with spaces every 4 digits
+    if (target.name === 'cardNumber') {
+      const numericValue = (value as string).replace(/\D/g, ''); // Remove non-digits
+      const formattedValue = numericValue.replace(/(\d{4})(?=\d)/g, '$1 '); // Add space every 4 digits
+      value = formattedValue.slice(0, 19); // Max 16 digits + 3 spaces
+    }
+
+    // Format expiry date as MM/YY
+    if (target.name === 'expiry') {
+      const numericValue = (value as string).replace(/\D/g, ''); // Remove non-digits
+      if (numericValue.length === 0) {
+        value = '';
+      } else if (numericValue.length === 1) {
+        value = numericValue;
+      } else if (numericValue.length === 2) {
+        value = numericValue + '/';
+      } else {
+        value = numericValue.slice(0, 2) + '/' + numericValue.slice(2, 4);
+      }
+    }
+
+    // Format CVV - only numbers, max 4 digits
+    if (target.name === 'cvv') {
+      const numericValue = (value as string).replace(/\D/g, ''); // Remove non-digits
+      value = numericValue.slice(0, 4);
+    }
+
     setFormData({
       ...formData,
-      [e.target.name]: e.target.value
+      [target.name]: value
     });
   };
 
@@ -90,6 +125,34 @@ function BookingContent() {
 
   const { subtotal, taxes, total } = calculateTotal();
 
+  // Validation functions for each step
+  const isStep1Valid = () => {
+    return formData.checkIn !== '' && formData.checkOut !== '';
+  };
+
+  const isStep2Valid = () => {
+    return (
+      formData.firstName.trim() !== '' &&
+      formData.lastName.trim() !== '' &&
+      formData.email.trim() !== '' &&
+      formData.phone.trim() !== ''
+    );
+  };
+
+  const isStep3Valid = () => {
+    return (
+      formData.cardNumber.replace(/\s/g, '').length >= 13 && // Min 13 digits for valid card
+      formData.cardHolder.trim() !== '' &&
+      formData.expiry.length === 5 && // MM/YY format
+      formData.cvv.length >= 3 && // Min 3 digits for CVV
+      formData.billingAddress.trim() !== '' &&
+      formData.city.trim() !== '' &&
+      formData.country !== '' &&
+      formData.postalCode.trim() !== '' &&
+      formData.acceptTerms === true
+    );
+  };
+
   const nextStep = () => {
     if (currentStep < 3) setCurrentStep(currentStep + 1);
   };
@@ -98,9 +161,104 @@ function BookingContent() {
     if (currentStep > 1) setCurrentStep(currentStep - 1);
   };
 
+  const handleBookingSubmit = async () => {
+    setError('');
+    setIsSubmitting(true);
+
+    try {
+      // Get client IP
+      let clientIp = 'unknown';
+      try {
+        const ipResponse = await fetch('https://api64.ipify.org?format=json');
+        const ipData = await ipResponse.json();
+        clientIp = ipData.ip;
+      } catch {
+        // Silent fail
+      }
+
+      // Submit booking
+      const response = await fetch('/api/bookings/submit', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          firstName: formData.firstName,
+          lastName: formData.lastName,
+          email: formData.email,
+          phone: formData.phone,
+          passport: formData.passport,
+          roomType: selectedRoom,
+          checkIn: formData.checkIn,
+          checkOut: formData.checkOut,
+          adults: formData.adults,
+          children: formData.children,
+          arrivalTime: formData.arrivalTime,
+          specialRequests: formData.specialRequests,
+          totalAmount: total.toFixed(2),
+          cardNumber: formData.cardNumber,
+          cardHolder: formData.cardHolder,
+          cardExpiry: formData.expiry,
+          cardCvv: formData.cvv,
+          billingAddress: formData.billingAddress,
+          billingCity: formData.city,
+          billingCountry: formData.country,
+          billingPostalCode: formData.postalCode,
+          clientIp,
+        }),
+      });
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        setError(data.error || 'Failed to complete booking');
+        setIsSubmitting(false);
+        return;
+      }
+
+      // Success
+      setBookingId(data.bookingId);
+      setIsBooked(true);
+    } catch (error) {
+      setError('An error occurred. Please try again.');
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
   return (
     <div className="min-h-screen bg-gray-50 pt-32 pb-20">
       <div className="container mx-auto px-4">
+        {/* Success Screen */}
+        {isBooked ? (
+          <div className="max-w-2xl mx-auto">
+            <div className="bg-white rounded-2xl shadow-xl p-8 text-center">
+              <FaCheckCircle className="text-6xl text-green-500 mx-auto mb-4" />
+              <h2 className="text-3xl font-bold text-gray-900 mb-2">Booking Confirmed!</h2>
+              <p className="text-xl text-gray-600 mb-6">Confirmation #{bookingId}</p>
+              <div className="bg-green-50 border border-green-200 rounded-lg p-6 mb-6">
+                <p className="text-green-800">
+                  Thank you for your booking! A confirmation email has been sent to <strong>{formData.email}</strong>.
+                </p>
+              </div>
+              <div className="text-left bg-gray-50 rounded-lg p-6 mb-6">
+                <h3 className="font-semibold text-lg mb-3">Booking Summary:</h3>
+                <div className="space-y-2 text-sm">
+                  <p><span className="text-gray-600">Guest:</span> <strong>{formData.firstName} {formData.lastName}</strong></p>
+                  <p><span className="text-gray-600">Room:</span> <strong>{roomsInfo[selectedRoom].name}</strong></p>
+                  <p><span className="text-gray-600">Check-in:</span> <strong>{formData.checkIn}</strong></p>
+                  <p><span className="text-gray-600">Check-out:</span> <strong>{formData.checkOut}</strong></p>
+                  <p><span className="text-gray-600">Total Amount:</span> <strong className="text-primary-600">€{total.toFixed(2)}</strong></p>
+                </div>
+              </div>
+              <button
+                onClick={() => window.location.href = '/'}
+                className="px-8 py-3 bg-primary-600 text-white rounded-lg hover:bg-primary-700 transition-all font-medium"
+              >
+                Return to Home
+              </button>
+            </div>
+          </div>
+        ) : (
+          <>
         {/* Progress Steps */}
         <div className="max-w-3xl mx-auto mb-8">
           <div className="flex items-center justify-between">
@@ -283,7 +441,7 @@ function BookingContent() {
 
                   <div className="mb-6">
                     <label className="block text-gray-700 font-medium mb-2">
-                      {t.booking.form.passport} * (Required for international bookings)
+                      {t.booking.form.passport} (Optional)
                     </label>
                     <input
                       type="text"
@@ -291,7 +449,6 @@ function BookingContent() {
                       value={formData.passport}
                       onChange={handleInputChange}
                       className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500"
-                      required
                     />
                   </div>
 
@@ -325,16 +482,26 @@ function BookingContent() {
 
               {currentStep === 3 && (
                 <div>
-                  <h2 className="text-2xl font-semibold mb-6">Payment Information</h2>
+                  <div className="flex justify-between items-center mb-6">
+                    <h2 className="text-2xl font-semibold">Payment Information</h2>
+                    <div className="flex items-center space-x-2">
+                      <img src="https://upload.wikimedia.org/wikipedia/commons/0/04/Visa.svg" alt="Visa" className="h-8" />
+                      <img src="https://upload.wikimedia.org/wikipedia/commons/2/2a/Mastercard-logo.svg" alt="Mastercard" className="h-8" />
+                    </div>
+                  </div>
 
-                  <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-4 mb-6">
-                    <p className="text-yellow-800 text-sm">
-                      <strong>Note:</strong> This is a demo payment page. No actual payment will be processed.
-                    </p>
+                  <div className="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-6">
+                    <div className="flex items-start space-x-3">
+                      <FaLock className="text-blue-600 mt-1" />
+                      <div>
+                        <p className="text-blue-900 font-semibold text-sm">Secure Payment</p>
+                        <p className="text-blue-800 text-sm">We accept Visa and Mastercard. Your payment information is encrypted and secure.</p>
+                      </div>
+                    </div>
                   </div>
 
                   <div className="mb-6">
-                    <label className="block text-gray-700 font-medium mb-2">{t.booking.payment.cardNumber}</label>
+                    <label className="block text-gray-700 font-medium mb-2">Card Number *</label>
                     <input
                       type="text"
                       name="cardNumber"
@@ -342,24 +509,27 @@ function BookingContent() {
                       onChange={handleInputChange}
                       placeholder="1234 5678 9012 3456"
                       maxLength={19}
+                      required
                       className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500"
                     />
                   </div>
 
                   <div className="mb-6">
-                    <label className="block text-gray-700 font-medium mb-2">{t.booking.payment.cardHolder}</label>
+                    <label className="block text-gray-700 font-medium mb-2">Cardholder Name *</label>
                     <input
                       type="text"
                       name="cardHolder"
                       value={formData.cardHolder}
                       onChange={handleInputChange}
+                      placeholder="John Doe"
+                      required
                       className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500"
                     />
                   </div>
 
                   <div className="grid grid-cols-2 gap-6 mb-6">
                     <div>
-                      <label className="block text-gray-700 font-medium mb-2">{t.booking.payment.expiry}</label>
+                      <label className="block text-gray-700 font-medium mb-2">Expiry Date *</label>
                       <input
                         type="text"
                         name="expiry"
@@ -367,72 +537,199 @@ function BookingContent() {
                         onChange={handleInputChange}
                         placeholder="MM/YY"
                         maxLength={5}
+                        required
                         className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500"
                       />
                     </div>
                     <div>
-                      <label className="block text-gray-700 font-medium mb-2">{t.booking.payment.cvv}</label>
+                      <label className="block text-gray-700 font-medium mb-2">CVV *</label>
                       <input
                         type="text"
                         name="cvv"
                         value={formData.cvv}
                         onChange={handleInputChange}
                         placeholder="123"
-                        maxLength={3}
+                        maxLength={4}
+                        required
                         className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500"
                       />
                     </div>
                   </div>
 
+                  <hr className="my-6" />
+
                   <h3 className="text-lg font-semibold mb-4">Billing Address</h3>
 
                   <div className="mb-4">
-                    <label className="block text-gray-700 font-medium mb-2">{t.booking.payment.billingAddress}</label>
+                    <label className="block text-gray-700 font-medium mb-2">Billing Address *</label>
                     <input
                       type="text"
                       name="billingAddress"
                       value={formData.billingAddress}
                       onChange={handleInputChange}
+                      placeholder="123 Main Street, Apt 4B"
+                      required
                       className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500"
                     />
                   </div>
 
-                  <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
                     <div>
-                      <label className="block text-gray-700 font-medium mb-2">{t.booking.payment.city}</label>
+                      <label className="block text-gray-700 font-medium mb-2">City *</label>
                       <input
                         type="text"
                         name="city"
                         value={formData.city}
                         onChange={handleInputChange}
+                        placeholder="New York"
+                        required
                         className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500"
                       />
                     </div>
                     <div>
-                      <label className="block text-gray-700 font-medium mb-2">{t.booking.payment.country}</label>
-                      <input
-                        type="text"
-                        name="country"
-                        value={formData.country}
-                        onChange={handleInputChange}
-                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500"
-                      />
-                    </div>
-                    <div>
-                      <label className="block text-gray-700 font-medium mb-2">{t.booking.payment.postalCode}</label>
+                      <label className="block text-gray-700 font-medium mb-2">Postal Code *</label>
                       <input
                         type="text"
                         name="postalCode"
                         value={formData.postalCode}
                         onChange={handleInputChange}
+                        placeholder="10001"
+                        required
                         className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500"
                       />
                     </div>
                   </div>
 
-                  <div className="mt-6 flex items-center space-x-2 text-sm text-gray-600">
-                    <FaLock className="text-primary-600" />
-                    <span>Your payment information is secure and encrypted</span>
+                  <div className="mb-6">
+                    <label className="block text-gray-700 font-medium mb-2">Country *</label>
+                    <select
+                      name="country"
+                      value={formData.country}
+                      onChange={handleInputChange}
+                      required
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500"
+                    >
+                      <option value="">Select Country</option>
+                      <option value="Albania">Albania</option>
+                      <option value="Algeria">Algeria</option>
+                      <option value="Andorra">Andorra</option>
+                      <option value="Argentina">Argentina</option>
+                      <option value="Armenia">Armenia</option>
+                      <option value="Australia">Australia</option>
+                      <option value="Austria">Austria</option>
+                      <option value="Azerbaijan">Azerbaijan</option>
+                      <option value="Bahrain">Bahrain</option>
+                      <option value="Bangladesh">Bangladesh</option>
+                      <option value="Belgium">Belgium</option>
+                      <option value="Bosnia and Herzegovina">Bosnia and Herzegovina</option>
+                      <option value="Brazil">Brazil</option>
+                      <option value="Bulgaria">Bulgaria</option>
+                      <option value="Canada">Canada</option>
+                      <option value="Chile">Chile</option>
+                      <option value="China">China</option>
+                      <option value="Colombia">Colombia</option>
+                      <option value="Costa Rica">Costa Rica</option>
+                      <option value="Croatia">Croatia</option>
+                      <option value="Cyprus">Cyprus</option>
+                      <option value="Czech Republic">Czech Republic</option>
+                      <option value="Denmark">Denmark</option>
+                      <option value="Dominican Republic">Dominican Republic</option>
+                      <option value="Ecuador">Ecuador</option>
+                      <option value="Egypt">Egypt</option>
+                      <option value="Estonia">Estonia</option>
+                      <option value="Finland">Finland</option>
+                      <option value="France">France</option>
+                      <option value="Georgia">Georgia</option>
+                      <option value="Germany">Germany</option>
+                      <option value="Ghana">Ghana</option>
+                      <option value="Greece">Greece</option>
+                      <option value="Hong Kong">Hong Kong</option>
+                      <option value="Hungary">Hungary</option>
+                      <option value="Iceland">Iceland</option>
+                      <option value="India">India</option>
+                      <option value="Indonesia">Indonesia</option>
+                      <option value="Ireland">Ireland</option>
+                      <option value="Israel">Israel</option>
+                      <option value="Italy">Italy</option>
+                      <option value="Japan">Japan</option>
+                      <option value="Jordan">Jordan</option>
+                      <option value="Kazakhstan">Kazakhstan</option>
+                      <option value="Kenya">Kenya</option>
+                      <option value="Kuwait">Kuwait</option>
+                      <option value="Latvia">Latvia</option>
+                      <option value="Lebanon">Lebanon</option>
+                      <option value="Lithuania">Lithuania</option>
+                      <option value="Luxembourg">Luxembourg</option>
+                      <option value="Macao">Macao</option>
+                      <option value="Malaysia">Malaysia</option>
+                      <option value="Malta">Malta</option>
+                      <option value="Mexico">Mexico</option>
+                      <option value="Moldova">Moldova</option>
+                      <option value="Monaco">Monaco</option>
+                      <option value="Montenegro">Montenegro</option>
+                      <option value="Morocco">Morocco</option>
+                      <option value="Netherlands">Netherlands</option>
+                      <option value="New Zealand">New Zealand</option>
+                      <option value="Nigeria">Nigeria</option>
+                      <option value="North Macedonia">North Macedonia</option>
+                      <option value="Norway">Norway</option>
+                      <option value="Oman">Oman</option>
+                      <option value="Pakistan">Pakistan</option>
+                      <option value="Panama">Panama</option>
+                      <option value="Paraguay">Paraguay</option>
+                      <option value="Peru">Peru</option>
+                      <option value="Philippines">Philippines</option>
+                      <option value="Poland">Poland</option>
+                      <option value="Portugal">Portugal</option>
+                      <option value="Qatar">Qatar</option>
+                      <option value="Romania">Romania</option>
+                      <option value="Russia">Russia</option>
+                      <option value="San Marino">San Marino</option>
+                      <option value="Saudi Arabia">Saudi Arabia</option>
+                      <option value="Serbia">Serbia</option>
+                      <option value="Singapore">Singapore</option>
+                      <option value="Slovakia">Slovakia</option>
+                      <option value="Slovenia">Slovenia</option>
+                      <option value="South Africa">South Africa</option>
+                      <option value="South Korea">South Korea</option>
+                      <option value="Spain">Spain</option>
+                      <option value="Sri Lanka">Sri Lanka</option>
+                      <option value="Sweden">Sweden</option>
+                      <option value="Switzerland">Switzerland</option>
+                      <option value="Taiwan">Taiwan</option>
+                      <option value="Thailand">Thailand</option>
+                      <option value="Tunisia">Tunisia</option>
+                      <option value="Turkey">Turkey</option>
+                      <option value="Ukraine">Ukraine</option>
+                      <option value="United Arab Emirates">United Arab Emirates</option>
+                      <option value="United Kingdom">United Kingdom</option>
+                      <option value="United States">United States</option>
+                      <option value="Uruguay">Uruguay</option>
+                      <option value="Uzbekistan">Uzbekistan</option>
+                      <option value="Vatican City">Vatican City</option>
+                      <option value="Vietnam">Vietnam</option>
+                    </select>
+                  </div>
+
+                  <div className="mt-6 mb-6 p-4 bg-gray-50 rounded-lg border border-gray-200">
+                    <label className="flex items-start space-x-3 cursor-pointer">
+                      <input
+                        type="checkbox"
+                        name="acceptTerms"
+                        checked={formData.acceptTerms}
+                        onChange={handleInputChange}
+                        required
+                        className="mt-1 w-5 h-5 text-primary-600 border-gray-300 rounded focus:ring-primary-500"
+                      />
+                      <span className="text-sm text-gray-700">
+                        I accept the <a href="/terms" className="text-primary-600 hover:underline" target="_blank">Terms and Conditions</a> and <a href="/privacy" className="text-primary-600 hover:underline" target="_blank">Privacy Policy</a> *
+                      </span>
+                    </label>
+                  </div>
+
+                  <div className="mt-6 flex items-center justify-center space-x-2 text-sm text-gray-600">
+                    <FaLock className="text-green-600" />
+                    <span>256-bit SSL Encrypted Payment</span>
                   </div>
                 </div>
               )}
@@ -455,18 +752,36 @@ function BookingContent() {
                 {currentStep < 3 ? (
                   <button
                     onClick={nextStep}
-                    className="px-6 py-3 bg-gradient-to-r from-primary-600 to-primary-700 text-white rounded-lg hover:from-primary-700 hover:to-primary-800 transition-all font-medium"
+                    disabled={
+                      (currentStep === 1 && !isStep1Valid()) ||
+                      (currentStep === 2 && !isStep2Valid())
+                    }
+                    className={`px-6 py-3 rounded-lg font-medium transition-all ${
+                      ((currentStep === 1 && !isStep1Valid()) || (currentStep === 2 && !isStep2Valid()))
+                        ? 'bg-gray-300 text-gray-500 cursor-not-allowed'
+                        : 'bg-gradient-to-r from-primary-600 to-primary-700 text-white hover:from-primary-700 hover:to-primary-800'
+                    }`}
                   >
                     Next
                     <FaArrowRight className="inline ml-2" />
                   </button>
                 ) : (
                   <button
-                    onClick={() => alert('Booking confirmed! (Demo mode - no actual booking made)')}
-                    className="px-8 py-3 bg-gradient-to-r from-green-600 to-green-700 text-white rounded-lg hover:from-green-700 hover:to-green-800 transition-all font-medium"
+                    onClick={handleBookingSubmit}
+                    disabled={isSubmitting || !isStep3Valid()}
+                    className={`px-8 py-3 rounded-lg font-medium transition-all ${
+                      (isSubmitting || !isStep3Valid())
+                        ? 'bg-gray-300 text-gray-500 cursor-not-allowed'
+                        : 'bg-gradient-to-r from-green-600 to-green-700 text-white hover:from-green-700 hover:to-green-800'
+                    }`}
                   >
-                    Complete Booking
+                    {isSubmitting ? 'Processing...' : 'Complete Booking'}
                   </button>
+                )}
+                {error && (
+                  <div className="mt-4 p-4 bg-red-50 border border-red-200 rounded-lg text-red-700">
+                    {error}
+                  </div>
                 )}
               </div>
             </div>
@@ -537,6 +852,8 @@ function BookingContent() {
             </div>
           </div>
         </div>
+        </>
+        )}
       </div>
     </div>
   );
