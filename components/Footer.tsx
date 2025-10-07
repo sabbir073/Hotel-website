@@ -19,7 +19,7 @@ export default function Footer() {
                   src="/logo.jpg"
                   alt="THEATRE HOTEL d.o.o."
                   fill
-                  className="object-contain brightness-0 invert"
+                  className="object-contain"
                 />
               </div>
               <p className="text-gray-400 text-sm">

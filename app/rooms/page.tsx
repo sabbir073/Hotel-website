@@ -78,7 +78,7 @@ export default function Rooms() {
         <div className="absolute inset-0">
           <Image
             src="https://images.unsplash.com/photo-1566665797739-1674de7a421a?w=1920&h=1080&fit=crop"
-            alt="Luxury Rooms"
+            alt="Luxury hotel rooms at THEATRE HOTEL Split Croatia showcasing elegant design and premium accommodations"
             fill
             className="object-cover"
           />
@@ -149,35 +149,40 @@ export default function Rooms() {
                         <div className="flex items-center space-x-3">
                           <FaRulerCombined className="text-primary-600 text-xl" />
                           <div>
-                            <p className="text-sm text-gray-500">Room Size</p>
+                            <p className="text-sm text-gray-500">{t.rooms.roomSize}</p>
                             <p className="font-semibold">{room.size}m²</p>
                           </div>
                         </div>
                         <div className="flex items-center space-x-3">
                           <FaUserFriends className="text-primary-600 text-xl" />
                           <div>
-                            <p className="text-sm text-gray-500">Max Guests</p>
-                            <p className="font-semibold">{room.maxGuests} Persons</p>
+                            <p className="text-sm text-gray-500">{t.rooms.maxGuests}</p>
+                            <p className="font-semibold">{room.maxGuests} {t.rooms.persons}</p>
                           </div>
                         </div>
                         <div className="flex items-center space-x-3">
                           <FaBed className="text-primary-600 text-xl" />
                           <div>
-                            <p className="text-sm text-gray-500">Bed Type</p>
-                            <p className="font-semibold">{room.bedType}</p>
+                            <p className="text-sm text-gray-500">{t.rooms.bedType}</p>
+                            <p className="font-semibold">
+                              {room.bedType === 'King or Twin' && t.rooms.kingOrTwin}
+                              {room.bedType === 'King' && t.rooms.king}
+                              {room.bedType === 'King + Sofa Bed' && t.rooms.kingPlusSofa}
+                              {room.bedType === 'Master King + Guest Room' && t.rooms.masterKingPlusGuest}
+                            </p>
                           </div>
                         </div>
                         <div className="flex items-center space-x-3">
                           <FaShower className="text-primary-600 text-xl" />
                           <div>
-                            <p className="text-sm text-gray-500">Bathroom</p>
-                            <p className="font-semibold">Private Luxury</p>
+                            <p className="text-sm text-gray-500">{t.rooms.bathroom}</p>
+                            <p className="font-semibold">{t.rooms.privateLuxury}</p>
                           </div>
                         </div>
                       </div>
 
                       <div>
-                        <h3 className="text-lg font-semibold mb-3">Room Amenities</h3>
+                        <h3 className="text-lg font-semibold mb-3">{t.rooms.roomAmenities}</h3>
                         <div className="grid grid-cols-2 gap-2">
                           {roomData.amenities.map((amenity: string, idx: number) => (
                             <div key={idx} className="flex items-center space-x-2">
@@ -200,7 +205,7 @@ export default function Rooms() {
                       <div className="relative h-[500px] rounded-2xl overflow-hidden shadow-2xl">
                         <Image
                           src={room.image}
-                          alt={roomData.name}
+                          alt={`${roomData.name} at luxury hotel Split Croatia - main view showcasing room layout and premium amenities`}
                           fill
                           className="object-cover"
                         />
@@ -210,7 +215,7 @@ export default function Rooms() {
                           <div key={idx} className="relative h-32 rounded-lg overflow-hidden shadow-lg">
                             <Image
                               src={img}
-                              alt={`${roomData.name} view ${idx + 1}`}
+                              alt={`${roomData.name} THEATRE HOTEL Split - detailed view ${idx + 1} showing interior features and luxury design`}
                               fill
                               className="object-cover hover:scale-110 transition-transform duration-500 cursor-pointer"
                             />
@@ -229,8 +234,8 @@ export default function Rooms() {
       <section className="py-20 bg-gray-50">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <h2 className="text-4xl font-serif font-bold mb-4 text-gray-900">All Room Features</h2>
-            <p className="text-xl text-gray-600">Every room includes these standard amenities</p>
+            <h2 className="text-4xl font-serif font-bold mb-4 text-gray-900">{t.rooms.allRoomFeatures.title}</h2>
+            <p className="text-xl text-gray-600">{t.rooms.allRoomFeatures.subtitle}</p>
           </div>
 
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
@@ -238,37 +243,37 @@ export default function Rooms() {
               <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center mx-auto mb-3 shadow-lg">
                 <FaWifi className="text-2xl text-primary-600" />
               </div>
-              <p className="text-sm font-medium">High-Speed WiFi</p>
+              <p className="text-sm font-medium">{t.rooms.allRoomFeatures.highSpeedWifi}</p>
             </div>
             <div className="text-center">
               <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center mx-auto mb-3 shadow-lg">
                 <FaSnowflake className="text-2xl text-primary-600" />
               </div>
-              <p className="text-sm font-medium">Air Conditioning</p>
+              <p className="text-sm font-medium">{t.rooms.allRoomFeatures.airConditioning}</p>
             </div>
             <div className="text-center">
               <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center mx-auto mb-3 shadow-lg">
                 <FaTv className="text-2xl text-primary-600" />
               </div>
-              <p className="text-sm font-medium">Smart TV</p>
+              <p className="text-sm font-medium">{t.rooms.allRoomFeatures.smartTv}</p>
             </div>
             <div className="text-center">
               <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center mx-auto mb-3 shadow-lg">
                 <FaCoffee className="text-2xl text-primary-600" />
               </div>
-              <p className="text-sm font-medium">Coffee Maker</p>
+              <p className="text-sm font-medium">{t.rooms.allRoomFeatures.coffeeMaker}</p>
             </div>
             <div className="text-center">
               <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center mx-auto mb-3 shadow-lg">
                 <FaGlassMartiniAlt className="text-2xl text-primary-600" />
               </div>
-              <p className="text-sm font-medium">Mini Bar</p>
+              <p className="text-sm font-medium">{t.rooms.allRoomFeatures.miniBar}</p>
             </div>
             <div className="text-center">
               <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center mx-auto mb-3 shadow-lg">
                 <FaConciergeBell className="text-2xl text-primary-600" />
               </div>
-              <p className="text-sm font-medium">Room Service</p>
+              <p className="text-sm font-medium">{t.rooms.allRoomFeatures.roomService}</p>
             </div>
           </div>
         </div>
@@ -277,24 +282,52 @@ export default function Rooms() {
       {/* Special Offers */}
       <section className="py-20 bg-gradient-to-r from-primary-600 to-primary-800 text-white">
         <div className="container mx-auto px-4 text-center">
-          <h2 className="text-4xl font-serif font-bold mb-4">Special Offers</h2>
-          <p className="text-xl mb-8">Book directly and save up to 20%</p>
+          <h2 className="text-4xl font-serif font-bold mb-4">{t.rooms.specialOffers.title}</h2>
+          <p className="text-xl mb-8">{t.rooms.specialOffers.subtitle}</p>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
             <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6">
-              <h3 className="text-2xl font-semibold mb-2">Early Bird</h3>
-              <p className="mb-4">Book 30 days in advance</p>
-              <p className="text-3xl font-bold">15% OFF</p>
+              <h3 className="text-2xl font-semibold mb-2">{t.rooms.specialOffers.earlyBird.title}</h3>
+              <p className="mb-4">{t.rooms.specialOffers.earlyBird.description}</p>
+              <p className="text-3xl font-bold">{t.rooms.specialOffers.earlyBird.discount}</p>
             </div>
             <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6">
-              <h3 className="text-2xl font-semibold mb-2">Long Stay</h3>
-              <p className="mb-4">Stay 5 nights or more</p>
-              <p className="text-3xl font-bold">20% OFF</p>
+              <h3 className="text-2xl font-semibold mb-2">{t.rooms.specialOffers.longStay.title}</h3>
+              <p className="mb-4">{t.rooms.specialOffers.longStay.description}</p>
+              <p className="text-3xl font-bold">{t.rooms.specialOffers.longStay.discount}</p>
             </div>
             <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6">
-              <h3 className="text-2xl font-semibold mb-2">Weekend Special</h3>
-              <p className="mb-4">Friday to Sunday stays</p>
-              <p className="text-3xl font-bold">10% OFF</p>
+              <h3 className="text-2xl font-semibold mb-2">{t.rooms.specialOffers.weekend.title}</h3>
+              <p className="mb-4">{t.rooms.specialOffers.weekend.description}</p>
+              <p className="text-3xl font-bold">{t.rooms.specialOffers.weekend.discount}</p>
             </div>
+          </div>
+          <div className="mt-12">
+            <Link
+              href="/booking"
+              className="inline-block px-10 py-4 bg-white text-primary-700 rounded-lg hover:bg-gray-100 transition-all font-semibold text-lg"
+            >
+              {t.internalLinks.rooms.bookNow}
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Related Links */}
+      <section className="py-16 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+            <Link href="/about" className="group p-6 bg-gray-50 rounded-xl hover:bg-gray-100 transition-all">
+              <h3 className="text-xl font-semibold mb-2 text-gray-900 group-hover:text-primary-700 transition-colors">{t.internalLinks.rooms.relatedLinks.aboutHotel}</h3>
+              <p className="text-gray-600">{t.internalLinks.rooms.relatedLinks.aboutDesc}</p>
+            </Link>
+            <Link href="/contact" className="group p-6 bg-gray-50 rounded-xl hover:bg-gray-100 transition-all">
+              <h3 className="text-xl font-semibold mb-2 text-gray-900 group-hover:text-primary-700 transition-colors">{t.internalLinks.rooms.relatedLinks.contact}</h3>
+              <p className="text-gray-600">{t.internalLinks.rooms.relatedLinks.contactDesc}</p>
+            </Link>
+            <Link href="/careers" className="group p-6 bg-gray-50 rounded-xl hover:bg-gray-100 transition-all">
+              <h3 className="text-xl font-semibold mb-2 text-gray-900 group-hover:text-primary-700 transition-colors">{t.internalLinks.rooms.relatedLinks.careers}</h3>
+              <p className="text-gray-600">{t.internalLinks.rooms.relatedLinks.careersDesc}</p>
+            </Link>
           </div>
         </div>
       </section>

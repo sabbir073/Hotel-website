@@ -1,6 +1,7 @@
 'use client';
 
 import { useLanguage } from '@/contexts/LanguageContext';
+import Link from 'next/link';
 import Image from 'next/image';
 import { FaAward, FaHandshake, FaLeaf, FaLightbulb, FaUsers, FaHistory, FaGlobe, FaStar } from 'react-icons/fa';
 
@@ -14,7 +15,7 @@ export default function About() {
         <div className="absolute inset-0">
           <Image
             src="https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=1920&h=1080&fit=crop"
-            alt="THEATRE HOTEL d.o.o."
+            alt="About THEATRE HOTEL d.o.o. Split Croatia - luxury boutique hotel with rich heritage and exceptional hospitality"
             fill
             className="object-cover"
           />
@@ -45,7 +46,7 @@ export default function About() {
             <div className="relative h-[500px] rounded-2xl overflow-hidden shadow-2xl">
               <Image
                 src="https://images.unsplash.com/photo-1566073771259-6a8506099945?w=800&h=600&fit=crop"
-                alt="Hotel History"
+                alt="Historic architecture and elegant design of THEATRE HOTEL Split showcasing Croatian heritage and luxury hospitality"
                 fill
                 className="object-cover"
               />
@@ -113,7 +114,7 @@ export default function About() {
               <div className="relative w-48 h-48 mx-auto mb-4 rounded-full overflow-hidden">
                 <Image
                   src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&h=400&fit=crop"
-                  alt="Director"
+                  alt="Director of THEATRE HOTEL d.o.o. Split Croatia - experienced hospitality leader"
                   fill
                   className="object-cover"
                 />
@@ -127,7 +128,7 @@ export default function About() {
               <div className="relative w-48 h-48 mx-auto mb-4 rounded-full overflow-hidden">
                 <Image
                   src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&h=400&fit=crop"
-                  alt="General Manager"
+                  alt="General Manager at luxury hotel Split - dedicated to exceptional guest service and hospitality excellence"
                   fill
                   className="object-cover"
                 />
@@ -141,7 +142,7 @@ export default function About() {
               <div className="relative w-48 h-48 mx-auto mb-4 rounded-full overflow-hidden">
                 <Image
                   src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&h=400&fit=crop"
-                  alt="Operations Director"
+                  alt="Operations Director THEATRE HOTEL Split - ensuring smooth daily operations and guest satisfaction"
                   fill
                   className="object-cover"
                 />
@@ -155,7 +156,7 @@ export default function About() {
               <div className="relative w-48 h-48 mx-auto mb-4 rounded-full overflow-hidden">
                 <Image
                   src="https://images.unsplash.com/photo-1581299894007-aaa50297cf16?w=400&h=400&fit=crop"
-                  alt="Executive Chef"
+                  alt="Executive Chef at THEATRE HOTEL Split Croatia - culinary expert creating exceptional Mediterranean cuisine"
                   fill
                   className="object-cover"
                 />
@@ -172,8 +173,8 @@ export default function About() {
       <section className="py-20 bg-gray-50">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <h2 className="text-4xl font-serif font-bold mb-4 text-gray-900">Awards & Recognition</h2>
-            <p className="text-xl text-gray-600">Honored for excellence in hospitality</p>
+            <h2 className="text-4xl font-serif font-bold mb-4 text-gray-900">{t.about.awards.title}</h2>
+            <p className="text-xl text-gray-600">{t.about.awards.subtitle}</p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -185,20 +186,20 @@ export default function About() {
 
             <div className="bg-white p-6 rounded-xl shadow-lg text-center">
               <FaAward className="text-4xl text-primary-600 mx-auto mb-3" />
-              <h3 className="font-semibold mb-2">Croatian Tourism Board</h3>
-              <p className="text-sm text-gray-600">Best Boutique Hotel 2023</p>
+              <h3 className="font-semibold mb-2">{t.about.awards.croatian}</h3>
+              <p className="text-sm text-gray-600">{t.about.awards.croatianDesc}</p>
             </div>
 
             <div className="bg-white p-6 rounded-xl shadow-lg text-center">
               <FaGlobe className="text-4xl text-blue-600 mx-auto mb-3" />
-              <h3 className="font-semibold mb-2">World Luxury Hotel</h3>
-              <p className="text-sm text-gray-600">Regional Winner 2024</p>
+              <h3 className="font-semibold mb-2">{t.about.awards.worldLuxury}</h3>
+              <p className="text-sm text-gray-600">{t.about.awards.worldLuxuryDesc}</p>
             </div>
 
             <div className="bg-white p-6 rounded-xl shadow-lg text-center">
               <FaHandshake className="text-4xl text-green-600 mx-auto mb-3" />
-              <h3 className="font-semibold mb-2">Green Key</h3>
-              <p className="text-sm text-gray-600">Eco-Certification 2023</p>
+              <h3 className="font-semibold mb-2">{t.about.awards.greenKey}</h3>
+              <p className="text-sm text-gray-600">{t.about.awards.greenKeyDesc}</p>
             </div>
           </div>
         </div>
@@ -210,19 +211,19 @@ export default function About() {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
             <div>
               <p className="text-5xl font-bold mb-2">45</p>
-              <p className="text-lg">Luxury Rooms</p>
+              <p className="text-lg">{t.about.stats.rooms}</p>
             </div>
             <div>
               <p className="text-5xl font-bold mb-2">15K+</p>
-              <p className="text-lg">Happy Guests</p>
+              <p className="text-lg">{t.about.stats.guests}</p>
             </div>
             <div>
               <p className="text-5xl font-bold mb-2">98%</p>
-              <p className="text-lg">Satisfaction Rate</p>
+              <p className="text-lg">{t.about.stats.satisfaction}</p>
             </div>
             <div>
               <p className="text-5xl font-bold mb-2">10+</p>
-              <p className="text-lg">Awards Won</p>
+              <p className="text-lg">{t.about.stats.awards}</p>
             </div>
           </div>
         </div>
@@ -276,6 +277,36 @@ export default function About() {
                 </div>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Call to Action */}
+      <section className="py-20 bg-gray-50">
+        <div className="container mx-auto px-4 text-center">
+          <h2 className="text-4xl font-serif font-bold mb-6 text-gray-900">{t.internalLinks.about.title}</h2>
+          <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
+            {t.internalLinks.about.description}
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Link
+              href="/rooms"
+              className="px-8 py-3 bg-gradient-to-r from-primary-600 to-primary-700 text-white rounded-lg hover:from-primary-700 hover:to-primary-800 transition-all font-semibold"
+            >
+              {t.internalLinks.about.viewRooms}
+            </Link>
+            <Link
+              href="/booking"
+              className="px-8 py-3 bg-white text-primary-700 border-2 border-primary-700 rounded-lg hover:bg-primary-50 transition-all font-semibold"
+            >
+              {t.internalLinks.about.bookStay}
+            </Link>
+            <Link
+              href="/careers"
+              className="px-8 py-3 bg-gray-800 text-white rounded-lg hover:bg-gray-900 transition-all font-semibold"
+            >
+              {t.internalLinks.about.joinTeam}
+            </Link>
           </div>
         </div>
       </section>

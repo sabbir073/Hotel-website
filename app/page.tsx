@@ -19,7 +19,7 @@ export default function Home() {
         <div className="absolute inset-0">
           <Image
             src="https://images.unsplash.com/photo-1564501049412-61c2a3083791?w=1920&h=1080&fit=crop"
-            alt="THEATRE HOTEL d.o.o."
+            alt="Luxury hotel lobby at THEATRE HOTEL d.o.o. Split Croatia with elegant interior design and comfortable seating"
             fill
             className="object-cover"
             priority
@@ -155,7 +155,7 @@ export default function Home() {
               <div className="relative h-64 overflow-hidden">
                 <Image
                   src="https://images.unsplash.com/photo-1611892440504-42a792e24d32?w=800&h=600&fit=crop"
-                  alt={t.rooms.types.standard.name}
+                  alt="Standard Room at luxury hotel Split Croatia featuring modern furnishings, comfortable king bed, and elegant decor"
                   fill
                   className="object-cover group-hover:scale-110 transition-transform duration-500"
                 />
@@ -191,7 +191,7 @@ export default function Home() {
               <div className="relative h-64 overflow-hidden">
                 <Image
                   src="https://images.unsplash.com/photo-1590490360182-c33d57733427?w=800&h=600&fit=crop"
-                  alt={t.rooms.types.deluxe.name}
+                  alt="Deluxe Room at THEATRE HOTEL Split with private balcony, spacious layout, premium amenities and city views"
                   fill
                   className="object-cover group-hover:scale-110 transition-transform duration-500"
                 />
@@ -227,7 +227,7 @@ export default function Home() {
               <div className="relative h-64 overflow-hidden">
                 <Image
                   src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=800&h=600&fit=crop"
-                  alt={t.rooms.types.suite.name}
+                  alt="Executive Suite at luxury Split hotel with separate living area, jacuzzi, premium furnishings and panoramic views"
                   fill
                   className="object-cover group-hover:scale-110 transition-transform duration-500"
                 />

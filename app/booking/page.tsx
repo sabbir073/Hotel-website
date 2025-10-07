@@ -225,8 +225,16 @@ function BookingContent() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 pt-32 pb-20">
-      <div className="container mx-auto px-4">
+    <div className="min-h-screen bg-gray-50">
+      {/* Page Header */}
+      <div className="bg-gradient-to-r from-primary-600 to-primary-800 text-white py-16">
+        <div className="container mx-auto px-4 text-center">
+          <h1 className="text-4xl md:text-5xl font-serif font-bold mb-2">Book Your Stay</h1>
+          <p className="text-xl">Complete your reservation at THEATRE HOTEL Split Croatia</p>
+        </div>
+      </div>
+
+      <div className="container mx-auto px-4 py-12">
         {/* Success Screen */}
         {isBooked ? (
           <div className="max-w-2xl mx-auto">
@@ -310,7 +318,7 @@ function BookingContent() {
                           }`}
                         >
                           <div className="relative h-32 mb-3 rounded-lg overflow-hidden">
-                            <Image src={room.image} alt={room.name} fill className="object-cover" />
+                            <Image src={room.image} alt={`${room.name} at THEATRE HOTEL Split Croatia - luxury accommodation option`} fill className="object-cover" />
                           </div>
                           <h3 className="font-semibold">{room.name}</h3>
                           <p className="text-primary-600 font-bold">€{room.price}/night</p>
@@ -485,8 +493,8 @@ function BookingContent() {
                   <div className="flex justify-between items-center mb-6">
                     <h2 className="text-2xl font-semibold">Payment Information</h2>
                     <div className="flex items-center space-x-2">
-                      <Image src="https://upload.wikimedia.org/wikipedia/commons/0/04/Visa.svg" alt="Visa" width={50} height={32} className="h-8" />
-                      <Image src="https://upload.wikimedia.org/wikipedia/commons/2/2a/Mastercard-logo.svg" alt="Mastercard" width={50} height={32} className="h-8" />
+                      <Image src="https://upload.wikimedia.org/wikipedia/commons/0/04/Visa.svg" alt="Visa credit card payment accepted at THEATRE HOTEL Split" width={50} height={32} className="h-8" />
+                      <Image src="https://upload.wikimedia.org/wikipedia/commons/2/2a/Mastercard-logo.svg" alt="Mastercard credit card payment accepted for hotel booking" width={50} height={32} className="h-8" />
                     </div>
                   </div>
 
@@ -797,7 +805,7 @@ function BookingContent() {
                   <div className="relative h-40 rounded-lg overflow-hidden mb-3">
                     <Image
                       src={roomsInfo[selectedRoom].image}
-                      alt={roomsInfo[selectedRoom].name}
+                      alt={`${roomsInfo[selectedRoom].name} at luxury hotel Split - selected room for booking`}
                       fill
                       className="object-cover"
                     />

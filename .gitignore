@@ -43,6 +43,9 @@ ADMIN_SETUP.md
 email-dns-setup.md
 *.draft.md
 *.notes.md
+SEO_IMPLEMENTATION_SUMMARY.md
+TODO_IMAGES.md
+IMAGE_GENERATION_INSTRUCTIONS.md
 
 # Database and migrations
 requirements.txt

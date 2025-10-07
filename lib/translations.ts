@@ -212,7 +212,7 @@ export const translations = {
         title: "Awards & Recognition",
         subtitle: "Honored for excellence in hospitality",
         tripadvisor: "TripAdvisor",
-        tripadvisorDesc: "Travelers&apos; Choice 2024",
+        tripadvisorDesc: "Travelers' Choice 2024",
         croatian: "Croatian Tourism Board",
         croatianDesc: "Best Boutique Hotel 2023",
         worldLuxury: "World Luxury Hotel",
@@ -230,7 +230,7 @@ export const translations = {
     careers: {
       title: "Join Our Team",
       subtitle: "Build Your Career with THEATRE HOTEL d.o.o.",
-      intro: "We&apos;re always looking for talented individuals who share our passion for hospitality",
+      intro: "We're always looking for talented individuals who share our passion for hospitality",
       whyWorkWithUs: {
         title: "Why Work With Us",
         subtitle: "Join a team that values excellence, growth, and well-being",
@@ -267,7 +267,7 @@ export const translations = {
         experience3to5: "3-5 years",
         experience5to10: "5-10 years",
         experience10plus: "10+ years",
-        coverLetterPlaceholder: "Tell us why you&apos;re the perfect fit for this position...",
+        coverLetterPlaceholder: "Tell us why you're the perfect fit for this position...",
         resumeUpload: "Click to upload or drag and drop",
         resumeFormat: "PDF, DOC, DOCX (max 5MB)"
       },
@@ -280,7 +280,7 @@ export const translations = {
           position: "Front Desk Manager, 3 years"
         },
         testimonial2: {
-          text: "The hotel&apos;s commitment to excellence pushes me to be my best every day. I&apos;m proud to be part of this amazing team.",
+          text: "The hotel's commitment to excellence pushes me to be my best every day. I'm proud to be part of this amazing team.",
           name: "Marina Jurić",
           position: "Spa Manager, 5 years"
         },
@@ -332,7 +332,7 @@ export const translations = {
     },
     contact: {
       title: "Contact Us",
-      subtitle: "We&apos;d Love to Hear from You",
+      subtitle: "We'd Love to Hear from You",
       info: {
         address: "Address",
         phone: "Phone",
@@ -345,11 +345,35 @@ export const translations = {
       mapClick: "Click to view on Google Maps",
       sendMessage: "Send Us a Message",
       messageSent: "Message Sent!",
-      messageThankYou: "Thank you for contacting us. We&apos;ll get back to you within 24 hours.",
+      messageThankYou: "Thank you for contacting us. We'll get back to you within 24 hours.",
       hoursDetails: {
         reception: "Reception: 24/7",
         restaurant: "Restaurant: 7:00 - 23:00",
         spa: "Spa: 9:00 - 21:00"
+      },
+      services: {
+        title: "How We Can Help",
+        subtitle: "Our team is here to assist with all your needs",
+        reservations: {
+          title: "Reservations",
+          description: "Book your stay or modify existing reservations with our dedicated team.",
+          action: "Call Now"
+        },
+        events: {
+          title: "Events & Groups",
+          description: "Planning a special event or group booking? Our events team will help.",
+          action: "Email Events Team"
+        },
+        concierge: {
+          title: "Concierge",
+          description: "Local recommendations, tours, and personalized assistance during your stay.",
+          action: "Contact Concierge"
+        }
+      },
+      emergency: {
+        title: "Emergency Contact",
+        description: "For urgent matters outside business hours or emergencies during your stay",
+        action: "24/7 Emergency Line: +385 92 451 2500"
       },
       form: {
         name: "Your Name",
@@ -359,6 +383,7 @@ export const translations = {
         subject: "Subject",
         message: "Message",
         send: "Send Message",
+        requiredNote: "* Required fields. We typically respond within 24 hours.",
         passportPlaceholder: "Required for reservation inquiries",
         messagePlaceholder: "Please describe your inquiry in detail...",
         required: "Required fields. We typically respond within 24 hours.",
@@ -391,11 +416,6 @@ export const translations = {
           description: "Local recommendations, tours, and personalized assistance during your stay.",
           cta: "Contact Concierge"
         }
-      },
-      emergency: {
-        title: "Emergency Contact",
-        description: "For urgent matters outside business hours or emergencies during your stay",
-        phone: "24/7 Emergency Line: +385 92 451 2500"
       }
     },
     booking: {
@@ -488,6 +508,322 @@ export const translations = {
       newsletterDescription: "Subscribe to our newsletter for exclusive offers and updates.",
       privacyPolicy: "Privacy Policy",
       termsOfService: "Terms of Service"
+    },
+    internalLinks: {
+      about: {
+        title: "Experience Our Luxury",
+        description: "Discover our elegant rooms and suites, or explore career opportunities to join our exceptional team.",
+        viewRooms: "View Our Rooms",
+        bookStay: "Book Your Stay",
+        joinTeam: "Join Our Team"
+      },
+      rooms: {
+        bookNow: "Book Your Stay Now",
+        relatedLinks: {
+          aboutHotel: "About Our Hotel",
+          aboutDesc: "Learn about our story, values, and commitment to excellence in hospitality.",
+          contact: "Contact Us",
+          contactDesc: "Have questions? Get in touch with our team for personalized assistance.",
+          careers: "Career Opportunities",
+          careersDesc: "Join our team and be part of Split's premier luxury hotel experience."
+        }
+      },
+      contact: {
+        exploreMore: "Explore More",
+        exploreDesc: "Discover everything THEATRE HOTEL has to offer",
+        roomsSuites: "Our Rooms & Suites",
+        roomsDesc: "Explore our luxury accommodations from Standard Rooms to Presidential Suites.",
+        bookStay: "Book Your Stay",
+        bookDesc: "Reserve your room with our best rate guarantee and instant confirmation.",
+        aboutUs: "About Us",
+        aboutDesc: "Learn about our heritage, values, and commitment to exceptional hospitality."
+      },
+      careers: {
+        exploreHotel: "Explore THEATRE HOTEL",
+        exploreDesc: "Discover more about our luxury hotel in Split, Croatia",
+        aboutHotel: "About Our Hotel",
+        aboutDesc: "Learn about our heritage, mission, and commitment to exceptional hospitality.",
+        luxuryAccommodations: "Luxury Accommodations",
+        accommodationsDesc: "Explore our elegant rooms and premium suites with world-class amenities.",
+        getInTouch: "Get in Touch",
+        getInTouchDesc: "Have questions? Contact our team for more information about careers."
+      },
+      common: {
+        termsOfService: "Terms of Service →",
+        contactUs: "Contact Us →",
+        backToHome: "Back to Home →",
+        privacyPolicy: "Privacy Policy →",
+        bookYourStay: "Book Your Stay →"
+      }
+    },
+    privacy: {
+      title: "Privacy Policy",
+      lastUpdated: "Last Updated:",
+      lastUpdatedDate: "January 2025",
+      section1: {
+        title: "1. Introduction",
+        content: "THEATRE HOTEL d.o.o. (\"we,\" \"our,\" or \"us\") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website or make a booking at our hotel."
+      },
+      section2: {
+        title: "2. Information We Collect",
+        subtitle1: "2.1 Personal Information",
+        content1: "We may collect the following personal information:",
+        items1: [
+          "Full name",
+          "Email address",
+          "Phone number",
+          "Passport number (for identification and legal requirements)",
+          "Billing and payment information",
+          "Room preferences and special requests",
+          "Date of birth (if provided)"
+        ],
+        subtitle2: "2.2 Technical Information",
+        content2: "We automatically collect certain technical information:",
+        items2: [
+          "IP address",
+          "Browser type and version",
+          "Device information",
+          "Pages visited and time spent on pages",
+          "Referring website addresses"
+        ]
+      },
+      section3: {
+        title: "3. How We Use Your Information",
+        content: "We use your information for the following purposes:",
+        items: [
+          "Processing and managing your bookings and reservations",
+          "Providing customer service and support",
+          "Sending booking confirmations and important updates",
+          "Processing payments securely",
+          "Complying with legal and regulatory requirements",
+          "Improving our website and services",
+          "Sending marketing communications (with your consent)",
+          "Preventing fraud and ensuring security"
+        ]
+      },
+      section4: {
+        title: "4. Data Storage and Security",
+        content1: "We implement appropriate technical and organizational security measures to protect your personal information against unauthorized access, alteration, disclosure, or destruction. Your payment information is encrypted using SSL technology.",
+        content2: "We store your data on secure servers located in Croatia and the European Union, in compliance with GDPR regulations."
+      },
+      section5: {
+        title: "5. Sharing Your Information",
+        content: "We may share your information with:",
+        serviceProviders: "Service Providers:",
+        serviceProvidersDesc: "Payment processors, email service providers, and booking platforms",
+        legalAuthorities: "Legal Authorities:",
+        legalAuthoritiesDesc: "When required by law or to protect our rights",
+        businessPartners: "Business Partners:",
+        businessPartnersDesc: "With your consent, for special offers or packages",
+        noSelling: "We do not sell, rent, or trade your personal information to third parties for marketing purposes."
+      },
+      section6: {
+        title: "6. Cookies and Tracking Technologies",
+        content1: "Our website uses cookies and similar tracking technologies to enhance your browsing experience. You can control cookie preferences through your browser settings.",
+        content2: "We use:",
+        essentialCookies: "Essential Cookies:",
+        essentialDesc: "Required for website functionality",
+        analyticsCookies: "Analytics Cookies:",
+        analyticsDesc: "To understand how visitors use our website",
+        marketingCookies: "Marketing Cookies:",
+        marketingDesc: "For personalized advertising (with your consent)"
+      },
+      section7: {
+        title: "7. Your Rights (GDPR)",
+        content: "Under the General Data Protection Regulation (GDPR), you have the following rights:",
+        rightToAccess: "Right to Access:",
+        accessDesc: "Request a copy of your personal data",
+        rightToRectification: "Right to Rectification:",
+        rectificationDesc: "Correct inaccurate or incomplete data",
+        rightToErasure: "Right to Erasure:",
+        erasureDesc: "Request deletion of your data",
+        rightToRestrict: "Right to Restrict Processing:",
+        restrictDesc: "Limit how we use your data",
+        rightToPortability: "Right to Data Portability:",
+        portabilityDesc: "Receive your data in a structured format",
+        rightToObject: "Right to Object:",
+        objectDesc: "Object to processing of your data",
+        rightToWithdraw: "Right to Withdraw Consent:",
+        withdrawDesc: "Withdraw consent at any time",
+        contactInfo: "To exercise these rights, please contact us at info@theatrehoteldoo.com"
+      },
+      section8: {
+        title: "8. Data Retention",
+        content: "We retain your personal information only for as long as necessary to fulfill the purposes outlined in this Privacy Policy, unless a longer retention period is required by law. Booking records are typically retained for 7 years for accounting and legal purposes."
+      },
+      section9: {
+        title: "9. Children's Privacy",
+        content: "Our services are not directed to individuals under the age of 18. We do not knowingly collect personal information from children. If you are a parent or guardian and believe your child has provided us with personal information, please contact us."
+      },
+      section10: {
+        title: "10. International Transfers",
+        content: "Your information may be transferred to and processed in countries outside the European Economic Area (EEA). We ensure appropriate safeguards are in place to protect your information in accordance with GDPR requirements."
+      },
+      section11: {
+        title: "11. Changes to This Privacy Policy",
+        content: "We may update this Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page and updating the \"Last Updated\" date. Continued use of our services after changes constitutes acceptance of the updated policy."
+      },
+      section12: {
+        title: "12. Contact Us",
+        content: "If you have any questions about this Privacy Policy or our data practices, please contact us:",
+        companyName: "THEATRE HOTEL d.o.o.",
+        address: "Matošića ul., 21000 Split, Croatia",
+        email: "Email: info@theatrehoteldoo.com",
+        phone: "Phone: +385 92 451 2500"
+      },
+      section13: {
+        title: "13. Supervisory Authority",
+        content: "If you have concerns about our data processing practices, you have the right to lodge a complaint with the Croatian Data Protection Authority (Agencija za zaštitu osobnih podataka) or your local supervisory authority."
+      }
+    },
+    terms: {
+      title: "Terms of Service",
+      lastUpdated: "Last Updated:",
+      lastUpdatedDate: "January 2025",
+      section1: {
+        title: "1. Acceptance of Terms",
+        content: "By accessing and using the THEATRE HOTEL d.o.o. website and services, you accept and agree to be bound by these Terms of Service. If you do not agree to these terms, please do not use our website or services."
+      },
+      section2: {
+        title: "2. Definitions",
+        hotel: "\"Hotel\"",
+        hotelDesc: "refers to THEATRE HOTEL d.o.o., located at Matošića ul., 21000 Split, Croatia",
+        guest: "\"Guest\"",
+        guestDesc: "refers to any person making a booking or staying at the Hotel",
+        booking: "\"Booking\"",
+        bookingDesc: "refers to a reservation for accommodation at the Hotel",
+        services: "\"Services\"",
+        servicesDesc: "refers to all services provided by the Hotel"
+      },
+      section3: {
+        title: "3. Booking and Reservations",
+        subtitle1: "3.1 Making a Reservation",
+        content1: "All bookings are subject to availability. A booking is confirmed only when you receive a confirmation email from us. We reserve the right to refuse any booking at our discretion.",
+        subtitle2: "3.2 Accuracy of Information",
+        content2: "You are responsible for ensuring that all information provided during the booking process is accurate and complete. This includes but is not limited to:",
+        items2: [
+          "Full name of all guests",
+          "Contact information (email, phone)",
+          "Payment details",
+          "Special requests or requirements"
+        ],
+        subtitle3: "3.3 Minimum Age Requirement",
+        content3: "Guests must be at least 18 years old to make a booking. Guests under 18 must be accompanied by a parent or legal guardian."
+      },
+      section4: {
+        title: "4. Payment Terms",
+        subtitle1: "4.1 Payment Methods",
+        content1: "We accept the following payment methods:",
+        items1: [
+          "Visa credit and debit cards",
+          "Mastercard credit and debit cards"
+        ],
+        subtitle2: "4.2 Payment Processing",
+        content2: "Payment is required at the time of booking. All payments are processed securely through our encrypted payment system. Payment information is not stored on our servers.",
+        subtitle3: "4.3 Currency",
+        content3: "All prices are quoted in Euros (EUR) unless otherwise stated. Exchange rates may vary.",
+        subtitle4: "4.4 Pricing",
+        content4: "Prices are subject to change without notice. The price applicable to your booking is the price displayed at the time of booking confirmation."
+      },
+      section5: {
+        title: "5. Cancellation and Refund Policy",
+        subtitle1: "5.1 Standard Cancellation Policy",
+        item1: "More than 7 days before check-in:",
+        item1Desc: "Full refund minus 10% administrative fee",
+        item2: "3-7 days before check-in:",
+        item2Desc: "50% refund",
+        item3: "Less than 3 days before check-in:",
+        item3Desc: "No refund",
+        item4: "No-show:",
+        item4Desc: "No refund, full charge applied",
+        subtitle2: "5.2 Special Rate Cancellations",
+        content2: "Bookings made under special promotional rates may have different cancellation policies. These will be clearly stated at the time of booking.",
+        subtitle3: "5.3 How to Cancel",
+        content3: "To cancel your booking, please contact us at:",
+        email: "Email: info@theatrehoteldoo.com",
+        phone: "Phone: +385 92 451 2500",
+        subtitle4: "5.4 Refund Processing",
+        content4: "Approved refunds will be processed within 14 business days to the original payment method."
+      },
+      section6: {
+        title: "6. Check-in and Check-out",
+        subtitle1: "6.1 Check-in Time",
+        content1: "Standard check-in time is 3:00 PM. Early check-in may be available upon request and subject to availability.",
+        subtitle2: "6.2 Check-out Time",
+        content2: "Standard check-out time is 11:00 AM. Late check-out may be available upon request and may incur additional charges.",
+        subtitle3: "6.3 Identification",
+        content3: "Valid government-issued photo identification (passport, ID card) is required for all guests at check-in."
+      },
+      section7: {
+        title: "7. Guest Conduct and Responsibilities",
+        subtitle1: "7.1 Behavior",
+        content1: "Guests are expected to behave responsibly and respectfully. We reserve the right to ask guests to leave without refund if they:",
+        items1: [
+          "Cause disturbance to other guests",
+          "Damage hotel property",
+          "Engage in illegal activities",
+          "Violate hotel policies"
+        ],
+        subtitle2: "7.2 Smoking Policy",
+        content2: "THEATRE HOTEL d.o.o. is a non-smoking property. Smoking is only permitted in designated outdoor areas. Violation of this policy may result in cleaning fees of up to €250.",
+        subtitle3: "7.3 Pets",
+        content3: "Pets are not permitted unless explicitly authorized in advance. Service animals are welcome with appropriate documentation.",
+        subtitle4: "7.4 Property Damage",
+        content4: "Guests are responsible for any damage caused to hotel property during their stay. Repair or replacement costs will be charged to the guest's payment method."
+      },
+      section8: {
+        title: "8. Limitation of Liability",
+        subtitle1: "8.1 Personal Belongings",
+        content1: "The Hotel is not responsible for loss, theft, or damage to guests' personal belongings. We recommend using in-room safes for valuables.",
+        subtitle2: "8.2 Force Majeure",
+        content2: "The Hotel shall not be liable for failure to perform its obligations due to circumstances beyond our reasonable control, including but not limited to:",
+        items2: [
+          "Natural disasters",
+          "War or civil unrest",
+          "Government actions",
+          "Pandemics or health emergencies",
+          "Utility failures"
+        ],
+        subtitle3: "8.3 Third-Party Services",
+        content3: "The Hotel may arrange third-party services (tours, transportation, etc.) as a convenience. We are not responsible for the acts or omissions of third-party providers."
+      },
+      section9: {
+        title: "9. Privacy and Data Protection",
+        content: "Your use of our services is also governed by our Privacy Policy, which can be found at theatrehoteldoo.com/privacy. We process personal data in accordance with GDPR and Croatian data protection laws."
+      },
+      section10: {
+        title: "10. Intellectual Property",
+        content: "All content on this website, including text, images, logos, and design, is the property of THEATRE HOTEL d.o.o. and protected by copyright laws. Unauthorized use is prohibited."
+      },
+      section11: {
+        title: "11. Modifications to Terms",
+        content: "We reserve the right to modify these Terms of Service at any time. Changes will be effective immediately upon posting on our website. Your continued use of our services constitutes acceptance of the modified terms."
+      },
+      section12: {
+        title: "12. Governing Law and Jurisdiction",
+        content: "These Terms of Service are governed by the laws of the Republic of Croatia. Any disputes arising from these terms shall be subject to the exclusive jurisdiction of the courts in Split, Croatia."
+      },
+      section13: {
+        title: "13. Severability",
+        content: "If any provision of these Terms of Service is found to be unenforceable or invalid, that provision shall be limited or eliminated to the minimum extent necessary so that these terms shall otherwise remain in full force and effect."
+      },
+      section14: {
+        title: "14. Entire Agreement",
+        content: "These Terms of Service, together with our Privacy Policy, constitute the entire agreement between you and THEATRE HOTEL d.o.o. regarding the use of our services."
+      },
+      section15: {
+        title: "15. Contact Information",
+        content: "If you have any questions about these Terms of Service, please contact us:",
+        companyName: "THEATRE HOTEL d.o.o.",
+        address: "Matošića ul., 21000 Split, Croatia",
+        email: "Email: info@theatrehoteldoo.com",
+        phone1: "Phone: +385 92 451 2500",
+        phone2: "Phone: 021 655 961"
+      },
+      section16: {
+        title: "16. Acknowledgment",
+        content: "By using our website and services, you acknowledge that you have read, understood, and agree to be bound by these Terms of Service."
+      }
     }
   },
   hr: {
@@ -575,6 +911,47 @@ export const translations = {
       bookRoom: "Rezerviraj sobu",
       from: "Od",
       perNight: "po noći",
+      allRooms: "Sve sobe",
+      roomSize: "Veličina sobe",
+      maxGuests: "Maksimalan broj gostiju",
+      persons: "Osoba",
+      bedType: "Tip kreveta",
+      bathroom: "Kupaonica",
+      privateLuxury: "Privatni luksuz",
+      roomAmenities: "Sadržaji sobe",
+      kingOrTwin: "King ili Twin",
+      king: "King",
+      kingPlusSofa: "King + kauč na razvlačenje",
+      masterKingPlusGuest: "Master King + soba za goste",
+      allRoomFeatures: {
+        title: "Sve značajke soba",
+        subtitle: "Svaka soba uključuje ove standardne sadržaje",
+        highSpeedWifi: "Brzi Wi-Fi",
+        airConditioning: "Klima uređaj",
+        smartTv: "Smart TV",
+        coffeeMaker: "Aparat za kavu",
+        miniBar: "Mini bar",
+        roomService: "Posluga u sobu"
+      },
+      specialOffers: {
+        title: "Posebne ponude",
+        subtitle: "Rezervirajte izravno i uštedite do 20%",
+        earlyBird: {
+          title: "Rana rezervacija",
+          description: "Rezervirajte 30 dana unaprijed",
+          discount: "15% POPUST"
+        },
+        longStay: {
+          title: "Duži boravak",
+          description: "Boravak od 5 noći ili više",
+          discount: "20% POPUST"
+        },
+        weekend: {
+          title: "Vikend posebna ponuda",
+          description: "Boravak od petka do nedjelje",
+          discount: "10% POPUST"
+        }
+      },
       types: {
         standard: {
           name: "Standardna soba",
@@ -681,6 +1058,65 @@ export const translations = {
       title: "Pridružite se našem timu",
       subtitle: "Izgradite karijeru s THEATRE HOTEL d.o.o.",
       intro: "Uvijek tražimo talentirane pojedince koji dijele našu strast za gostoprimstvom",
+      whyWorkWithUs: {
+        title: "Zašto raditi s nama",
+        subtitle: "Pridružite se timu koji cijeni izvrsnost, rast i dobrobit",
+        healthWellness: {
+          title: "Zdravlje i dobrobit",
+          description: "Sveobuhvatno zdravstveno osiguranje i wellness programi"
+        },
+        careerDevelopment: {
+          title: "Razvoj karijere",
+          description: "Kontinuirano učenje i mogućnosti napredovanja"
+        },
+        recognition: {
+          title: "Priznanje",
+          description: "Bonusi za učinak i programi priznanja zaposlenika"
+        },
+        teamCulture: {
+          title: "Timska kultura",
+          description: "Suradničko okruženje s aktivnostima za jačanje tima"
+        }
+      },
+      openPositions: {
+        title: "Otvorene pozicije",
+        subtitle: "Pronađite svoju savršenu ulogu u našem timu",
+        requirements: "Zahtjevi:",
+        close: "Zatvori"
+      },
+      applicationForm: {
+        title: "Obrazac za prijavu posla",
+        close: "Zatvori",
+        cancel: "Odustani",
+        applicationSubmitted: "Prijava uspješno poslana! (Demo način - bez stvarnog slanja)",
+        selectExperience: "Odaberi...",
+        experience0to2: "0-2 godine",
+        experience3to5: "3-5 godina",
+        experience5to10: "5-10 godina",
+        experience10plus: "10+ godina",
+        coverLetterPlaceholder: "Recite nam zašto ste savršeni za ovu poziciju...",
+        resumeUpload: "Kliknite za učitavanje ili povucite i ispustite",
+        resumeFormat: "PDF, DOC, DOCX (max 5MB)"
+      },
+      employeeTestimonials: {
+        title: "Što kaže naš tim",
+        subtitle: "Čujte od ljudi koji čine THEATRE HOTEL d.o.o. posebnim",
+        testimonial1: {
+          text: "Rad u THEATRE HOTEL d.o.o. bio je nevjerojatno putovanje. Tim je poput obitelji, a mogućnosti za rast su beskonačne.",
+          name: "Petar Nikolić",
+          position: "Voditelj recepcije, 3 godine"
+        },
+        testimonial2: {
+          text: "Predanost hotela izvrsnosti gura me da budem najbolji svaki dan. Ponosan sam što sam dio ovog nevjerojatnog tima.",
+          name: "Marina Jurić",
+          position: "Spa menadžer, 5 godina"
+        },
+        testimonial3: {
+          text: "Programi obuke i razvoja ovdje pomogli su mi napredovati u karijeri više nego što sam mogao zamisliti.",
+          name: "Tomislav Horvat",
+          position: "Sous Chef, 2 godine"
+        }
+      },
       positions: {
         manager: {
           title: "Direktor hotela",
@@ -730,6 +1166,42 @@ export const translations = {
         email: "Email",
         hours: "Radno vrijeme"
       },
+      getInTouch: "Stupite u kontakt",
+      mapTitle: "Interaktivna karta",
+      mapSubtitle: "THEATRE HOTEL d.o.o., Split",
+      mapClick: "Kliknite za prikaz na Google kartama",
+      sendMessage: "Pošaljite nam poruku",
+      messageSent: "Poruka poslana!",
+      messageThankYou: "Hvala što ste nas kontaktirali. Javit ćemo vam se u roku od 24 sata.",
+      hoursDetails: {
+        reception: "Recepcija: 24/7",
+        restaurant: "Restoran: 7:00 - 23:00",
+        spa: "Spa: 9:00 - 21:00"
+      },
+      services: {
+        title: "Kako vam možemo pomoći",
+        subtitle: "Naš tim je ovdje da vam pomogne sa svim vašim potrebama",
+        reservations: {
+          title: "Rezervacije",
+          description: "Rezervirajte svoj boravak ili izmijenite postojeće rezervacije s našim predanim timom.",
+          action: "Nazovi sada"
+        },
+        events: {
+          title: "Eventi i grupe",
+          description: "Planirate poseban događaj ili grupnu rezervaciju? Naš tim za događaje će vam pomoći.",
+          action: "Pošalji email timu za događaje"
+        },
+        concierge: {
+          title: "Concierge",
+          description: "Lokalne preporuke, ture i personalizirana pomoć tijekom vašeg boravka.",
+          action: "Kontaktirajte Concierge"
+        }
+      },
+      emergency: {
+        title: "Hitni kontakt",
+        description: "Za hitne slučajeve izvan radnog vremena ili hitne slučajeve tijekom vašeg boravka",
+        action: "24/7 Hitna linija: +385 92 451 2500"
+      },
       form: {
         name: "Vaše ime",
         email: "Vaš email",
@@ -737,7 +1209,14 @@ export const translations = {
         passport: "Broj putovnice",
         subject: "Predmet",
         message: "Poruka",
-        send: "Pošalji poruku"
+        send: "Pošalji poruku",
+        requiredNote: "* Obavezna polja. Obično odgovaramo u roku od 24 sata.",
+        passportPlaceholder: "Potrebno za upite o rezervaciji",
+        namePlaceholder: "Unesite svoje puno ime",
+        emailPlaceholder: "vas@email.com",
+        phonePlaceholder: "+385 xx xxx xxxx",
+        subjectPlaceholder: "Kako vam možemo pomoći?",
+        messagePlaceholder: "Vaša poruka ovdje..."
       }
     },
     booking: {
@@ -797,6 +1276,322 @@ export const translations = {
       newsletterDescription: "Pretplatite se na naš newsletter za ekskluzivne ponude i ažuriranja.",
       privacyPolicy: "Pravilnik o privatnosti",
       termsOfService: "Uvjeti korištenja"
+    },
+    internalLinks: {
+      about: {
+        title: "Doživite naš luksuz",
+        description: "Otkrijte naše elegantne sobe i apartmane, ili istražite prilike za karijeru i pridružite se našem iznimnom timu.",
+        viewRooms: "Pogledajte naše sobe",
+        bookStay: "Rezervirajte boravak",
+        joinTeam: "Pridružite se našem timu"
+      },
+      rooms: {
+        bookNow: "Rezervirajte svoj boravak sada",
+        relatedLinks: {
+          aboutHotel: "O našem hotelu",
+          aboutDesc: "Saznajte više o našoj priči, vrijednostima i predanosti izvrsnosti u gostoprimstvu.",
+          contact: "Kontaktirajte nas",
+          contactDesc: "Imate pitanja? Kontaktirajte naš tim za personaliziranu pomoć.",
+          careers: "Prilike za karijeru",
+          careersDesc: "Pridružite se našem timu i budite dio luksuznog hotelskog iskustva u Splitu."
+        }
+      },
+      contact: {
+        exploreMore: "Istražite više",
+        exploreDesc: "Otkrijte sve što THEATRE HOTEL nudi",
+        roomsSuites: "Naše sobe i apartmani",
+        roomsDesc: "Istražite naše luksuzne smještaje od standardnih soba do predsjedničkih apartmana.",
+        bookStay: "Rezervirajte boravak",
+        bookDesc: "Rezervirajte svoju sobu s našom garancijom najbolje cijene i trenutnom potvrdom.",
+        aboutUs: "O nama",
+        aboutDesc: "Saznajte više o našoj baštini, vrijednostima i predanosti iznimnom gostoprimstvu."
+      },
+      careers: {
+        exploreHotel: "Istražite THEATRE HOTEL",
+        exploreDesc: "Otkrijte više o našem luksuznom hotelu u Splitu, Hrvatska",
+        aboutHotel: "O našem hotelu",
+        aboutDesc: "Saznajte više o našoj baštini, misiji i predanosti iznimnom gostoprimstvu.",
+        luxuryAccommodations: "Luksuzni smještaji",
+        accommodationsDesc: "Istražite naše elegantne sobe i premium apartmane sa sadržajima svjetske klase.",
+        getInTouch: "Kontaktirajte nas",
+        getInTouchDesc: "Imate pitanja? Kontaktirajte naš tim za više informacija o karijeri."
+      },
+      common: {
+        termsOfService: "Uvjeti korištenja →",
+        contactUs: "Kontaktirajte nas →",
+        backToHome: "Povratak na početnu →",
+        privacyPolicy: "Pravilnik o privatnosti →",
+        bookYourStay: "Rezervirajte boravak →"
+      }
+    },
+    privacy: {
+      title: "Pravilnik o privatnosti",
+      lastUpdated: "Zadnje ažurirano:",
+      lastUpdatedDate: "Siječanj 2025",
+      section1: {
+        title: "1. Uvod",
+        content: "THEATRE HOTEL d.o.o. (\"mi\", \"naš\" ili \"nas\") predano je zaštiti vaše privatnosti. Ovaj Pravilnik o privatnosti objašnjava kako prikupljamo, koristimo, otkrivamo i čuvamo vaše podatke kada posjećujete našu web stranicu ili rezervirate boravak u našem hotelu."
+      },
+      section2: {
+        title: "2. Informacije koje prikupljamo",
+        subtitle1: "2.1 Osobni podaci",
+        content1: "Možemo prikupljati sljedeće osobne podatke:",
+        items1: [
+          "Puno ime i prezime",
+          "Email adresa",
+          "Broj telefona",
+          "Broj putovnice (za identifikaciju i pravne zahtjeve)",
+          "Podaci o naplati i plaćanju",
+          "Preferencije soba i posebni zahtjevi",
+          "Datum rođenja (ako je naveden)"
+        ],
+        subtitle2: "2.2 Tehničke informacije",
+        content2: "Automatski prikupljamo određene tehničke informacije:",
+        items2: [
+          "IP adresa",
+          "Vrsta i verzija preglednika",
+          "Informacije o uređaju",
+          "Posjećene stranice i vrijeme provedeno na stranicama",
+          "Adrese prethodnih web stranica"
+        ]
+      },
+      section3: {
+        title: "3. Kako koristimo vaše podatke",
+        content: "Vaše podatke koristimo u sljedeće svrhe:",
+        items: [
+          "Obrada i upravljanje vašim rezervacijama",
+          "Pružanje korisničke podrške i usluge",
+          "Slanje potvrda rezervacija i važnih obavijesti",
+          "Sigurna obrada plaćanja",
+          "Usklađenost s pravnim i regulatornim zahtjevima",
+          "Poboljšanje naše web stranice i usluga",
+          "Slanje marketinških komunikacija (uz vašu suglasnost)",
+          "Sprječavanje prijevare i osiguranje sigurnosti"
+        ]
+      },
+      section4: {
+        title: "4. Pohrana i sigurnost podataka",
+        content1: "Provodimo odgovarajuće tehničke i organizacijske sigurnosne mjere za zaštitu vaših osobnih podataka od neovlaštenog pristupa, izmjene, otkrivanja ili uništenja. Vaši podaci o plaćanju šifrirani su pomoću SSL tehnologije.",
+        content2: "Vaše podatke pohranjujemo na sigurnim poslužiteljima smještenima u Hrvatskoj i Europskoj uniji, u skladu s GDPR propisima."
+      },
+      section5: {
+        title: "5. Dijeljenje vaših podataka",
+        content: "Vaše podatke možemo podijeliti s:",
+        serviceProviders: "Pružatelji usluga:",
+        serviceProvidersDesc: "Obrađivači plaćanja, pružatelji email usluga i platforme za rezervacije",
+        legalAuthorities: "Pravne vlasti:",
+        legalAuthoritiesDesc: "Kada to zahtijeva zakon ili radi zaštite naših prava",
+        businessPartners: "Poslovni partneri:",
+        businessPartnersDesc: "Uz vašu suglasnost, za posebne ponude ili pakete",
+        noSelling: "Ne prodajemo, ne iznajmljujemo niti trgujemo vašim osobnim podacima trećim stranama u marketinške svrhe."
+      },
+      section6: {
+        title: "6. Kolačići i tehnologije praćenja",
+        content1: "Naša web stranica koristi kolačiće i slične tehnologije praćenja kako bi poboljšala vaše iskustvo pregledavanja. Možete kontrolirati postavke kolačića putem postavki vašeg preglednika.",
+        content2: "Koristimo:",
+        essentialCookies: "Bitni kolačići:",
+        essentialDesc: "Potrebni za funkcionalnost web stranice",
+        analyticsCookies: "Analitički kolačići:",
+        analyticsDesc: "Za razumijevanje kako posjetitelji koriste našu web stranicu",
+        marketingCookies: "Marketinški kolačići:",
+        marketingDesc: "Za personalizirano oglašavanje (uz vašu suglasnost)"
+      },
+      section7: {
+        title: "7. Vaša prava (GDPR)",
+        content: "Prema Općoj uredbi o zaštiti podataka (GDPR), imate sljedeća prava:",
+        rightToAccess: "Pravo na pristup:",
+        accessDesc: "Zatražite kopiju svojih osobnih podataka",
+        rightToRectification: "Pravo na ispravak:",
+        rectificationDesc: "Ispravite netočne ili nepotpune podatke",
+        rightToErasure: "Pravo na brisanje:",
+        erasureDesc: "Zatražite brisanje svojih podataka",
+        rightToRestrict: "Pravo na ograničenje obrade:",
+        restrictDesc: "Ograničite način na koji koristimo vaše podatke",
+        rightToPortability: "Pravo na prenosivost podataka:",
+        portabilityDesc: "Primite svoje podatke u strukturiranom formatu",
+        rightToObject: "Pravo na prigovor:",
+        objectDesc: "Prigovorite obradi vaših podataka",
+        rightToWithdraw: "Pravo na povlačenje suglasnosti:",
+        withdrawDesc: "Povucite suglasnost u bilo kojem trenutku",
+        contactInfo: "Za ostvarivanje ovih prava, kontaktirajte nas na info@theatrehoteldoo.com"
+      },
+      section8: {
+        title: "8. Zadržavanje podataka",
+        content: "Vaše osobne podatke zadržavamo samo onoliko dugo koliko je potrebno za ispunjenje svrha navedenih u ovom Pravilniku o privatnosti, osim ako dulje razdoblje zadržavanja nije zahtijevano zakonom. Zapisi o rezervacijama obično se čuvaju 7 godina u računovodstvene i pravne svrhe."
+      },
+      section9: {
+        title: "9. Privatnost djece",
+        content: "Naše usluge nisu namijenjene osobama mlađim od 18 godina. Ne prikupljamo svjesno osobne podatke od djece. Ako ste roditelj ili skrbnik i smatrate da je vaše dijete dalo svoje osobne podatke, kontaktirajte nas."
+      },
+      section10: {
+        title: "10. Međunarodni prijenosi",
+        content: "Vaši podaci mogu biti preneseni i obrađeni u zemljama izvan Europskog gospodarskog prostora (EEA). Osiguravamo odgovarajuće zaštitne mjere za zaštitu vaših podataka u skladu sa GDPR zahtjevima."
+      },
+      section11: {
+        title: "11. Izmjene ovog Pravilnika o privatnosti",
+        content: "Možemo povremeno ažurirati ovaj Pravilnik o privatnosti. Obavijestit ćemo vas o svim izmjenama objavljivanjem novog Pravilnika o privatnosti na ovoj stranici i ažuriranjem datuma \"Zadnje ažurirano\". Nastavak korištenja naših usluga nakon izmjena predstavlja prihvaćanje ažuriranog pravilnika."
+      },
+      section12: {
+        title: "12. Kontaktirajte nas",
+        content: "Ako imate bilo kakvih pitanja o ovom Pravilniku o privatnosti ili našim praksama zaštite podataka, kontaktirajte nas:",
+        companyName: "THEATRE HOTEL d.o.o.",
+        address: "Matošića ul., 21000 Split, Hrvatska",
+        email: "Email: info@theatrehoteldoo.com",
+        phone: "Telefon: +385 92 451 2500"
+      },
+      section13: {
+        title: "13. Nadzorno tijelo",
+        content: "Ako imate zabrinutosti vezane uz naše prakse obrade podataka, imate pravo podnijeti pritužbu Agenciji za zaštitu osobnih podataka ili vašem lokalnom nadzornom tijelu."
+      }
+    },
+    terms: {
+      title: "Uvjeti korištenja",
+      lastUpdated: "Zadnje ažurirano:",
+      lastUpdatedDate: "Siječanj 2025",
+      section1: {
+        title: "1. Prihvaćanje uvjeta",
+        content: "Pristupom i korištenjem web stranice i usluga THEATRE HOTEL d.o.o., prihvaćate i slažete se biti vezani ovim Uvjetima korištenja. Ako se ne slažete s ovim uvjetima, molimo ne koristite našu web stranicu ili usluge."
+      },
+      section2: {
+        title: "2. Definicije",
+        hotel: "\"Hotel\"",
+        hotelDesc: "odnosi se na THEATRE HOTEL d.o.o., smješten na adresi Matošića ul., 21000 Split, Hrvatska",
+        guest: "\"Gost\"",
+        guestDesc: "odnosi se na bilo koju osobu koja pravi rezervaciju ili boravi u Hotelu",
+        booking: "\"Rezervacija\"",
+        bookingDesc: "odnosi se na rezervaciju smještaja u Hotelu",
+        services: "\"Usluge\"",
+        servicesDesc: "odnosi se na sve usluge koje pruža Hotel"
+      },
+      section3: {
+        title: "3. Rezervacije",
+        subtitle1: "3.1 Kreiranje rezervacije",
+        content1: "Sve rezervacije podliježu dostupnosti. Rezervacija je potvrđena tek kada primite email potvrdu od nas. Zadržavamo pravo odbijanja bilo koje rezervacije po vlastitom nahođenju.",
+        subtitle2: "3.2 Točnost informacija",
+        content2: "Odgovorni ste za osiguravanje da su sve informacije pružene tijekom procesa rezervacije točne i potpune. To uključuje, ali nije ograničeno na:",
+        items2: [
+          "Puna imena svih gostiju",
+          "Kontakt informacije (email, telefon)",
+          "Detalji plaćanja",
+          "Posebni zahtjevi ili potrebe"
+        ],
+        subtitle3: "3.3 Minimalna dobna granica",
+        content3: "Gosti moraju imati najmanje 18 godina za pravljenje rezervacije. Gosti mlađi od 18 godina moraju biti u pratnji roditelja ili zakonskog skrbnika."
+      },
+      section4: {
+        title: "4. Uvjeti plaćanja",
+        subtitle1: "4.1 Načini plaćanja",
+        content1: "Prihvaćamo sljedeće načine plaćanja:",
+        items1: [
+          "Visa kreditne i debitne kartice",
+          "Mastercard kreditne i debitne kartice"
+        ],
+        subtitle2: "4.2 Obrada plaćanja",
+        content2: "Plaćanje je potrebno u trenutku rezervacije. Sva plaćanja se obrađuju sigurno kroz naš šifrirani sustav plaćanja. Informacije o plaćanju nisu pohranjene na našim poslužiteljima.",
+        subtitle3: "4.3 Valuta",
+        content3: "Sve cijene su navedene u eurima (EUR) osim ako nije drugačije navedeno. Tečajevi se mogu razlikovati.",
+        subtitle4: "4.4 Cijene",
+        content4: "Cijene podliježu promjenama bez prethodne najave. Cijena koja se primjenjuje na vašu rezervaciju je cijena prikazana u trenutku potvrde rezervacije."
+      },
+      section5: {
+        title: "5. Pravila otkazivanja i povrata novca",
+        subtitle1: "5.1 Standardna pravila otkazivanja",
+        item1: "Više od 7 dana prije prijave:",
+        item1Desc: "Potpuni povrat novca minus 10% administrativne naknade",
+        item2: "3-7 dana prije prijave:",
+        item2Desc: "50% povrat novca",
+        item3: "Manje od 3 dana prije prijave:",
+        item3Desc: "Bez povrata novca",
+        item4: "Nedolazak:",
+        item4Desc: "Bez povrata novca, primjenjuje se puna naplata",
+        subtitle2: "5.2 Otkazivanje posebnih cijena",
+        content2: "Rezervacije napravljene po posebnim promotivnim cijenama mogu imati različita pravila otkazivanja. Ona će biti jasno navedena u trenutku rezervacije.",
+        subtitle3: "5.3 Kako otkazati",
+        content3: "Za otkazivanje rezervacije, molimo kontaktirajte nas na:",
+        email: "Email: info@theatrehoteldoo.com",
+        phone: "Telefon: +385 92 451 2500",
+        subtitle4: "5.4 Obrada povrata novca",
+        content4: "Odobreni povrati novca bit će obrađeni u roku od 14 radnih dana na originalnu metodu plaćanja."
+      },
+      section6: {
+        title: "6. Prijava i odjava",
+        subtitle1: "6.1 Vrijeme prijave",
+        content1: "Standardno vrijeme prijave je 15:00. Rana prijava može biti dostupna na zahtjev i ovisno o dostupnosti.",
+        subtitle2: "6.2 Vrijeme odjave",
+        content2: "Standardno vrijeme odjave je 11:00. Kasna odjava može biti dostupna na zahtjev i može uključivati dodatne naknade.",
+        subtitle3: "6.3 Identifikacija",
+        content3: "Valjana fotografska identifikacija izdana od strane države (putovnica, osobna iskaznica) potrebna je za sve goste pri prijavi."
+      },
+      section7: {
+        title: "7. Ponašanje i odgovornosti gosta",
+        subtitle1: "7.1 Ponašanje",
+        content1: "Od gostiju se očekuje odgovorno i pošteno ponašanje. Zadržavamo pravo tražiti od gostiju da napuste hotel bez povrata novca ako:",
+        items1: [
+          "Uzrokuju smetnje drugim gostima",
+          "Oštete hotelsku imovinu",
+          "Sudjeluju u ilegalnim aktivnostima",
+          "Krše hotelska pravila"
+        ],
+        subtitle2: "7.2 Politika pušenja",
+        content2: "THEATRE HOTEL d.o.o. je objekt bez pušenja. Pušenje je dozvoljeno samo u određenim vanjskim područjima. Kršenje ovog pravila može rezultirati naknadama za čišćenje do 250 €.",
+        subtitle3: "7.3 Kućni ljubimci",
+        content3: "Kućni ljubimci nisu dozvoljeni osim ako nije eksplicitno odobreno unaprijed. Službene životinje su dobrodošle uz odgovarajuću dokumentaciju.",
+        subtitle4: "7.4 Oštećenje imovine",
+        content4: "Gosti su odgovorni za bilo kakvu štetu nanijetu hotelskoj imovini tijekom boravka. Troškovi popravka ili zamjene bit će naplaćeni na metodu plaćanja gosta."
+      },
+      section8: {
+        title: "8. Ograničenje odgovornosti",
+        subtitle1: "8.1 Osobni predmeti",
+        content1: "Hotel nije odgovoran za gubitak, krađu ili oštećenje osobnih predmeta gostiju. Preporučujemo korištenje sefova u sobi za vrijednosti.",
+        subtitle2: "8.2 Viša sila",
+        content2: "Hotel neće biti odgovoran za neispunjavanje svojih obveza zbog okolnosti izvan naše razumne kontrole, uključujući, ali ne ograničavajući se na:",
+        items2: [
+          "Prirodne katastrofe",
+          "Rat ili građanski nemiri",
+          "Vladine akcije",
+          "Pandemije ili zdravstvene hitne situacije",
+          "Kvarovi komunalija"
+        ],
+        subtitle3: "8.3 Usluge trećih strana",
+        content3: "Hotel može organizirati usluge trećih strana (izleti, prijevoz, itd.) kao pogodnost. Nismo odgovorni za postupke ili propuste pružatelja usluga trećih strana."
+      },
+      section9: {
+        title: "9. Privatnost i zaštita podataka",
+        content: "Vaše korištenje naših usluga također je regulirano našim Pravilnikom o privatnosti, koji se može pronaći na theatrehoteldoo.com/privacy. Osobne podatke obrađujemo u skladu s GDPR-om i hrvatskim zakonima o zaštiti podataka."
+      },
+      section10: {
+        title: "10. Intelektualno vlasništvo",
+        content: "Sav sadržaj na ovoj web stranici, uključujući tekst, slike, logotipe i dizajn, vlasništvo je THEATRE HOTEL d.o.o. i zaštićen je zakonima o autorskim pravima. Neovlaštena upotreba je zabranjena."
+      },
+      section11: {
+        title: "11. Izmjene uvjeta",
+        content: "Zadržavamo pravo izmjene ovih Uvjeta korištenja u bilo kojem trenutku. Izmjene će stupiti na snagu odmah nakon objavljivanja na našoj web stranici. Vaše nastavak korištenja naših usluga predstavlja prihvaćanje izmijenjenih uvjeta."
+      },
+      section12: {
+        title: "12. Mjerodavno pravo i nadležnost",
+        content: "Ovi Uvjeti korištenja regulirani su zakonima Republike Hrvatske. Svi sporovi koji proizlaze iz ovih uvjeta bit će podložni ekskluzivnoj nadležnosti sudova u Splitu, Hrvatska."
+      },
+      section13: {
+        title: "13. Djelomična ništavnost",
+        content: "Ako se bilo koja odredba ovih Uvjeta korištenja smatra neizvršivom ili nevažećom, ta će odredba biti ograničena ili eliminirana u minimalnoj potrebnoj mjeri tako da ovi uvjeti ostanu na snazi."
+      },
+      section14: {
+        title: "14. Cjeloviti sporazum",
+        content: "Ovi Uvjeti korištenja, zajedno s našim Pravilnikom o privatnosti, čine cjeloviti sporazum između vas i THEATRE HOTEL d.o.o. u vezi s korištenjem naših usluga."
+      },
+      section15: {
+        title: "15. Kontakt informacije",
+        content: "Ako imate bilo kakvih pitanja o ovim Uvjetima korištenja, molimo kontaktirajte nas:",
+        companyName: "THEATRE HOTEL d.o.o.",
+        address: "Matošića ul., 21000 Split, Hrvatska",
+        email: "Email: info@theatrehoteldoo.com",
+        phone1: "Telefon: +385 92 451 2500",
+        phone2: "Telefon: 021 655 961"
+      },
+      section16: {
+        title: "16. Potvrda",
+        content: "Korištenjem naše web stranice i usluga, potvrđujete da ste pročitali, razumjeli i slažete se biti vezani ovim Uvjetima korištenja."
+      }
     }
   }
 };

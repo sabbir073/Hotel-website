@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import { useLanguage } from '@/contexts/LanguageContext';
+import Link from 'next/link';
 import Image from 'next/image';
 import { FaBriefcase, FaClock, FaMapMarkerAlt, FaHeart, FaGraduationCap, FaTrophy, FaHandshake, FaUpload, FaTimes, FaCheckCircle } from 'react-icons/fa';
 
@@ -195,7 +196,7 @@ export default function Careers() {
         <div className="absolute inset-0">
           <Image
             src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=1920&h=1080&fit=crop"
-            alt="Careers at THEATRE HOTEL d.o.o."
+            alt="Careers at THEATRE HOTEL d.o.o. Split Croatia - join our professional hospitality team and build your career"
             fill
             className="object-cover"
           />
@@ -229,24 +230,24 @@ export default function Careers() {
               <div className="w-20 h-20 bg-gradient-to-r from-primary-500 to-primary-600 rounded-full flex items-center justify-center mx-auto mb-4">
                 <FaGraduationCap className="text-3xl text-white" />
               </div>
-              <h3 className="text-xl font-semibold mb-2">Career Development</h3>
-              <p className="text-gray-600">Continuous learning and advancement opportunities</p>
+              <h3 className="text-xl font-semibold mb-2">{t?.careers?.whyWorkWithUs?.careerDevelopment?.title || "Career Development"}</h3>
+              <p className="text-gray-600">{t?.careers?.whyWorkWithUs?.careerDevelopment?.description || "Continuous learning and advancement opportunities"}</p>
             </div>
 
             <div className="text-center">
               <div className="w-20 h-20 bg-gradient-to-r from-primary-500 to-primary-600 rounded-full flex items-center justify-center mx-auto mb-4">
                 <FaTrophy className="text-3xl text-white" />
               </div>
-              <h3 className="text-xl font-semibold mb-2">Recognition</h3>
-              <p className="text-gray-600">Performance bonuses and employee appreciation programs</p>
+              <h3 className="text-xl font-semibold mb-2">{t?.careers?.whyWorkWithUs?.recognition?.title || "Recognition"}</h3>
+              <p className="text-gray-600">{t?.careers?.whyWorkWithUs?.recognition?.description || "Performance bonuses and employee appreciation programs"}</p>
             </div>
 
             <div className="text-center">
               <div className="w-20 h-20 bg-gradient-to-r from-primary-500 to-primary-600 rounded-full flex items-center justify-center mx-auto mb-4">
                 <FaHandshake className="text-3xl text-white" />
               </div>
-              <h3 className="text-xl font-semibold mb-2">Team Culture</h3>
-              <p className="text-gray-600">Collaborative environment with team-building events</p>
+              <h3 className="text-xl font-semibold mb-2">{t?.careers?.whyWorkWithUs?.teamCulture?.title || "Team Culture"}</h3>
+              <p className="text-gray-600">{t?.careers?.whyWorkWithUs?.teamCulture?.description || "Collaborative environment with team-building events"}</p>
             </div>
           </div>
         </div>
@@ -256,8 +257,8 @@ export default function Careers() {
       <section className="py-20">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <h2 className="text-4xl font-serif font-bold text-gray-900 mb-4">Open Positions</h2>
-            <p className="text-xl text-gray-600">Find your perfect role in our team</p>
+            <h2 className="text-4xl font-serif font-bold text-gray-900 mb-4">{t?.careers?.openPositions?.title || "Open Positions"}</h2>
+            <p className="text-xl text-gray-600">{t?.careers?.openPositions?.subtitle || "Find your perfect role in our team"}</p>
           </div>
 
           {loading ? (
@@ -556,7 +557,7 @@ export default function Careers() {
                 <div className="relative w-12 h-12 rounded-full overflow-hidden">
                   <Image
                     src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop"
-                    alt="Employee"
+                    alt="THEATRE HOTEL employee testimonial - Front Desk Manager sharing career growth experience"
                     fill
                     className="object-cover"
                   />
@@ -576,14 +577,14 @@ export default function Careers() {
                 <div className="relative w-12 h-12 rounded-full overflow-hidden">
                   <Image
                     src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&h=100&fit=crop"
-                    alt="Employee"
+                    alt="Spa Manager at luxury hotel Split Croatia - employee success story and testimonial"
                     fill
                     className="object-cover"
                   />
                 </div>
                 <div>
-                  <p className="font-semibold">Marina Jurić</p>
-                  <p className="text-sm text-gray-500">Spa Manager, 5 years</p>
+                  <p className="font-semibold">{t?.careers?.employeeTestimonials?.testimonial2?.name || "Marina Jurić"}</p>
+                  <p className="text-sm text-gray-500">{t?.careers?.employeeTestimonials?.testimonial2?.position || "Spa Manager, 5 years"}</p>
                 </div>
               </div>
             </div>
@@ -596,17 +597,41 @@ export default function Careers() {
                 <div className="relative w-12 h-12 rounded-full overflow-hidden">
                   <Image
                     src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&h=100&fit=crop"
-                    alt="Employee"
+                    alt="Sous Chef THEATRE HOTEL Split - culinary professional sharing training and development experience"
                     fill
                     className="object-cover"
                   />
                 </div>
                 <div>
-                  <p className="font-semibold">Tomislav Horvat</p>
-                  <p className="text-sm text-gray-500">Sous Chef, 2 years</p>
+                  <p className="font-semibold">{t?.careers?.employeeTestimonials?.testimonial3?.name || "Tomislav Horvat"}</p>
+                  <p className="text-sm text-gray-500">{t?.careers?.employeeTestimonials?.testimonial3?.position || "Sous Chef, 2 years"}</p>
                 </div>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Explore More */}
+      <section className="py-16 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-10">
+            <h2 className="text-3xl font-serif font-bold text-gray-900 mb-3">{t.internalLinks.careers.exploreHotel}</h2>
+            <p className="text-gray-600">{t.internalLinks.careers.exploreDesc}</p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+            <Link href="/about" className="group p-6 bg-gray-50 rounded-xl hover:bg-gray-100 transition-all">
+              <h3 className="text-xl font-semibold mb-2 text-gray-900 group-hover:text-primary-700 transition-colors">{t.internalLinks.careers.aboutHotel}</h3>
+              <p className="text-gray-600">{t.internalLinks.careers.aboutDesc}</p>
+            </Link>
+            <Link href="/rooms" className="group p-6 bg-gray-50 rounded-xl hover:bg-gray-100 transition-all">
+              <h3 className="text-xl font-semibold mb-2 text-gray-900 group-hover:text-primary-700 transition-colors">{t.internalLinks.careers.luxuryAccommodations}</h3>
+              <p className="text-gray-600">{t.internalLinks.careers.accommodationsDesc}</p>
+            </Link>
+            <Link href="/contact" className="group p-6 bg-gray-50 rounded-xl hover:bg-gray-100 transition-all">
+              <h3 className="text-xl font-semibold mb-2 text-gray-900 group-hover:text-primary-700 transition-colors">{t.internalLinks.careers.getInTouch}</h3>
+              <p className="text-gray-600">{t.internalLinks.careers.getInTouchDesc}</p>
+            </Link>
           </div>
         </div>
       </section>

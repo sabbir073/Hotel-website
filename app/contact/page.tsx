@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { useGoogleReCaptcha } from 'react-google-recaptcha-v3';
+import Link from 'next/link';
 import Image from 'next/image';
 import { FaPhone, FaEnvelope, FaMapMarkerAlt, FaClock, FaPaperPlane, FaCheckCircle } from 'react-icons/fa';
 
@@ -109,7 +110,7 @@ export default function Contact() {
         <div className="absolute inset-0">
           <Image
             src="https://images.unsplash.com/photo-1497215842964-222b430dc094?w=1920&h=1080&fit=crop"
-            alt="Contact THEATRE HOTEL d.o.o."
+            alt="Contact THEATRE HOTEL d.o.o. Split Croatia - professional reception desk and friendly hospitality staff ready to assist"
             fill
             className="object-cover"
           />
@@ -323,7 +324,7 @@ export default function Contact() {
                     </button>
 
                     <p className="text-sm text-gray-500 mt-4 text-center">
-                      * Required fields. We typically respond within 24 hours.
+                      {t.contact.form.requiredNote}
                     </p>
                   </form>
                 )}
@@ -337,8 +338,8 @@ export default function Contact() {
       <section className="py-20 bg-gray-50">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <h2 className="text-4xl font-serif font-bold text-gray-900 mb-4">How We Can Help</h2>
-            <p className="text-xl text-gray-600">Our team is here to assist with all your needs</p>
+            <h2 className="text-4xl font-serif font-bold text-gray-900 mb-4">{t.contact.services.title}</h2>
+            <p className="text-xl text-gray-600">{t.contact.services.subtitle}</p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
@@ -346,10 +347,10 @@ export default function Contact() {
               <div className="w-16 h-16 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-4">
                 <FaPhone className="text-2xl text-primary-600" />
               </div>
-              <h3 className="text-xl font-semibold mb-3">Reservations</h3>
-              <p className="text-gray-600 mb-4">Book your stay or modify existing reservations with our dedicated team.</p>
+              <h3 className="text-xl font-semibold mb-3">{t.contact.services.reservations.title}</h3>
+              <p className="text-gray-600 mb-4">{t.contact.services.reservations.description}</p>
               <a href="tel:+385924512500" className="text-primary-600 hover:text-primary-700 font-medium">
-                Call Now
+                {t.contact.services.reservations.action}
               </a>
             </div>
 
@@ -357,10 +358,10 @@ export default function Contact() {
               <div className="w-16 h-16 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-4">
                 <FaEnvelope className="text-2xl text-primary-600" />
               </div>
-              <h3 className="text-xl font-semibold mb-3">Events & Groups</h3>
-              <p className="text-gray-600 mb-4">Planning a special event or group booking? Our events team will help.</p>
+              <h3 className="text-xl font-semibold mb-3">{t.contact.services.events.title}</h3>
+              <p className="text-gray-600 mb-4">{t.contact.services.events.description}</p>
               <a href="mailto:events@theatrehoteldoo.com" className="text-primary-600 hover:text-primary-700 font-medium">
-                Email Events Team
+                {t.contact.services.events.action}
               </a>
             </div>
 
@@ -368,10 +369,10 @@ export default function Contact() {
               <div className="w-16 h-16 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-4">
                 <FaMapMarkerAlt className="text-2xl text-primary-600" />
               </div>
-              <h3 className="text-xl font-semibold mb-3">Concierge</h3>
-              <p className="text-gray-600 mb-4">Local recommendations, tours, and personalized assistance during your stay.</p>
+              <h3 className="text-xl font-semibold mb-3">{t.contact.services.concierge.title}</h3>
+              <p className="text-gray-600 mb-4">{t.contact.services.concierge.description}</p>
               <a href="mailto:concierge@theatrehoteldoo.com" className="text-primary-600 hover:text-primary-700 font-medium">
-                Contact Concierge
+                {t.contact.services.concierge.action}
               </a>
             </div>
           </div>
@@ -382,16 +383,40 @@ export default function Contact() {
       <section className="py-12 bg-red-50 border-l-4 border-red-500">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center">
-            <h3 className="text-2xl font-semibold text-red-800 mb-2">Emergency Contact</h3>
+            <h3 className="text-2xl font-semibold text-red-800 mb-2">{t.contact.emergency.title}</h3>
             <p className="text-red-700 mb-4">
-              For urgent matters outside business hours or emergencies during your stay
+              {t.contact.emergency.description}
             </p>
             <a
               href="tel:+385924512500"
               className="inline-block bg-red-600 text-white px-6 py-3 rounded-lg hover:bg-red-700 transition-colors font-semibold"
             >
-              24/7 Emergency Line: +385 92 451 2500
+              {t.contact.emergency.action}
             </a>
+          </div>
+        </div>
+      </section>
+
+      {/* Explore More */}
+      <section className="py-16 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-10">
+            <h2 className="text-3xl font-serif font-bold text-gray-900 mb-3">{t.internalLinks.contact.exploreMore}</h2>
+            <p className="text-gray-600">{t.internalLinks.contact.exploreDesc}</p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+            <Link href="/rooms" className="group p-6 bg-gray-50 rounded-xl hover:bg-gray-100 transition-all">
+              <h3 className="text-xl font-semibold mb-2 text-gray-900 group-hover:text-primary-700 transition-colors">{t.internalLinks.contact.roomsSuites}</h3>
+              <p className="text-gray-600">{t.internalLinks.contact.roomsDesc}</p>
+            </Link>
+            <Link href="/booking" className="group p-6 bg-primary-50 rounded-xl hover:bg-primary-100 transition-all">
+              <h3 className="text-xl font-semibold mb-2 text-primary-900 group-hover:text-primary-700 transition-colors">{t.internalLinks.contact.bookStay}</h3>
+              <p className="text-gray-700">{t.internalLinks.contact.bookDesc}</p>
+            </Link>
+            <Link href="/about" className="group p-6 bg-gray-50 rounded-xl hover:bg-gray-100 transition-all">
+              <h3 className="text-xl font-semibold mb-2 text-gray-900 group-hover:text-primary-700 transition-colors">{t.internalLinks.contact.aboutUs}</h3>
+              <p className="text-gray-600">{t.internalLinks.contact.aboutDesc}</p>
+            </Link>
           </div>
         </div>
       </section>
