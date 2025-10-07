@@ -1,6 +1,9 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  compiler: {
+    removeConsole: process.env.NODE_ENV === 'production',
+  },
   images: {
     remotePatterns: [
       // No external image sources - all images are local
@@ -12,6 +15,10 @@ const nextConfig: NextConfig = {
     dangerouslyAllowSVG: true,
     contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
     unoptimized: false,
+  },
+  swcMinify: true,
+  experimental: {
+    optimizePackageImports: ['react-icons'],
   },
   async headers() {
     return [
