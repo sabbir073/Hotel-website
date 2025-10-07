@@ -196,7 +196,7 @@ function CareersPage() {
       <section className="relative h-[60vh] flex items-center justify-center">
         <div className="absolute inset-0">
           <Image
-            src="/images/hero/hero-careers.jpg"
+            src="/images/hero/hero-careers.webp"
             alt="Careers at THEATRE HOTEL d.o.o. Split Croatia - join our professional hospitality team and build your career"
             fill
             className="object-cover"
@@ -557,7 +557,7 @@ function CareersPage() {
               <div className="flex items-center space-x-3">
                 <div className="relative w-12 h-12 rounded-full overflow-hidden">
                   <Image
-                    src="/images/avatars/avatar-1.jpg"
+                    src="/images/avatars/avatar-1.webp"
                     alt="THEATRE HOTEL employee testimonial - Front Desk Manager sharing career growth experience"
                     fill
                     className="object-cover"
@@ -577,7 +577,7 @@ function CareersPage() {
               <div className="flex items-center space-x-3">
                 <div className="relative w-12 h-12 rounded-full overflow-hidden">
                   <Image
-                    src="/images/avatars/avatar-2.jpg"
+                    src="/images/avatars/avatar-2.webp"
                     alt="Spa Manager at luxury hotel Split Croatia - employee success story and testimonial"
                     fill
                     className="object-cover"
@@ -597,7 +597,7 @@ function CareersPage() {
               <div className="flex items-center space-x-3">
                 <div className="relative w-12 h-12 rounded-full overflow-hidden">
                   <Image
-                    src="/images/avatars/avatar-3.jpg"
+                    src="/images/avatars/avatar-3.webp"
                     alt="Sous Chef THEATRE HOTEL Split - culinary professional sharing training and development experience"
                     fill
                     className="object-cover"

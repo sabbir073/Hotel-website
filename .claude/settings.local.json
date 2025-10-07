@@ -10,7 +10,10 @@
       "Bash(node -e \"console.log(require(''crypto'').randomBytes(32).toString(''base64''))\")",
       "Bash(node:*)",
       "Bash(curl:*)",
-      "Bash(npm uninstall:*)"
+      "Bash(npm uninstall:*)",
+      "Bash(dir)",
+      "Bash(powershell:*)",
+      "Bash(find:*)"
     ],
     "deny": [],
     "ask": []

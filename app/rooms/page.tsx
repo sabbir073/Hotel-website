@@ -9,11 +9,11 @@ import { FaWifi, FaTv, FaCoffee, FaSnowflake, FaSwimmingPool, FaSpa, FaConcierge
 const roomsData = [
   {
     id: 'standard',
-    image: '/images/rooms/room-standard.jpg',
+    image: '/images/rooms/room-standard.webp',
     gallery: [
-      '/images/gallery/standard/standard-1.jpg',
-      '/images/gallery/standard/standard-2.jpg',
-      '/images/gallery/standard/standard-3.jpg',
+      '/images/gallery/standard/standard-1.webp',
+      '/images/gallery/standard/standard-2.webp',
+      '/images/gallery/standard/standard-3.webp',
     ],
     price: 150,
     size: 25,
@@ -22,11 +22,11 @@ const roomsData = [
   },
   {
     id: 'deluxe',
-    image: '/images/rooms/room-deluxe.jpg',
+    image: '/images/rooms/room-deluxe.webp',
     gallery: [
-      '/images/gallery/deluxe/deluxe-1.jpg',
-      '/images/gallery/deluxe/deluxe-2.jpg',
-      '/images/gallery/deluxe/deluxe-3.jpg',
+      '/images/gallery/deluxe/deluxe-1.webp',
+      '/images/gallery/deluxe/deluxe-2.webp',
+      '/images/gallery/deluxe/deluxe-3.webp',
     ],
     price: 250,
     size: 35,
@@ -35,11 +35,11 @@ const roomsData = [
   },
   {
     id: 'suite',
-    image: '/images/rooms/room-suite.jpg',
+    image: '/images/rooms/room-suite.webp',
     gallery: [
-      '/images/gallery/suite/suite-1.jpg',
-      '/images/gallery/suite/suite-2.jpg',
-      '/images/gallery/suite/suite-3.jpg',
+      '/images/gallery/suite/suite-1.webp',
+      '/images/gallery/suite/suite-2.webp',
+      '/images/gallery/suite/suite-3.webp',
     ],
     price: 450,
     size: 65,
@@ -48,11 +48,11 @@ const roomsData = [
   },
   {
     id: 'presidential',
-    image: '/images/rooms/room-presidential.jpg',
+    image: '/images/rooms/room-presidential.webp',
     gallery: [
-      '/images/gallery/presidential/presidential-1.jpg',
-      '/images/gallery/presidential/presidential-2.jpg',
-      '/images/gallery/presidential/presidential-3.jpg',
+      '/images/gallery/presidential/presidential-1.webp',
+      '/images/gallery/presidential/presidential-2.webp',
+      '/images/gallery/presidential/presidential-3.webp',
     ],
     price: 850,
     size: 120,
@@ -77,7 +77,7 @@ export default function Rooms() {
       <section className="relative h-[50vh] flex items-center justify-center">
         <div className="absolute inset-0">
           <Image
-            src="/images/hero/hero-rooms.jpg"
+            src="/images/hero/hero-rooms.webp"
             alt="Luxury hotel rooms at THEATRE HOTEL Split Croatia showcasing elegant design and premium accommodations"
             fill
             className="object-cover"

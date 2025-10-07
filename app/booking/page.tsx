@@ -10,22 +10,22 @@ const roomsInfo: any = {
   standard: {
     name: 'Standard Room',
     price: 150,
-    image: '/images/rooms/room-standard.jpg'
+    image: '/images/rooms/room-standard.webp'
   },
   deluxe: {
     name: 'Deluxe Room',
     price: 250,
-    image: '/images/rooms/room-deluxe.jpg'
+    image: '/images/rooms/room-deluxe.webp'
   },
   suite: {
     name: 'Executive Suite',
     price: 450,
-    image: '/images/rooms/room-suite.jpg'
+    image: '/images/rooms/room-suite.webp'
   },
   presidential: {
     name: 'Presidential Suite',
     price: 850,
-    image: '/images/rooms/room-presidential.jpg'
+    image: '/images/rooms/room-presidential.webp'
   }
 };
 

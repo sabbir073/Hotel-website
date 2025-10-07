@@ -11,6 +11,8 @@ const playfair = Playfair_Display({
   weight: ['400', '700', '900'],
   variable: '--font-playfair',
   display: 'swap',
+  preload: true,
+  fallback: ['serif'],
 });
 
 const inter = Inter({
@@ -18,6 +20,8 @@ const inter = Inter({
   weight: ['300', '400', '500', '600', '700'],
   variable: '--font-inter',
   display: 'swap',
+  preload: true,
+  fallback: ['system-ui', 'sans-serif'],
 });
 
 const siteUrl = "https://theatrehoteldoo.com";

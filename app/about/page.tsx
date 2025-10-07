@@ -14,7 +14,7 @@ export default function About() {
       <section className="relative h-[60vh] flex items-center justify-center">
         <div className="absolute inset-0">
           <Image
-            src="/images/hero/hero-about.jpg"
+            src="/images/hero/hero-about.webp"
             alt="About THEATRE HOTEL d.o.o. Split Croatia - luxury boutique hotel with rich heritage and exceptional hospitality"
             fill
             className="object-cover"
@@ -45,7 +45,7 @@ export default function About() {
             </div>
             <div className="relative h-[500px] rounded-2xl overflow-hidden shadow-2xl">
               <Image
-                src="/images/about/about-building.jpg"
+                src="/images/about/about-building.webp"
                 alt="Historic architecture and elegant design of THEATRE HOTEL Split showcasing Croatian heritage and luxury hospitality"
                 fill
                 className="object-cover"
@@ -113,7 +113,7 @@ export default function About() {
             <div className="text-center">
               <div className="relative w-48 h-48 mx-auto mb-4 rounded-full overflow-hidden">
                 <Image
-                  src="/images/team/team-1.jpg"
+                  src="/images/team/team-1.webp"
                   alt="Director of THEATRE HOTEL d.o.o. Split Croatia - experienced hospitality leader"
                   fill
                   className="object-cover"
@@ -127,7 +127,7 @@ export default function About() {
             <div className="text-center">
               <div className="relative w-48 h-48 mx-auto mb-4 rounded-full overflow-hidden">
                 <Image
-                  src="/images/team/team-2.jpg"
+                  src="/images/team/team-2.webp"
                   alt="General Manager at luxury hotel Split - dedicated to exceptional guest service and hospitality excellence"
                   fill
                   className="object-cover"
@@ -141,7 +141,7 @@ export default function About() {
             <div className="text-center">
               <div className="relative w-48 h-48 mx-auto mb-4 rounded-full overflow-hidden">
                 <Image
-                  src="/images/team/team-1.jpg"
+                  src="/images/team/team-1.webp"
                   alt="Operations Director THEATRE HOTEL Split - ensuring smooth daily operations and guest satisfaction"
                   fill
                   className="object-cover"
@@ -155,7 +155,7 @@ export default function About() {
             <div className="text-center">
               <div className="relative w-48 h-48 mx-auto mb-4 rounded-full overflow-hidden">
                 <Image
-                  src="/images/team/team-3.jpg"
+                  src="/images/team/team-3.webp"
                   alt="Executive Chef at THEATRE HOTEL Split Croatia - culinary expert creating exceptional Mediterranean cuisine"
                   fill
                   className="object-cover"

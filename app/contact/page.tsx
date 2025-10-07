@@ -110,7 +110,7 @@ function ContactForm() {
       <section className="relative h-[50vh] flex items-center justify-center">
         <div className="absolute inset-0">
           <Image
-            src="/images/hero/hero-contact.jpg"
+            src="/images/hero/hero-contact.webp"
             alt="Contact THEATRE HOTEL d.o.o. Split Croatia - professional reception desk and friendly hospitality staff ready to assist"
             fill
             className="object-cover"
