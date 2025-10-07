@@ -44,11 +44,12 @@ export default function Home() {
           <div className="bg-white/95 backdrop-blur-md rounded-2xl p-6 shadow-2xl mt-8 animate-fade-in-delay-3">
             <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
               <div className="text-left">
-                <label className="block text-gray-700 text-sm font-medium mb-2">
+                <label htmlFor="check-in-date" className="block text-gray-700 text-sm font-medium mb-2">
                   <FaCalendarAlt className="inline mr-2 text-primary-600" />
                   {t.hero.checkIn}
                 </label>
                 <input
+                  id="check-in-date"
                   type="date"
                   value={checkIn}
                   onChange={(e) => setCheckIn(e.target.value)}
@@ -57,11 +58,12 @@ export default function Home() {
               </div>
 
               <div className="text-left">
-                <label className="block text-gray-700 text-sm font-medium mb-2">
+                <label htmlFor="check-out-date" className="block text-gray-700 text-sm font-medium mb-2">
                   <FaCalendarAlt className="inline mr-2 text-primary-600" />
                   {t.hero.checkOut}
                 </label>
                 <input
+                  id="check-out-date"
                   type="date"
                   value={checkOut}
                   onChange={(e) => setCheckOut(e.target.value)}
@@ -70,11 +72,12 @@ export default function Home() {
               </div>
 
               <div className="text-left">
-                <label className="block text-gray-700 text-sm font-medium mb-2">
+                <label htmlFor="guests-select" className="block text-gray-700 text-sm font-medium mb-2">
                   <FaUsers className="inline mr-2 text-primary-600" />
                   {t.hero.guests}
                 </label>
                 <select
+                  id="guests-select"
                   value={guests}
                   onChange={(e) => setGuests(e.target.value)}
                   className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 text-gray-900"
