@@ -485,8 +485,8 @@ function BookingContent() {
                   <div className="flex justify-between items-center mb-6">
                     <h2 className="text-2xl font-semibold">Payment Information</h2>
                     <div className="flex items-center space-x-2">
-                      <img src="https://upload.wikimedia.org/wikipedia/commons/0/04/Visa.svg" alt="Visa" className="h-8" />
-                      <img src="https://upload.wikimedia.org/wikipedia/commons/2/2a/Mastercard-logo.svg" alt="Mastercard" className="h-8" />
+                      <Image src="https://upload.wikimedia.org/wikipedia/commons/0/04/Visa.svg" alt="Visa" width={50} height={32} className="h-8" />
+                      <Image src="https://upload.wikimedia.org/wikipedia/commons/2/2a/Mastercard-logo.svg" alt="Mastercard" width={50} height={32} className="h-8" />
                     </div>
                   </div>
 
