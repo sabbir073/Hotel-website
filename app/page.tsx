@@ -21,6 +21,8 @@ export default function Home() {
             src="https://images.unsplash.com/photo-1564501049412-61c2a3083791?w=1920&h=1080&fit=crop"
             alt="Luxury hotel lobby at THEATRE HOTEL d.o.o. Split Croatia with elegant interior design and comfortable seating"
             fill
+            sizes="100vw"
+            quality={95}
             className="object-cover"
             priority
           />
@@ -157,6 +159,8 @@ export default function Home() {
                   src="https://images.unsplash.com/photo-1611892440504-42a792e24d32?w=800&h=600&fit=crop"
                   alt="Standard Room at luxury hotel Split Croatia featuring modern furnishings, comfortable king bed, and elegant decor"
                   fill
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                  quality={90}
                   className="object-cover group-hover:scale-110 transition-transform duration-500"
                 />
                 <div className="absolute top-4 right-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full">
@@ -193,6 +197,8 @@ export default function Home() {
                   src="https://images.unsplash.com/photo-1590490360182-c33d57733427?w=800&h=600&fit=crop"
                   alt="Deluxe Room at THEATRE HOTEL Split with private balcony, spacious layout, premium amenities and city views"
                   fill
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                  quality={90}
                   className="object-cover group-hover:scale-110 transition-transform duration-500"
                 />
                 <div className="absolute top-4 right-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full">
@@ -229,6 +235,8 @@ export default function Home() {
                   src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=800&h=600&fit=crop"
                   alt="Executive Suite at luxury Split hotel with separate living area, jacuzzi, premium furnishings and panoramic views"
                   fill
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                  quality={90}
                   className="object-cover group-hover:scale-110 transition-transform duration-500"
                 />
                 <div className="absolute top-4 right-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full">

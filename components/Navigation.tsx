@@ -20,9 +20,11 @@ export default function Navigation() {
           <Link href="/" className="flex items-center space-x-3">
             <div className="relative w-48 h-12">
               <Image
-                src="/logo.jpg"
+                src="/logo.webp"
                 alt="THEATRE HOTEL d.o.o."
                 fill
+                sizes="(max-width: 768px) 150px, 192px"
+                quality={95}
                 className="object-contain"
                 priority
               />

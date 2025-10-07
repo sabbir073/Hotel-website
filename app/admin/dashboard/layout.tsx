@@ -66,7 +66,7 @@ export default function AdminDashboardLayout({
               </button>
               <div className="relative w-40 h-10">
                 <Image
-                  src="/logo.jpg"
+                  src="/logo.webp"
                   alt="THEATRE HOTEL d.o.o."
                   fill
                   className="object-contain"

@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import { useLanguage } from '@/contexts/LanguageContext';
+import RecaptchaProvider from '@/components/RecaptchaProvider';
 import Link from 'next/link';
 import Image from 'next/image';
 import { FaBriefcase, FaClock, FaMapMarkerAlt, FaHeart, FaGraduationCap, FaTrophy, FaHandshake, FaUpload, FaTimes, FaCheckCircle } from 'react-icons/fa';
@@ -24,7 +25,7 @@ const iconMap: Record<string, any> = {
   'default': FaBriefcase
 };
 
-export default function Careers() {
+function CareersPage() {
   const { t } = useLanguage();
   const [jobs, setJobs] = useState<Job[]>([]);
   const [loading, setLoading] = useState(true);
@@ -708,5 +709,13 @@ export default function Careers() {
         </div>
       )}
     </div>
+  );
+}
+
+export default function Careers() {
+  return (
+    <RecaptchaProvider>
+      <CareersPage />
+    </RecaptchaProvider>
   );
 }

@@ -1,9 +1,24 @@
 import type { Metadata } from "next";
+import { Playfair_Display, Inter } from 'next/font/google';
 import "./globals.css";
 import { LanguageProvider } from "@/contexts/LanguageContext";
 import SessionProvider from "@/components/SessionProvider";
-import RecaptchaProvider from "@/components/RecaptchaProvider";
 import LayoutWrapper from "@/components/LayoutWrapper";
+
+// Optimize font loading with next/font
+const playfair = Playfair_Display({
+  subsets: ['latin'],
+  weight: ['400', '700', '900'],
+  variable: '--font-playfair',
+  display: 'swap',
+});
+
+const inter = Inter({
+  subsets: ['latin'],
+  weight: ['300', '400', '500', '600', '700'],
+  variable: '--font-inter',
+  display: 'swap',
+});
 
 const siteUrl = "https://theatrehoteldoo.com";
 const siteName = "THEATRE HOTEL d.o.o.";
@@ -138,7 +153,7 @@ export default function RootLayout({
   };
 
   return (
-    <html lang="en" className="scroll-smooth">
+    <html lang="en" className={`scroll-smooth ${playfair.variable} ${inter.variable}`}>
       <head>
         <link rel="icon" type="image/x-icon" href="/favicon.ico" />
         <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
@@ -153,13 +168,11 @@ export default function RootLayout({
       </head>
       <body className="antialiased">
         <SessionProvider>
-          <RecaptchaProvider>
-            <LanguageProvider>
-              <LayoutWrapper>
-                {children}
-              </LayoutWrapper>
-            </LanguageProvider>
-          </RecaptchaProvider>
+          <LanguageProvider>
+            <LayoutWrapper>
+              {children}
+            </LayoutWrapper>
+          </LanguageProvider>
         </SessionProvider>
       </body>
     </html>

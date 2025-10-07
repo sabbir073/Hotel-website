@@ -70,7 +70,7 @@ export default function AdminLogin() {
         <div className="text-center mb-8">
           <div className="relative w-64 h-20 mx-auto mb-6">
             <Image
-              src="/logo.jpg"
+              src="/logo.webp"
               alt="THEATRE HOTEL d.o.o."
               fill
               className="object-contain"

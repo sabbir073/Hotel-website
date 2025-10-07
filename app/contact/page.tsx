@@ -3,11 +3,12 @@
 import { useState } from 'react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { useGoogleReCaptcha } from 'react-google-recaptcha-v3';
+import RecaptchaProvider from '@/components/RecaptchaProvider';
 import Link from 'next/link';
 import Image from 'next/image';
 import { FaPhone, FaEnvelope, FaMapMarkerAlt, FaClock, FaPaperPlane, FaCheckCircle } from 'react-icons/fa';
 
-export default function Contact() {
+function ContactForm() {
   const { t } = useLanguage();
   const { executeRecaptcha } = useGoogleReCaptcha();
   const [formData, setFormData] = useState({
@@ -421,5 +422,13 @@ export default function Contact() {
         </div>
       </section>
     </div>
+  );
+}
+
+export default function Contact() {
+  return (
+    <RecaptchaProvider>
+      <ContactForm />
+    </RecaptchaProvider>
   );
 }

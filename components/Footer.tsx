@@ -16,9 +16,11 @@ export default function Footer() {
             <div className="mb-4">
               <div className="relative w-48 h-12 mb-4">
                 <Image
-                  src="/logo.jpg"
+                  src="/logo.webp"
                   alt="THEATRE HOTEL d.o.o."
                   fill
+                  sizes="192px"
+                  quality={95}
                   className="object-contain"
                 />
               </div>
@@ -27,16 +29,36 @@ export default function Footer() {
               </p>
             </div>
             <div className="flex space-x-4 mt-6">
-              <a href="#" className="text-gray-400 hover:text-white transition-colors">
+              <a
+                href="#"
+                className="text-gray-400 hover:text-white transition-colors p-2"
+                aria-label="Visit our Facebook page"
+                title="Facebook"
+              >
                 <FaFacebookF className="text-xl" />
               </a>
-              <a href="#" className="text-gray-400 hover:text-white transition-colors">
+              <a
+                href="#"
+                className="text-gray-400 hover:text-white transition-colors p-2"
+                aria-label="Follow us on Twitter"
+                title="Twitter"
+              >
                 <FaTwitter className="text-xl" />
               </a>
-              <a href="#" className="text-gray-400 hover:text-white transition-colors">
+              <a
+                href="#"
+                className="text-gray-400 hover:text-white transition-colors p-2"
+                aria-label="Follow us on Instagram"
+                title="Instagram"
+              >
                 <FaInstagram className="text-xl" />
               </a>
-              <a href="#" className="text-gray-400 hover:text-white transition-colors">
+              <a
+                href="#"
+                className="text-gray-400 hover:text-white transition-colors p-2"
+                aria-label="Connect with us on LinkedIn"
+                title="LinkedIn"
+              >
                 <FaLinkedinIn className="text-xl" />
               </a>
             </div>
@@ -83,8 +105,20 @@ export default function Footer() {
               <li className="flex items-center space-x-3">
                 <FaPhone className="text-primary-500 flex-shrink-0" />
                 <div className="text-gray-400 text-sm">
-                  <a href="tel:021655961" className="hover:text-white transition-colors block">021655961</a>
-                  <a href="tel:+385924512500" className="hover:text-white transition-colors block">+385 92 451 2500</a>
+                  <a
+                    href="tel:021655961"
+                    className="hover:text-white transition-colors block py-2 px-3 -mx-3 rounded"
+                    aria-label="Call hotel phone number 021655961"
+                  >
+                    021655961
+                  </a>
+                  <a
+                    href="tel:+385924512500"
+                    className="hover:text-white transition-colors block py-2 px-3 -mx-3 rounded"
+                    aria-label="Call mobile phone number +385 92 451 2500"
+                  >
+                    +385 92 451 2500
+                  </a>
                 </div>
               </li>
               <li className="flex items-center space-x-3">
