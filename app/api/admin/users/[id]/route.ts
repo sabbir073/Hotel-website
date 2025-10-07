@@ -7,7 +7,7 @@ import { hashPassword } from '@/lib/auth';
 // PUT - Update user
 export async function PUT(
   request: Request,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   try {
     const session = await getServerSession(authOptions);
@@ -16,7 +16,7 @@ export async function PUT(
     }
 
     const { username, email, password, full_name, status } = await request.json();
-    const userId = params.id;
+    const { id: userId } = await params;
 
     // Validate required fields
     if (!username || !email || !full_name) {
@@ -56,7 +56,7 @@ export async function PUT(
 // DELETE - Delete user
 export async function DELETE(
   request: Request,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   try {
     const session = await getServerSession(authOptions);
@@ -64,7 +64,7 @@ export async function DELETE(
       return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
     }
 
-    const userId = params.id;
+    const { id: userId } = await params;
 
     // Prevent deleting own account
     if ((session.user as any).id === userId) {
