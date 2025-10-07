@@ -25,6 +25,7 @@ export default function Home() {
             quality={95}
             className="object-cover"
             priority
+            fetchPriority="high"
           />
           <div className="absolute inset-0 bg-black/70"></div>
         </div>
