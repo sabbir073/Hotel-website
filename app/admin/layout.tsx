@@ -1,20 +1,11 @@
-import type { Metadata } from "next";
+import { generateSEO } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  robots: {
-    index: false,
-    follow: false,
-    nocache: true,
-    googleBot: {
-      index: false,
-      follow: false,
-      noimageindex: true,
-      "max-video-preview": -1,
-      "max-image-preview": "large",
-      "max-snippet": -1,
-    },
-  },
-};
+export const metadata = generateSEO({
+  title: "Admin Dashboard",
+  description: "Admin area for THEATRE HOTEL d.o.o.",
+  url: "/admin",
+  noindex: true,
+});
 
 export default function AdminLayout({
   children,

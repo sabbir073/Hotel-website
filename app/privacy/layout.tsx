@@ -1,16 +1,11 @@
-import type { Metadata } from "next";
+import { generateSEO } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata = generateSEO({
   title: "Privacy Policy",
   description: "THEATRE HOTEL d.o.o. Privacy Policy. Learn how we collect, use, and protect your personal information. GDPR compliant data protection practices for our Split, Croatia hotel.",
-  robots: {
-    index: true,
-    follow: true,
-  },
-  alternates: {
-    canonical: "https://theatrehoteldoo.com/privacy",
-  },
-};
+  url: "/privacy",
+  keywords: ["privacy policy", "data protection", "GDPR", "hotel privacy"],
+});
 
 export default function PrivacyLayout({
   children,

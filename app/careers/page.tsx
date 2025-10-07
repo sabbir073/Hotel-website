@@ -158,7 +158,7 @@ export default function Careers() {
 
       // Step 5: Complete (100%)
       setUploadProgress(100);
-      setUploadStatus('Application submitted successfully!');
+      setUploadStatus(t?.careers?.applicationForm?.uploadProgress || 'Application submitted successfully!');
 
       setTimeout(() => {
         setShowApplicationForm(false);
@@ -180,7 +180,7 @@ export default function Careers() {
       }, 1000);
 
     } catch (error: any) {
-      setErrorMessage(error?.message || 'An error occurred. Please try again.');
+      setErrorMessage(error?.message || t?.careers?.applicationForm?.errorMessage || 'An error occurred. Please try again.');
       setShowErrorModal(true);
       setUploadProgress(0);
       setUploadStatus('');
@@ -652,12 +652,12 @@ export default function Careers() {
                 <FaCheckCircle className="text-4xl text-green-600" />
               </div>
 
-              <h2 className="text-2xl font-semibold mb-2 text-gray-900">Application Submitted!</h2>
+              <h2 className="text-2xl font-semibold mb-2 text-gray-900">{t?.careers?.applicationForm?.successTitle || "Application Submitted!"}</h2>
               <p className="text-gray-600 mb-6">
-                Thank you for your application! We have received your resume and will review it shortly.
+                {t?.careers?.applicationForm?.successMessage || "Thank you for your application! We have received your resume and will review it shortly."}
                 <br />
                 <span className="text-green-600 text-sm mt-2 block font-medium">
-                  We will contact you soon via email.
+                  {t?.careers?.applicationForm?.successContact || "We will contact you soon via email."}
                 </span>
               </p>
 
@@ -665,7 +665,7 @@ export default function Careers() {
                 onClick={() => setShowSuccessModal(false)}
                 className="px-8 py-3 bg-gradient-to-r from-primary-600 to-primary-700 text-white rounded-lg hover:from-primary-700 hover:to-primary-800 transition-all font-medium w-full"
               >
-                Close
+                {t?.careers?.applicationForm?.close || "Close"}
               </button>
             </div>
           </div>
@@ -688,12 +688,12 @@ export default function Careers() {
                 <FaTimes className="text-4xl text-red-600" />
               </div>
 
-              <h2 className="text-2xl font-semibold mb-2 text-gray-900">Submission Failed</h2>
+              <h2 className="text-2xl font-semibold mb-2 text-gray-900">{t?.careers?.applicationForm?.errorTitle || "Submission Failed"}</h2>
               <p className="text-gray-600 mb-6">
                 {errorMessage}
                 <br />
                 <span className="text-sm mt-2 block text-gray-500">
-                  Please try again or contact us if the problem persists.
+                  {t?.careers?.applicationForm?.errorContact || "Please try again or contact us if the problem persists."}
                 </span>
               </p>
 
@@ -701,7 +701,7 @@ export default function Careers() {
                 onClick={() => setShowErrorModal(false)}
                 className="px-8 py-3 bg-red-600 text-white rounded-lg hover:bg-red-700 transition-all font-medium w-full"
               >
-                Close
+                {t?.careers?.applicationForm?.close || "Close"}
               </button>
             </div>
           </div>

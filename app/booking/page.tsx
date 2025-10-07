@@ -218,7 +218,7 @@ function BookingContent() {
       setBookingId(data.bookingId);
       setIsBooked(true);
     } catch (error) {
-      setError('An error occurred. Please try again.');
+      setError(t.booking.payment.errorMessage);
     } finally {
       setIsSubmitting(false);
     }
@@ -229,8 +229,8 @@ function BookingContent() {
       {/* Page Header */}
       <div className="bg-gradient-to-r from-primary-600 to-primary-800 text-white py-16">
         <div className="container mx-auto px-4 text-center">
-          <h1 className="text-4xl md:text-5xl font-serif font-bold mb-2">Book Your Stay</h1>
-          <p className="text-xl">Complete your reservation at THEATRE HOTEL Split Croatia</p>
+          <h1 className="text-4xl md:text-5xl font-serif font-bold mb-2">{t.booking.title}</h1>
+          <p className="text-xl">{t.booking.subtitle || 'Complete your reservation at THEATRE HOTEL Split Croatia'}</p>
         </div>
       </div>
 
@@ -240,28 +240,28 @@ function BookingContent() {
           <div className="max-w-2xl mx-auto">
             <div className="bg-white rounded-2xl shadow-xl p-8 text-center">
               <FaCheckCircle className="text-6xl text-green-500 mx-auto mb-4" />
-              <h2 className="text-3xl font-bold text-gray-900 mb-2">Booking Confirmed!</h2>
-              <p className="text-xl text-gray-600 mb-6">Confirmation #{bookingId}</p>
+              <h2 className="text-3xl font-bold text-gray-900 mb-2">{t.booking.success.title}</h2>
+              <p className="text-xl text-gray-600 mb-6">{t.booking.success.confirmation}{bookingId}</p>
               <div className="bg-green-50 border border-green-200 rounded-lg p-6 mb-6">
                 <p className="text-green-800">
-                  Thank you for your booking! A confirmation email has been sent to <strong>{formData.email}</strong>.
+                  {t.booking.success.thankYou} <strong>{formData.email}</strong>.
                 </p>
               </div>
               <div className="text-left bg-gray-50 rounded-lg p-6 mb-6">
-                <h3 className="font-semibold text-lg mb-3">Booking Summary:</h3>
+                <h3 className="font-semibold text-lg mb-3">{t.booking.success.summaryTitle}</h3>
                 <div className="space-y-2 text-sm">
-                  <p><span className="text-gray-600">Guest:</span> <strong>{formData.firstName} {formData.lastName}</strong></p>
-                  <p><span className="text-gray-600">Room:</span> <strong>{roomsInfo[selectedRoom].name}</strong></p>
-                  <p><span className="text-gray-600">Check-in:</span> <strong>{formData.checkIn}</strong></p>
-                  <p><span className="text-gray-600">Check-out:</span> <strong>{formData.checkOut}</strong></p>
-                  <p><span className="text-gray-600">Total Amount:</span> <strong className="text-primary-600">€{total.toFixed(2)}</strong></p>
+                  <p><span className="text-gray-600">{t.booking.success.guest}:</span> <strong>{formData.firstName} {formData.lastName}</strong></p>
+                  <p><span className="text-gray-600">{t.booking.success.room}:</span> <strong>{t.rooms.types[selectedRoom as keyof typeof t.rooms.types]?.name || roomsInfo[selectedRoom].name}</strong></p>
+                  <p><span className="text-gray-600">{t.booking.success.checkIn}:</span> <strong>{formData.checkIn}</strong></p>
+                  <p><span className="text-gray-600">{t.booking.success.checkOut}:</span> <strong>{formData.checkOut}</strong></p>
+                  <p><span className="text-gray-600">{t.booking.success.totalAmount}:</span> <strong className="text-primary-600">€{total.toFixed(2)}</strong></p>
                 </div>
               </div>
               <button
                 onClick={() => window.location.href = '/'}
                 className="px-8 py-3 bg-primary-600 text-white rounded-lg hover:bg-primary-700 transition-all font-medium"
               >
-                Return to Home
+                {t.booking.success.returnHome}
               </button>
             </div>
           </div>
@@ -303,27 +303,30 @@ function BookingContent() {
             <div className="bg-white rounded-2xl shadow-lg p-6">
               {currentStep === 1 && (
                 <div>
-                  <h2 className="text-2xl font-semibold mb-6">Select Your Room & Dates</h2>
+                  <h2 className="text-2xl font-semibold mb-6">{t.booking.selectRoom.title}</h2>
 
                   {/* Room Selection */}
                   <div className="mb-8">
-                    <label className="block text-gray-700 font-medium mb-4">Choose Room Type</label>
+                    <label className="block text-gray-700 font-medium mb-4">{t.booking.selectRoom.chooseRoomType}</label>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                      {Object.entries(roomsInfo).map(([key, room]: [string, any]) => (
-                        <div
-                          key={key}
-                          onClick={() => setSelectedRoom(key)}
-                          className={`border-2 rounded-xl p-4 cursor-pointer transition-all ${
-                            selectedRoom === key ? 'border-primary-600 bg-primary-50' : 'border-gray-200 hover:border-gray-300'
-                          }`}
-                        >
-                          <div className="relative h-32 mb-3 rounded-lg overflow-hidden">
-                            <Image src={room.image} alt={`${room.name} at THEATRE HOTEL Split Croatia - luxury accommodation option`} fill className="object-cover" />
+                      {Object.entries(roomsInfo).map(([key, room]: [string, any]) => {
+                        const roomTranslation = t.rooms.types[key as keyof typeof t.rooms.types];
+                        return (
+                          <div
+                            key={key}
+                            onClick={() => setSelectedRoom(key)}
+                            className={`border-2 rounded-xl p-4 cursor-pointer transition-all ${
+                              selectedRoom === key ? 'border-primary-600 bg-primary-50' : 'border-gray-200 hover:border-gray-300'
+                            }`}
+                          >
+                            <div className="relative h-32 mb-3 rounded-lg overflow-hidden">
+                              <Image src={room.image} alt={`${roomTranslation?.name || room.name} at THEATRE HOTEL Split Croatia - luxury accommodation option`} fill className="object-cover" />
+                            </div>
+                            <h3 className="font-semibold">{roomTranslation?.name || room.name}</h3>
+                            <p className="text-primary-600 font-bold">€{room.price}/{t.booking.selectRoom.night}</p>
                           </div>
-                          <h3 className="font-semibold">{room.name}</h3>
-                          <p className="text-primary-600 font-bold">€{room.price}/night</p>
-                        </div>
-                      ))}
+                        );
+                      })}
                     </div>
                   </div>
 
@@ -332,7 +335,7 @@ function BookingContent() {
                     <div>
                       <label className="block text-gray-700 font-medium mb-2">
                         <FaCalendarAlt className="inline mr-2" />
-                        Check-in Date
+                        {t.booking.selectRoom.checkInDate}
                       </label>
                       <input
                         type="date"
@@ -347,7 +350,7 @@ function BookingContent() {
                     <div>
                       <label className="block text-gray-700 font-medium mb-2">
                         <FaCalendarAlt className="inline mr-2" />
-                        Check-out Date
+                        {t.booking.selectRoom.checkOutDate}
                       </label>
                       <input
                         type="date"
@@ -372,7 +375,7 @@ function BookingContent() {
                         className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500"
                       >
                         {[1,2,3,4,5,6].map(n => (
-                          <option key={n} value={n}>{n} {n === 1 ? 'Adult' : 'Adults'}</option>
+                          <option key={n} value={n}>{n} {n === 1 ? t.booking.selectRoom.adult : t.booking.selectRoom.adults}</option>
                         ))}
                       </select>
                     </div>
@@ -385,7 +388,7 @@ function BookingContent() {
                         className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500"
                       >
                         {[0,1,2,3,4].map(n => (
-                          <option key={n} value={n}>{n} {n === 1 ? 'Child' : 'Children'}</option>
+                          <option key={n} value={n}>{n} {n === 1 ? t.booking.selectRoom.child : t.booking.selectRoom.children}</option>
                         ))}
                       </select>
                     </div>
@@ -395,7 +398,7 @@ function BookingContent() {
 
               {currentStep === 2 && (
                 <div>
-                  <h2 className="text-2xl font-semibold mb-6">Guest Information</h2>
+                  <h2 className="text-2xl font-semibold mb-6">{t.booking.guestInfo.title}</h2>
 
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
                     <div>
@@ -449,7 +452,7 @@ function BookingContent() {
 
                   <div className="mb-6">
                     <label className="block text-gray-700 font-medium mb-2">
-                      {t.booking.form.passport} (Optional)
+                      {t.booking.form.passport}
                     </label>
                     <input
                       type="text"
@@ -482,7 +485,7 @@ function BookingContent() {
                       onChange={handleInputChange}
                       rows={4}
                       className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500"
-                      placeholder="Any special requests or requirements..."
+                      placeholder={t.booking.guestInfo.anySpecialRequests}
                     />
                   </div>
                 </div>
@@ -491,7 +494,7 @@ function BookingContent() {
               {currentStep === 3 && (
                 <div>
                   <div className="flex justify-between items-center mb-6">
-                    <h2 className="text-2xl font-semibold">Payment Information</h2>
+                    <h2 className="text-2xl font-semibold">{t.booking.paymentInfo.title}</h2>
                     <div className="flex items-center space-x-2">
                       <Image src="https://upload.wikimedia.org/wikipedia/commons/0/04/Visa.svg" alt="Visa credit card payment accepted at THEATRE HOTEL Split" width={50} height={32} className="h-8" />
                       <Image src="https://upload.wikimedia.org/wikipedia/commons/2/2a/Mastercard-logo.svg" alt="Mastercard credit card payment accepted for hotel booking" width={50} height={32} className="h-8" />
@@ -502,14 +505,14 @@ function BookingContent() {
                     <div className="flex items-start space-x-3">
                       <FaLock className="text-blue-600 mt-1" />
                       <div>
-                        <p className="text-blue-900 font-semibold text-sm">Secure Payment</p>
-                        <p className="text-blue-800 text-sm">We accept Visa and Mastercard. Your payment information is encrypted and secure.</p>
+                        <p className="text-blue-900 font-semibold text-sm">{t.booking.payment.securePayment}</p>
+                        <p className="text-blue-800 text-sm">{t.booking.payment.securePaymentDesc}</p>
                       </div>
                     </div>
                   </div>
 
                   <div className="mb-6">
-                    <label className="block text-gray-700 font-medium mb-2">Card Number *</label>
+                    <label className="block text-gray-700 font-medium mb-2">{t.booking.payment.cardNumber} *</label>
                     <input
                       type="text"
                       name="cardNumber"
@@ -523,13 +526,13 @@ function BookingContent() {
                   </div>
 
                   <div className="mb-6">
-                    <label className="block text-gray-700 font-medium mb-2">Cardholder Name *</label>
+                    <label className="block text-gray-700 font-medium mb-2">{t.booking.payment.cardHolder} *</label>
                     <input
                       type="text"
                       name="cardHolder"
                       value={formData.cardHolder}
                       onChange={handleInputChange}
-                      placeholder="John Doe"
+                      placeholder={t.booking.payment.cardHolderPlaceholder}
                       required
                       className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500"
                     />
@@ -537,7 +540,7 @@ function BookingContent() {
 
                   <div className="grid grid-cols-2 gap-6 mb-6">
                     <div>
-                      <label className="block text-gray-700 font-medium mb-2">Expiry Date *</label>
+                      <label className="block text-gray-700 font-medium mb-2">{t.booking.payment.expiry} *</label>
                       <input
                         type="text"
                         name="expiry"
@@ -550,7 +553,7 @@ function BookingContent() {
                       />
                     </div>
                     <div>
-                      <label className="block text-gray-700 font-medium mb-2">CVV *</label>
+                      <label className="block text-gray-700 font-medium mb-2">{t.booking.payment.cvv} *</label>
                       <input
                         type="text"
                         name="cvv"
@@ -566,10 +569,10 @@ function BookingContent() {
 
                   <hr className="my-6" />
 
-                  <h3 className="text-lg font-semibold mb-4">Billing Address</h3>
+                  <h3 className="text-lg font-semibold mb-4">{t.booking.paymentInfo.billingAddress}</h3>
 
                   <div className="mb-4">
-                    <label className="block text-gray-700 font-medium mb-2">Billing Address *</label>
+                    <label className="block text-gray-700 font-medium mb-2">{t.booking.payment.billingAddress} *</label>
                     <input
                       type="text"
                       name="billingAddress"
@@ -583,19 +586,19 @@ function BookingContent() {
 
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
                     <div>
-                      <label className="block text-gray-700 font-medium mb-2">City *</label>
+                      <label className="block text-gray-700 font-medium mb-2">{t.booking.payment.city} *</label>
                       <input
                         type="text"
                         name="city"
                         value={formData.city}
                         onChange={handleInputChange}
-                        placeholder="New York"
+                        placeholder={t.booking.payment.cityPlaceholder}
                         required
                         className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500"
                       />
                     </div>
                     <div>
-                      <label className="block text-gray-700 font-medium mb-2">Postal Code *</label>
+                      <label className="block text-gray-700 font-medium mb-2">{t.booking.payment.postalCode} *</label>
                       <input
                         type="text"
                         name="postalCode"
@@ -609,7 +612,7 @@ function BookingContent() {
                   </div>
 
                   <div className="mb-6">
-                    <label className="block text-gray-700 font-medium mb-2">Country *</label>
+                    <label className="block text-gray-700 font-medium mb-2">{t.booking.payment.country} *</label>
                     <select
                       name="country"
                       value={formData.country}
@@ -617,7 +620,7 @@ function BookingContent() {
                       required
                       className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500"
                     >
-                      <option value="">Select Country</option>
+                      <option value="">{t.booking.payment.selectCountry}</option>
                       <option value="Albania">Albania</option>
                       <option value="Algeria">Algeria</option>
                       <option value="Andorra">Andorra</option>
@@ -730,14 +733,14 @@ function BookingContent() {
                         className="mt-1 w-5 h-5 text-primary-600 border-gray-300 rounded focus:ring-primary-500"
                       />
                       <span className="text-sm text-gray-700">
-                        I accept the <a href="/terms" className="text-primary-600 hover:underline" target="_blank">Terms and Conditions</a> and <a href="/privacy" className="text-primary-600 hover:underline" target="_blank">Privacy Policy</a> *
+                        {t.booking.payment.acceptTerms} <a href="/terms" className="text-primary-600 hover:underline" target="_blank">{t.booking.payment.termsAndConditions}</a> {t.booking.payment.and} <a href="/privacy" className="text-primary-600 hover:underline" target="_blank">{t.booking.payment.privacyPolicy}</a> *
                       </span>
                     </label>
                   </div>
 
                   <div className="mt-6 flex items-center justify-center space-x-2 text-sm text-gray-600">
                     <FaLock className="text-green-600" />
-                    <span>256-bit SSL Encrypted Payment</span>
+                    <span>{t.booking.payment.sslEncrypted}</span>
                   </div>
                 </div>
               )}
@@ -754,7 +757,7 @@ function BookingContent() {
                   disabled={currentStep === 1}
                 >
                   <FaArrowLeft className="inline mr-2" />
-                  Previous
+                  {t.booking.navigation.previous}
                 </button>
 
                 {currentStep < 3 ? (
@@ -770,7 +773,7 @@ function BookingContent() {
                         : 'bg-gradient-to-r from-primary-600 to-primary-700 text-white hover:from-primary-700 hover:to-primary-800'
                     }`}
                   >
-                    Next
+                    {t.booking.navigation.next}
                     <FaArrowRight className="inline ml-2" />
                   </button>
                 ) : (
@@ -783,7 +786,7 @@ function BookingContent() {
                         : 'bg-gradient-to-r from-green-600 to-green-700 text-white hover:from-green-700 hover:to-green-800'
                     }`}
                   >
-                    {isSubmitting ? 'Processing...' : 'Complete Booking'}
+                    {isSubmitting ? t.booking.navigation.processing || 'Processing...' : t.booking.navigation.completeBooking}
                   </button>
                 )}
                 {error && (
@@ -810,19 +813,19 @@ function BookingContent() {
                       className="object-cover"
                     />
                   </div>
-                  <h4 className="font-semibold">{roomsInfo[selectedRoom].name}</h4>
-                  <p className="text-primary-600 font-bold">€{roomsInfo[selectedRoom].price}/night</p>
+                  <h4 className="font-semibold">{t.rooms.types[selectedRoom as keyof typeof t.rooms.types]?.name || roomsInfo[selectedRoom].name}</h4>
+                  <p className="text-primary-600 font-bold">€{roomsInfo[selectedRoom].price}/{t.booking.selectRoom.night}</p>
                 </div>
               )}
 
               <div className="space-y-3 mb-6">
                 <div className="flex justify-between text-sm">
                   <span className="text-gray-600">{t.booking.summary.checkIn}:</span>
-                  <span className="font-medium">{formData.checkIn || 'Not selected'}</span>
+                  <span className="font-medium">{formData.checkIn || (t.booking.summary.notSelected || 'Not selected')}</span>
                 </div>
                 <div className="flex justify-between text-sm">
                   <span className="text-gray-600">{t.booking.summary.checkOut}:</span>
-                  <span className="font-medium">{formData.checkOut || 'Not selected'}</span>
+                  <span className="font-medium">{formData.checkOut || (t.booking.summary.notSelected || 'Not selected')}</span>
                 </div>
                 <div className="flex justify-between text-sm">
                   <span className="text-gray-600">{t.booking.summary.nights}:</span>
@@ -831,7 +834,7 @@ function BookingContent() {
                 <div className="flex justify-between text-sm">
                   <span className="text-gray-600">{t.booking.summary.guests}:</span>
                   <span className="font-medium">
-                    {formData.adults} Adults{formData.children !== '0' && `, ${formData.children} Children`}
+                    {formData.adults} {parseInt(formData.adults) > 1 ? t.booking.selectRoom.adults : t.booking.selectRoom.adult}{formData.children !== '0' && `, ${formData.children} ${parseInt(formData.children) > 1 ? t.booking.selectRoom.children : t.booking.selectRoom.child}`}
                   </span>
                 </div>
               </div>
@@ -854,7 +857,7 @@ function BookingContent() {
               <div className="mt-6 p-3 bg-green-50 rounded-lg">
                 <p className="text-green-800 text-sm">
                   <FaCheck className="inline mr-2" />
-                  Free cancellation up to 24 hours before check-in
+                  {t.booking.sidebar.freeCancellation}
                 </p>
               </div>
             </div>

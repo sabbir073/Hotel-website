@@ -1,16 +1,11 @@
-import type { Metadata } from "next";
+import { generateSEO } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata = generateSEO({
   title: "Terms of Service",
   description: "THEATRE HOTEL d.o.o. Terms of Service. Read our booking terms, cancellation policy, guest conduct rules, and legal terms for stays at our Split, Croatia hotel.",
-  robots: {
-    index: true,
-    follow: true,
-  },
-  alternates: {
-    canonical: "https://theatrehoteldoo.com/terms",
-  },
-};
+  url: "/terms",
+  keywords: ["terms of service", "booking terms", "cancellation policy", "hotel terms"],
+});
 
 export default function TermsLayout({
   children,

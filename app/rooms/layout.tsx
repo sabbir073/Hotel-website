@@ -1,8 +1,9 @@
-import type { Metadata } from "next";
+import { generateSEO } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata = generateSEO({
   title: "Luxury Rooms & Suites in Split",
   description: "Discover our exquisite selection of luxury rooms and suites at THEATRE HOTEL d.o.o. From elegant Standard Rooms to opulent Presidential Suites, experience world-class comfort in Split, Croatia. Free WiFi, sea views, premium amenities.",
+  url: "/rooms",
   keywords: [
     "luxury rooms Split",
     "hotel suites Croatia",
@@ -15,22 +16,7 @@ export const metadata: Metadata = {
     "luxury accommodation Split",
     "5-star hotel rooms",
   ],
-  openGraph: {
-    title: "Luxury Rooms & Suites | THEATRE HOTEL d.o.o. Split",
-    description: "Discover our exquisite selection of luxury rooms and suites. From elegant Standard Rooms to opulent Presidential Suites in Split, Croatia.",
-    images: [
-      {
-        url: "/og_image.png",
-        width: 1200,
-        height: 630,
-        alt: "Luxury Hotel Rooms at THEATRE HOTEL d.o.o.",
-      },
-    ],
-  },
-  alternates: {
-    canonical: "https://theatrehoteldoo.com/rooms",
-  },
-};
+});
 
 export default function RoomsLayout({
   children,

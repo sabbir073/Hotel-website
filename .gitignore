@@ -44,8 +44,11 @@ email-dns-setup.md
 *.draft.md
 *.notes.md
 SEO_IMPLEMENTATION_SUMMARY.md
+SEO_MODULE_GUIDE.md
+SEO_IMPLEMENTATION_COMPLETE.md
 TODO_IMAGES.md
 IMAGE_GENERATION_INSTRUCTIONS.md
+WEBSITE_IMPROVEMENT_RECOMMENDATIONS.md
 
 # Database and migrations
 requirements.txt

@@ -8,7 +8,9 @@
       "Bash(npm run dev:*)",
       "Bash(npm run build:*)",
       "Bash(node -e \"console.log(require(''crypto'').randomBytes(32).toString(''base64''))\")",
-      "Bash(node:*)"
+      "Bash(node:*)",
+      "Bash(curl:*)",
+      "Bash(npm uninstall:*)"
     ],
     "deny": [],
     "ask": []

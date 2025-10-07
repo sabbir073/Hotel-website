@@ -37,7 +37,7 @@ export default function Contact() {
     try {
       // Execute reCAPTCHA
       if (!executeRecaptcha) {
-        setError('reCAPTCHA not loaded. Please refresh the page.');
+        setError(t.contact.errors.recaptchaNotLoaded);
         setIsSubmitting(false);
         return;
       }
@@ -78,7 +78,7 @@ export default function Contact() {
       const data = await response.json();
 
       if (!response.ok) {
-        setError(data.error || 'Failed to submit form');
+        setError(data.error || t.contact.errors.failedToSubmit);
         setIsSubmitting(false);
         return;
       }
@@ -97,7 +97,7 @@ export default function Contact() {
         });
       }, 5000);
     } catch (error) {
-      setError('An error occurred. Please try again.');
+      setError(t.contact.errors.generalError);
     } finally {
       setIsSubmitting(false);
     }
@@ -179,9 +179,9 @@ export default function Contact() {
                   <div>
                     <h3 className="text-lg font-semibold mb-1">{t.contact.info.hours}</h3>
                     <div className="text-gray-600 space-y-1">
-                      <p>Reception: 24/7</p>
-                      <p>Restaurant: 7:00 - 23:00</p>
-                      <p>Spa: 9:00 - 21:00</p>
+                      <p>{t.contact.hoursDetails.reception}</p>
+                      <p>{t.contact.hoursDetails.restaurant}</p>
+                      <p>{t.contact.hoursDetails.spa}</p>
                     </div>
                   </div>
                 </div>
@@ -272,7 +272,7 @@ export default function Contact() {
                           value={formData.passport}
                           onChange={handleInputChange}
                           className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500"
-                          placeholder="Required for reservation inquiries"
+                          placeholder={t.contact.form.passportPlaceholder}
                         />
                       </div>
                     </div>
@@ -288,14 +288,14 @@ export default function Contact() {
                         className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500"
                         required
                       >
-                        <option value="">Select a subject...</option>
-                        <option value="reservation">Reservation Inquiry</option>
-                        <option value="event">Event Planning</option>
-                        <option value="spa">Spa Services</option>
-                        <option value="restaurant">Restaurant</option>
-                        <option value="complaint">Complaint</option>
-                        <option value="compliment">Compliment</option>
-                        <option value="other">Other</option>
+                        <option value="">{t.contact.form.selectSubject}</option>
+                        <option value="reservation">{t.contact.form.subjectOptions.reservation}</option>
+                        <option value="event">{t.contact.form.subjectOptions.event}</option>
+                        <option value="spa">{t.contact.form.subjectOptions.spa}</option>
+                        <option value="restaurant">{t.contact.form.subjectOptions.restaurant}</option>
+                        <option value="complaint">{t.contact.form.subjectOptions.complaint}</option>
+                        <option value="compliment">{t.contact.form.subjectOptions.compliment}</option>
+                        <option value="other">{t.contact.form.subjectOptions.other}</option>
                       </select>
                     </div>
 
@@ -309,7 +309,7 @@ export default function Contact() {
                         onChange={handleInputChange}
                         rows={5}
                         className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500"
-                        placeholder="Please describe your inquiry in detail..."
+                        placeholder={t.contact.form.messagePlaceholder}
                         required
                       />
                     </div>

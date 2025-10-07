@@ -269,7 +269,14 @@ export const translations = {
         experience10plus: "10+ years",
         coverLetterPlaceholder: "Tell us why you're the perfect fit for this position...",
         resumeUpload: "Click to upload or drag and drop",
-        resumeFormat: "PDF, DOC, DOCX (max 5MB)"
+        resumeFormat: "PDF, DOC, DOCX (max 5MB)",
+        uploadProgress: "Application submitted successfully!",
+        successTitle: "Application Submitted!",
+        successMessage: "Thank you for your application! We have received your resume and will review it shortly.",
+        successContact: "We will contact you soon via email.",
+        errorTitle: "Submission Failed",
+        errorMessage: "An error occurred. Please try again.",
+        errorContact: "Please try again or contact us if the problem persists."
       },
       employeeTestimonials: {
         title: "What Our Team Says",
@@ -346,6 +353,11 @@ export const translations = {
       sendMessage: "Send Us a Message",
       messageSent: "Message Sent!",
       messageThankYou: "Thank you for contacting us. We'll get back to you within 24 hours.",
+      errors: {
+        recaptchaNotLoaded: "reCAPTCHA not loaded. Please refresh the page.",
+        failedToSubmit: "Failed to submit form",
+        generalError: "An error occurred. Please try again."
+      },
       hoursDetails: {
         reception: "Reception: 24/7",
         restaurant: "Restaurant: 7:00 - 23:00",
@@ -386,9 +398,8 @@ export const translations = {
         requiredNote: "* Required fields. We typically respond within 24 hours.",
         passportPlaceholder: "Required for reservation inquiries",
         messagePlaceholder: "Please describe your inquiry in detail...",
-        required: "Required fields. We typically respond within 24 hours.",
+        selectSubject: "Select a subject...",
         subjectOptions: {
-          select: "Select a subject...",
           reservation: "Reservation Inquiry",
           event: "Event Planning",
           spa: "Spa Services",
@@ -481,7 +492,18 @@ export const translations = {
         total: "Total Amount",
         deposit: "Deposit Required",
         payNow: "Pay Now",
-        payLater: "Pay at Hotel"
+        payLater: "Pay at Hotel",
+        securePayment: "Secure Payment",
+        securePaymentDesc: "We accept Visa and Mastercard. Your payment information is encrypted and secure.",
+        sslEncrypted: "256-bit SSL Encrypted Payment",
+        selectCountry: "Select Country",
+        cardHolderPlaceholder: "John Doe",
+        cityPlaceholder: "New York",
+        errorMessage: "An error occurred. Please try again.",
+        acceptTerms: "I accept the",
+        termsAndConditions: "Terms and Conditions",
+        and: "and",
+        privacyPolicy: "Privacy Policy"
       },
       summary: {
         title: "Booking Summary",
@@ -492,7 +514,20 @@ export const translations = {
         guests: "Guests",
         subtotal: "Subtotal",
         taxes: "Taxes & Fees",
-        total: "Total"
+        total: "Total",
+        notSelected: "Not selected"
+      },
+      success: {
+        title: "Booking Confirmed!",
+        confirmation: "Confirmation #",
+        thankYou: "Thank you for your booking! A confirmation email has been sent to",
+        summaryTitle: "Booking Summary:",
+        guest: "Guest",
+        room: "Room",
+        checkIn: "Check-in",
+        checkOut: "Check-out",
+        totalAmount: "Total Amount",
+        returnHome: "Return to Home"
       }
     },
     footer: {
@@ -1096,7 +1131,14 @@ export const translations = {
         experience10plus: "10+ godina",
         coverLetterPlaceholder: "Recite nam zašto ste savršeni za ovu poziciju...",
         resumeUpload: "Kliknite za učitavanje ili povucite i ispustite",
-        resumeFormat: "PDF, DOC, DOCX (max 5MB)"
+        resumeFormat: "PDF, DOC, DOCX (max 5MB)",
+        uploadProgress: "Prijava uspješno poslana!",
+        successTitle: "Prijava poslana!",
+        successMessage: "Hvala na vašoj prijavi! Primili smo vaš životopis i uskoro ćemo ga pregledati.",
+        successContact: "Uskoro ćemo vas kontaktirati putem emaila.",
+        errorTitle: "Slanje nije uspjelo",
+        errorMessage: "Došlo je do greške. Molimo pokušajte ponovo.",
+        errorContact: "Molimo pokušajte ponovo ili nas kontaktirajte ako se problem nastavi."
       },
       employeeTestimonials: {
         title: "Što kaže naš tim",
@@ -1173,6 +1215,11 @@ export const translations = {
       sendMessage: "Pošaljite nam poruku",
       messageSent: "Poruka poslana!",
       messageThankYou: "Hvala što ste nas kontaktirali. Javit ćemo vam se u roku od 24 sata.",
+      errors: {
+        recaptchaNotLoaded: "reCAPTCHA nije učitan. Molimo osvježite stranicu.",
+        failedToSubmit: "Slanje obrasca nije uspjelo",
+        generalError: "Došlo je do greške. Molimo pokušajte ponovo."
+      },
       hoursDetails: {
         reception: "Recepcija: 24/7",
         restaurant: "Restoran: 7:00 - 23:00",
@@ -1213,6 +1260,16 @@ export const translations = {
         requiredNote: "* Obavezna polja. Obično odgovaramo u roku od 24 sata.",
         passportPlaceholder: "Potrebno za upite o rezervaciji",
         namePlaceholder: "Unesite svoje puno ime",
+        selectSubject: "Odaberite predmet...",
+        subjectOptions: {
+          reservation: "Upit o rezervaciji",
+          event: "Planiranje događaja",
+          spa: "Spa usluge",
+          restaurant: "Restoran",
+          complaint: "Pritužba",
+          compliment: "Kompliment",
+          other: "Ostalo"
+        },
         emailPlaceholder: "vas@email.com",
         phonePlaceholder: "+385 xx xxx xxxx",
         subjectPlaceholder: "Kako vam možemo pomoći?",
@@ -1221,10 +1278,44 @@ export const translations = {
     },
     booking: {
       title: "Rezervirajte boravak",
+      subtitle: "Dovršite svoju rezervaciju u THEATRE HOTEL Split Croatia",
       steps: {
         room: "Odabir sobe",
         details: "Podaci gosta",
         payment: "Plaćanje"
+      },
+      selectRoom: {
+        title: "Odaberite sobu i datume",
+        chooseRoomType: "Odaberi tip sobe",
+        checkInDate: "Datum prijave",
+        checkOutDate: "Datum odjave",
+        night: "noć",
+        adult: "Odrasla osoba",
+        adults: "Odrasli",
+        child: "Dijete",
+        children: "Djeca"
+      },
+      guestInfo: {
+        title: "Informacije o gostu",
+        required: "Obavezna polja. Obično odgovaramo u roku od 24 sata.",
+        passportNote: "Potrebno za međunarodne rezervacije",
+        estimatedArrival: "Procijenjeno vrijeme dolaska",
+        anySpecialRequests: "Bilo koji posebni zahtjevi ili potrebe..."
+      },
+      paymentInfo: {
+        title: "Informacije o plaćanju",
+        demoNote: "Ovo je demo stranica plaćanja. Nikakvo stvarno plaćanje neće biti obrađeno.",
+        billingAddress: "Adresa za naplatu",
+        secureNote: "Vaše informacije o plaćanju su sigurne i šifrirane"
+      },
+      navigation: {
+        previous: "Prethodno",
+        next: "Sljedeće",
+        completeBooking: "Završi rezervaciju",
+        bookingConfirmed: "Rezervacija potvrđena! (Demo način - nije napravljena stvarna rezervacija)"
+      },
+      sidebar: {
+        freeCancellation: "Besplatno otkazivanje do 24 sata prije prijave"
       },
       form: {
         firstName: "Ime",
@@ -1249,7 +1340,18 @@ export const translations = {
         total: "Ukupan iznos",
         deposit: "Potreban depozit",
         payNow: "Plati sada",
-        payLater: "Plati u hotelu"
+        payLater: "Plati u hotelu",
+        securePayment: "Sigurno plaćanje",
+        securePaymentDesc: "Prihvaćamo Visa i Mastercard. Vaše podatke o plaćanju su šifrirane i sigurne.",
+        sslEncrypted: "256-bitno SSL šifrirano plaćanje",
+        selectCountry: "Odaberi državu",
+        cardHolderPlaceholder: "Ime Prezime",
+        cityPlaceholder: "Zagreb",
+        errorMessage: "Došlo je do greške. Molimo pokušajte ponovo.",
+        acceptTerms: "Prihvaćam",
+        termsAndConditions: "Uvjete korištenja",
+        and: "i",
+        privacyPolicy: "Politiku privatnosti"
       },
       summary: {
         title: "Sažetak rezervacije",
@@ -1260,7 +1362,20 @@ export const translations = {
         guests: "Gosti",
         subtotal: "Međuzbroj",
         taxes: "Porezi i naknade",
-        total: "Ukupno"
+        total: "Ukupno",
+        notSelected: "Nije odabrano"
+      },
+      success: {
+        title: "Rezervacija potvrđena!",
+        confirmation: "Potvrda #",
+        thankYou: "Hvala vam na rezervaciji! Potvrdni email je poslan na",
+        summaryTitle: "Sažetak rezervacije:",
+        guest: "Gost",
+        room: "Soba",
+        checkIn: "Prijava",
+        checkOut: "Odjava",
+        totalAmount: "Ukupan iznos",
+        returnHome: "Povratak na početnu"
       }
     },
     footer: {
