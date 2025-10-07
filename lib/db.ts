@@ -8,7 +8,12 @@ const pool = mysql.createPool({
   database: process.env.DB_NAME,
   waitForConnections: true,
   connectionLimit: 10,
+  maxIdle: 10,
+  idleTimeout: 60000,
   queueLimit: 0,
+  enableKeepAlive: true,
+  keepAliveInitialDelay: 0,
+  connectTimeout: 10000,
   // SSL configuration for cPanel remote MySQL
   ssl: process.env.DB_SSL === 'true'
     ? { rejectUnauthorized: false } // Use false for self-signed certificates

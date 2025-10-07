@@ -47,7 +47,7 @@ export const translations = {
           country: "Italy"
         },
         review3: {
-          text: "The spa treatments were incredible! This hotel truly offers a five-star experience. Can&apos;t wait to come back!",
+          text: "The spa treatments were incredible! This hotel truly offers a five-star experience. Can't wait to come back!",
           name: "Emma Schmidt",
           country: "Germany"
         }
@@ -153,9 +153,9 @@ export const translations = {
       subtitle: "A Legacy of Croatian Hospitality",
       story: {
         title: "Our Story",
-        content: "Nestled in the heart of Split, THEATRE HOTEL d.o.o. has been a beacon of luxury and comfort since its inception. Our historic building, once home to the city&apos;s grand theatre, has been meticulously restored to offer modern amenities while preserving its timeless charm.",
+        content: "Nestled in the heart of Split, THEATRE HOTEL d.o.o. has been a beacon of luxury and comfort since its inception. Our historic building, once home to the city's grand theatre, has been meticulously restored to offer modern amenities while preserving its timeless charm.",
         content2: "Built in the early 20th century, our building has witnessed the golden age of Croatian theatre and arts. Today, we honor this heritage by providing a stage for unforgettable hospitality experiences, where every guest becomes the protagonist of their own Croatian story.",
-        content3: "With 45 meticulously designed rooms and suites, each space tells its own story while offering modern amenities and breathtaking views of the Adriatic Sea or the historic Diocletian&apos;s Palace."
+        content3: "With 45 meticulously designed rooms and suites, each space tells its own story while offering modern amenities and breathtaking views of the Adriatic Sea or the historic Diocletian's Palace."
       },
       mission: {
         title: "Our Mission",
