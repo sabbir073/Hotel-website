@@ -10,22 +10,22 @@ const roomsInfo: any = {
   standard: {
     name: 'Standard Room',
     price: 150,
-    image: 'https://images.unsplash.com/photo-1611892440504-42a792e24d32?w=400&h=300&fit=crop'
+    image: '/images/rooms/room-standard.jpg'
   },
   deluxe: {
     name: 'Deluxe Room',
     price: 250,
-    image: 'https://images.unsplash.com/photo-1590490360182-c33d57733427?w=400&h=300&fit=crop'
+    image: '/images/rooms/room-deluxe.jpg'
   },
   suite: {
     name: 'Executive Suite',
     price: 450,
-    image: 'https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=400&h=300&fit=crop'
+    image: '/images/rooms/room-suite.jpg'
   },
   presidential: {
     name: 'Presidential Suite',
     price: 850,
-    image: 'https://images.unsplash.com/photo-1629140727571-9b5c6f6267b4?w=400&h=300&fit=crop'
+    image: '/images/rooms/room-presidential.jpg'
   }
 };
 

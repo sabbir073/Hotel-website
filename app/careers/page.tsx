@@ -196,7 +196,7 @@ function CareersPage() {
       <section className="relative h-[60vh] flex items-center justify-center">
         <div className="absolute inset-0">
           <Image
-            src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=1920&h=1080&fit=crop"
+            src="/images/hero/hero-careers.jpg"
             alt="Careers at THEATRE HOTEL d.o.o. Split Croatia - join our professional hospitality team and build your career"
             fill
             className="object-cover"
@@ -557,7 +557,7 @@ function CareersPage() {
               <div className="flex items-center space-x-3">
                 <div className="relative w-12 h-12 rounded-full overflow-hidden">
                   <Image
-                    src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop"
+                    src="/images/avatars/avatar-1.jpg"
                     alt="THEATRE HOTEL employee testimonial - Front Desk Manager sharing career growth experience"
                     fill
                     className="object-cover"
@@ -577,7 +577,7 @@ function CareersPage() {
               <div className="flex items-center space-x-3">
                 <div className="relative w-12 h-12 rounded-full overflow-hidden">
                   <Image
-                    src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&h=100&fit=crop"
+                    src="/images/avatars/avatar-2.jpg"
                     alt="Spa Manager at luxury hotel Split Croatia - employee success story and testimonial"
                     fill
                     className="object-cover"
@@ -597,7 +597,7 @@ function CareersPage() {
               <div className="flex items-center space-x-3">
                 <div className="relative w-12 h-12 rounded-full overflow-hidden">
                   <Image
-                    src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&h=100&fit=crop"
+                    src="/images/avatars/avatar-3.jpg"
                     alt="Sous Chef THEATRE HOTEL Split - culinary professional sharing training and development experience"
                     fill
                     className="object-cover"

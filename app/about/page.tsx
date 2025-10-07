@@ -14,7 +14,7 @@ export default function About() {
       <section className="relative h-[60vh] flex items-center justify-center">
         <div className="absolute inset-0">
           <Image
-            src="https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=1920&h=1080&fit=crop"
+            src="/images/hero/hero-about.jpg"
             alt="About THEATRE HOTEL d.o.o. Split Croatia - luxury boutique hotel with rich heritage and exceptional hospitality"
             fill
             className="object-cover"
@@ -45,7 +45,7 @@ export default function About() {
             </div>
             <div className="relative h-[500px] rounded-2xl overflow-hidden shadow-2xl">
               <Image
-                src="https://images.unsplash.com/photo-1566073771259-6a8506099945?w=800&h=600&fit=crop"
+                src="/images/about/about-building.jpg"
                 alt="Historic architecture and elegant design of THEATRE HOTEL Split showcasing Croatian heritage and luxury hospitality"
                 fill
                 className="object-cover"
@@ -113,7 +113,7 @@ export default function About() {
             <div className="text-center">
               <div className="relative w-48 h-48 mx-auto mb-4 rounded-full overflow-hidden">
                 <Image
-                  src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&h=400&fit=crop"
+                  src="/images/team/team-1.jpg"
                   alt="Director of THEATRE HOTEL d.o.o. Split Croatia - experienced hospitality leader"
                   fill
                   className="object-cover"
@@ -127,7 +127,7 @@ export default function About() {
             <div className="text-center">
               <div className="relative w-48 h-48 mx-auto mb-4 rounded-full overflow-hidden">
                 <Image
-                  src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&h=400&fit=crop"
+                  src="/images/team/team-2.jpg"
                   alt="General Manager at luxury hotel Split - dedicated to exceptional guest service and hospitality excellence"
                   fill
                   className="object-cover"
@@ -141,7 +141,7 @@ export default function About() {
             <div className="text-center">
               <div className="relative w-48 h-48 mx-auto mb-4 rounded-full overflow-hidden">
                 <Image
-                  src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&h=400&fit=crop"
+                  src="/images/team/team-1.jpg"
                   alt="Operations Director THEATRE HOTEL Split - ensuring smooth daily operations and guest satisfaction"
                   fill
                   className="object-cover"
@@ -155,7 +155,7 @@ export default function About() {
             <div className="text-center">
               <div className="relative w-48 h-48 mx-auto mb-4 rounded-full overflow-hidden">
                 <Image
-                  src="https://images.unsplash.com/photo-1581299894007-aaa50297cf16?w=400&h=400&fit=crop"
+                  src="/images/team/team-3.jpg"
                   alt="Executive Chef at THEATRE HOTEL Split Croatia - culinary expert creating exceptional Mediterranean cuisine"
                   fill
                   className="object-cover"

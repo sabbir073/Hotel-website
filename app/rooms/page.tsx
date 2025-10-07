@@ -9,11 +9,11 @@ import { FaWifi, FaTv, FaCoffee, FaSnowflake, FaSwimmingPool, FaSpa, FaConcierge
 const roomsData = [
   {
     id: 'standard',
-    image: 'https://images.unsplash.com/photo-1611892440504-42a792e24d32?w=1200&h=800&fit=crop',
+    image: '/images/rooms/room-standard.jpg',
     gallery: [
-      'https://images.unsplash.com/photo-1618773928121-c32242e63f39?w=800&h=600&fit=crop',
-      'https://images.unsplash.com/photo-1595526051245-4506e0005bd0?w=800&h=600&fit=crop',
-      'https://images.unsplash.com/photo-1609766857041-ed402ea8069a?w=800&h=600&fit=crop',
+      '/images/gallery/standard/standard-1.jpg',
+      '/images/gallery/standard/standard-2.jpg',
+      '/images/gallery/standard/standard-3.jpg',
     ],
     price: 150,
     size: 25,
@@ -22,11 +22,11 @@ const roomsData = [
   },
   {
     id: 'deluxe',
-    image: 'https://images.unsplash.com/photo-1590490360182-c33d57733427?w=1200&h=800&fit=crop',
+    image: '/images/rooms/room-deluxe.jpg',
     gallery: [
-      'https://images.unsplash.com/photo-1591088398332-8a7791972843?w=800&h=600&fit=crop',
-      'https://images.unsplash.com/photo-1598928506311-c55ded91a20c?w=800&h=600&fit=crop',
-      'https://images.unsplash.com/photo-1584132967334-10e028bd69f7?w=800&h=600&fit=crop',
+      '/images/gallery/deluxe/deluxe-1.jpg',
+      '/images/gallery/deluxe/deluxe-2.jpg',
+      '/images/gallery/deluxe/deluxe-3.jpg',
     ],
     price: 250,
     size: 35,
@@ -35,11 +35,11 @@ const roomsData = [
   },
   {
     id: 'suite',
-    image: 'https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=1200&h=800&fit=crop',
+    image: '/images/rooms/room-suite.jpg',
     gallery: [
-      'https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=800&h=600&fit=crop',
-      'https://images.unsplash.com/photo-1616594039964-ae9021a400a0?w=800&h=600&fit=crop',
-      'https://images.unsplash.com/photo-1578683010236-d716f9a3f461?w=800&h=600&fit=crop',
+      '/images/gallery/suite/suite-1.jpg',
+      '/images/gallery/suite/suite-2.jpg',
+      '/images/gallery/suite/suite-3.jpg',
     ],
     price: 450,
     size: 65,
@@ -48,11 +48,11 @@ const roomsData = [
   },
   {
     id: 'presidential',
-    image: 'https://images.unsplash.com/photo-1629140727571-9b5c6f6267b4?w=1200&h=800&fit=crop',
+    image: '/images/rooms/room-presidential.jpg',
     gallery: [
-      'https://images.unsplash.com/photo-1606402179428-a57976d71fa4?w=800&h=600&fit=crop',
-      'https://images.unsplash.com/photo-1587985064135-0366536eab42?w=800&h=600&fit=crop',
-      'https://images.unsplash.com/photo-1609766857326-18a204c2cf31?w=800&h=600&fit=crop',
+      '/images/gallery/presidential/presidential-1.jpg',
+      '/images/gallery/presidential/presidential-2.jpg',
+      '/images/gallery/presidential/presidential-3.jpg',
     ],
     price: 850,
     size: 120,
@@ -77,7 +77,7 @@ export default function Rooms() {
       <section className="relative h-[50vh] flex items-center justify-center">
         <div className="absolute inset-0">
           <Image
-            src="https://images.unsplash.com/photo-1566665797739-1674de7a421a?w=1920&h=1080&fit=crop"
+            src="/images/hero/hero-rooms.jpg"
             alt="Luxury hotel rooms at THEATRE HOTEL Split Croatia showcasing elegant design and premium accommodations"
             fill
             className="object-cover"

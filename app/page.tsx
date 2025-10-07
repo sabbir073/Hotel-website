@@ -18,7 +18,7 @@ export default function Home() {
       <section className="relative h-screen flex items-center justify-center">
         <div className="absolute inset-0">
           <Image
-            src="https://images.unsplash.com/photo-1564501049412-61c2a3083791?w=1920&h=1080&fit=crop"
+            src="/images/hero/hero-home.jpg"
             alt="Luxury hotel lobby at THEATRE HOTEL d.o.o. Split Croatia with elegant interior design and comfortable seating"
             fill
             sizes="100vw"
@@ -156,7 +156,7 @@ export default function Home() {
             <div className="bg-white rounded-2xl shadow-xl overflow-hidden group hover:shadow-2xl transition-shadow">
               <div className="relative h-64 overflow-hidden">
                 <Image
-                  src="https://images.unsplash.com/photo-1611892440504-42a792e24d32?w=800&h=600&fit=crop"
+                  src="/images/rooms/room-standard.jpg"
                   alt="Standard Room at luxury hotel Split Croatia featuring modern furnishings, comfortable king bed, and elegant decor"
                   fill
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
@@ -194,7 +194,7 @@ export default function Home() {
             <div className="bg-white rounded-2xl shadow-xl overflow-hidden group hover:shadow-2xl transition-shadow">
               <div className="relative h-64 overflow-hidden">
                 <Image
-                  src="https://images.unsplash.com/photo-1590490360182-c33d57733427?w=800&h=600&fit=crop"
+                  src="/images/rooms/room-deluxe.jpg"
                   alt="Deluxe Room at THEATRE HOTEL Split with private balcony, spacious layout, premium amenities and city views"
                   fill
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
@@ -232,7 +232,7 @@ export default function Home() {
             <div className="bg-white rounded-2xl shadow-xl overflow-hidden group hover:shadow-2xl transition-shadow">
               <div className="relative h-64 overflow-hidden">
                 <Image
-                  src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=800&h=600&fit=crop"
+                  src="/images/rooms/room-suite.jpg"
                   alt="Executive Suite at luxury Split hotel with separate living area, jacuzzi, premium furnishings and panoramic views"
                   fill
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
