@@ -4,7 +4,6 @@ const nextConfig: NextConfig = {
   compiler: {
     removeConsole: process.env.NODE_ENV === 'production',
   },
-  optimizeFonts: true,
   images: {
     remotePatterns: [
       // No external image sources - all images are local
