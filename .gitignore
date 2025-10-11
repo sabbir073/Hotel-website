@@ -52,11 +52,24 @@ WEBSITE_IMPROVEMENT_RECOMMENDATIONS.md
 PAGESPEED_OPTIMIZATION_PLAN.md
 PAGESPEED_OPTIMIZATION_COMPLETE.md
 LOCAL_IMAGES_MIGRATION.md
+PERMIT_MANAGEMENT_IMPLEMENTATION.md
+PERMIT_FEATURE_UPDATES.md
+FINAL_UPDATE.md
+PDF_PATH_FIX.md
+ENV_VARIABLE_UPDATE.md
+FORM_ERROR_DISPLAY.md
+PDF_DELETE_ON_EDIT_DELETE.md
+SUCCESS_ERROR_POPUPS_ENHANCED.md
+*_DOCS.md
+*_IMPLEMENTATION.md
+*_UPDATE.md
+*_FIX.md
 pagespeed.txt
 
 # Database and migrations
 requirements.txt
 database/
+migrations/
 
 # IDE
 .vscode/
@@ -74,3 +87,10 @@ Thumbs.db
 *.temp
 .tmp/
 temp/
+
+# Generated PDFs (work permits)
+/public/pdf/*.pdf
+
+# Puppeteer
+.local-chromium/
+.cache/puppeteer/

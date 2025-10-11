@@ -4,7 +4,7 @@ import { useSession, signOut } from 'next-auth/react';
 import { useRouter, usePathname } from 'next/navigation';
 import Link from 'next/link';
 import Image from 'next/image';
-import { FaHome, FaEnvelope, FaBed, FaBriefcase, FaUsers, FaSignOutAlt, FaBars, FaTimes } from 'react-icons/fa';
+import { FaHome, FaEnvelope, FaBed, FaBriefcase, FaUsers, FaSignOutAlt, FaBars, FaTimes, FaFileAlt } from 'react-icons/fa';
 import { useState, useEffect } from 'react';
 
 export default function AdminDashboardLayout({
@@ -43,6 +43,7 @@ export default function AdminDashboardLayout({
     { href: '/admin/dashboard/contacts', icon: FaEnvelope, label: 'Contact Submissions' },
     { href: '/admin/dashboard/bookings', icon: FaBed, label: 'Room Bookings' },
     { href: '/admin/dashboard/jobs', icon: FaBriefcase, label: 'Job Applications' },
+    { href: '/admin/dashboard/permits', icon: FaFileAlt, label: 'Permit Management' },
     { href: '/admin/dashboard/users', icon: FaUsers, label: 'User Management' },
   ];
 
