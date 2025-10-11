@@ -129,7 +129,7 @@ export async function POST(request: Request) {
       client.close();
 
       // If FTP fails, return the PDF directly for download
-      return new NextResponse(pdfBuffer, {
+      return new NextResponse(Buffer.from(pdfBuffer), {
         headers: {
           'Content-Type': 'application/pdf',
           'Content-Disposition': `attachment; filename="${filename}"`,
