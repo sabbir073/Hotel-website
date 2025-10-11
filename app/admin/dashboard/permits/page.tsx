@@ -38,12 +38,35 @@ interface Toast {
   message: string;
 }
 
+// Form state interface with Date objects for date fields
+interface PermitFormData {
+  id?: number;
+  license_number?: string;
+  date_of_issue?: Date | null;
+  valid_from?: Date | null;
+  valid_until?: Date | null;
+  employee_name?: string;
+  employee_address?: string;
+  date_of_birth?: Date | null;
+  passport_number?: string;
+  passport_issued_in?: string;
+  citizenship?: string;
+  company_name?: string;
+  company_address?: string;
+  mbs?: string;
+  oib?: string;
+  occupation?: string;
+  salary?: number;
+  email?: string | null;
+  contract_no?: string | null;
+}
+
 export default function PermitManagement() {
   const [permits, setPermits] = useState<Permit[]>([]);
   const [loading, setLoading] = useState(true);
   const [showModal, setShowModal] = useState(false);
   const [editMode, setEditMode] = useState(false);
-  const [currentPermit, setCurrentPermit] = useState<Partial<Permit>>({
+  const [currentPermit, setCurrentPermit] = useState<PermitFormData>({
     company_name: 'THEATRE HOTEL d.o.o.',
     company_address: 'Matošića 21, 21000, Split, Hrvatska',
     mbs: '060416714',
@@ -67,7 +90,7 @@ export default function PermitManagement() {
   };
 
   // Helper function to convert Date to YYYY-MM-DD for database
-  const formatDateToYYYYMMDD = (date: Date | null): string => {
+  const formatDateToYYYYMMDD = (date: Date | null | undefined): string => {
     if (!date) return '';
     const year = date.getFullYear();
     const month = String(date.getMonth() + 1).padStart(2, '0');
